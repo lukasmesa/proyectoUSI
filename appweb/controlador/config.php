@@ -11,20 +11,19 @@ header("Pragma: no-cache");
 // Constantes propias de la aplicación
 define('COMSPEC', filter_input(INPUT_SERVER, 'COMSPEC'));
 define('ROOT', filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'));
-define('DOCUMENT_ROOT', substr(ROOT, -1) == '/' ? ROOT : ROOT . '/');
-define('RUTA_APLICACION', '../');
+define('DOCUMENT_ROOT', substr('ROOT', -1) == '/' ? 'ROOT' : 'ROOT' . '/');
+define('RUTA_APLICACION', DOCUMENT_ROOT . 'demojqgrid01/');
 define('PHPEXCEL_ROOT', '../../includes/PHPExcel/');
-define('RUTA_DESCARGA', '../serviciosTecnicos/varios/');
 //-----------------
 define('PHPWORD_ROOT', '../../includes/PHPWord/');
 define('TMP_PATH', sys_get_temp_dir() . DIRECTORY_SEPARATOR);
 
 // Atributos de la conexión a la base de datos
-define('BASE_DATOS', 'usi');
+define('BASE_DATOS', 'lp_prueba');
 define('SERVIDOR', 'localhost');
 define('PUERTO', '5432');
 define('USUARIO', 'postgres');
-define('CONTRASENA', '3124114983');
+define('CONTRASENA', 'jhona369');
 
 spl_autoload_register('__autoload');
 // Para PHP 6 E_STRICT es parte de E_ALL -- error_reporting(E_ALL | E_STRICT); para verificación exhaustivo --
@@ -39,8 +38,14 @@ error_reporting(E_ERROR);
  */
 function __autoload($nombreClase) {
 
-    if (substr($nombreClase, 0, 4) == 'Util') {
+    if (substr($nombreClase, 0, 7) == 'Reporte') {
+        $nombreClase = "../serviciosTecnicos/reportes/$nombreClase.php";
+    } else if (substr($nombreClase, 0, 4) == 'Util') {
         $nombreClase = "../serviciosTecnicos/utilidades/$nombreClase.php";
+    } else if (substr($nombreClase, 0, 8) == 'PHPExcel') {
+        $nombreClase = PHPEXCEL_ROOT . str_replace('_', '/', $nombreClase) . '.php';
+    } else if (substr($nombreClase, 0, 7) == 'PHPWord') {
+        $nombreClase = PHPWORD_ROOT . str_replace('_', '/', $nombreClase) . '.php';
     } else {
         $nombreClase = "../modelo/$nombreClase.php";
     }
