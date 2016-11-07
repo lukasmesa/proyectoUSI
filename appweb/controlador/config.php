@@ -20,11 +20,11 @@ define('PHPWORD_ROOT', '../../includes/PHPWord/');
 define('TMP_PATH', sys_get_temp_dir() . DIRECTORY_SEPARATOR);
 
 // Atributos de la conexión a la base de datos
-define('BASE_DATOS', 'usi');
+define('BASE_DATOS', 'USI');
 define('SERVIDOR', 'localhost');
 define('PUERTO', '5432');
-define('USUARIO', 'postgres');
-define('CONTRASENA', '3124114983');
+define('USUARIO', 'camilo');//postgres
+define('CONTRASENA', 'coffeeandtv');//123456
 
 spl_autoload_register('__autoload');
 // Para PHP 6 E_STRICT es parte de E_ALL -- error_reporting(E_ALL | E_STRICT); para verificación exhaustivo --

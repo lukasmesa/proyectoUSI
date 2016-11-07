@@ -19,7 +19,56 @@ $(document).on('ready', function () {
     $("#index-asignatura").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/asignatura.html");
     });
+    $("#index-externo").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/externo.html");
+    });
+	$("#index-prestamo_equipo").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/prestamo_equipo.html");
 
+    });
+	$("#index-horas_disponibles_monitor").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/horas_disponibles_monitor.html");
+
+    });
+	$("#index-parte_equipo").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/parte_equipo.html");
+
+    });
+	$("#index-grupo").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/grupo.html");
+
+    });
+	
+	$("#index-bloque").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/bloque.html");
+
+    });
+	$("#index-equipos_sala").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/equipos_sala.html");
+
+    });
+	$("#index-sala").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/sala.html");
+
+    });
+	
+	
+	$("#index-docente").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/docente.html");
+
+    });
+	$("#index-administrativo").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/administrativo.html");
+
+    });
+	$("#index-monitor").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/monitor.html");
+
+    });
+	
+	
+	
+	
     // un ejemplo de uso de selectores jQuery para controlar eventos sobre links
     $("#index-menu-superior li a").each(function () {
         var opcion = $(this).text();
@@ -60,7 +109,7 @@ $(document).on('ready', function () {
     // cada que se redimensione el navegador se actualiza anchoContenedor
     $(window).on('resize', function () {
         anchoContenedor = $(window).width() - 220;
-        console.log('ancho usable: ' + anchoContenedor)
+        console.log('ancho usable: ' + anchoContenedor);
         $('.ui-jqgrid-btable').each(function () {
             $(this).jqGrid('setGridWidth', anchoContenedor);
         });
