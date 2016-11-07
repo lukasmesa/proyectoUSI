@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--
+Ejemplo básico de una aplicación web construída por capas.
+Autor: Carlos Cuesta Iglesias
+-->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -7,12 +11,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>La Patria - CPI</title>
+        <title>Equipos para prestamo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" media="screen" href="vista/css/estilos.css">
 
-        <link type="text/css" href="../includes/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+        <!--
+        carga el estilo por defecto que se haya utilizado al momento de descargar
+        <link type="text/css" href="../includes/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" >
+        -->
+        <!-- carga cualquier otro estilo definido en themes -->
+        <link type="text/css" href="../includes/jquery-ui-1.12.0.custom/jquery-ui.min.css" rel="stylesheet">
         <!-- No apto para usar con Internet Explores 9 o inferiores -->
 
     </head>
@@ -21,13 +30,6 @@
 
         <header>
             <!-- diseñe la cabecera con un estilo sobrio y usable -->
-            <img src="vista/imagenes/logoazul.png" alt="La Patria">
-            <nav>
-                <ul id="index-menu-superior" class="nav inline-items">
-                    <li><a href="">Actualidad</a></li>
-                    <li><a href="">Caldas</a></li>
-                </ul>
-            </nav>
         </header>
 
         <div class="columns-container">
@@ -35,8 +37,9 @@
             <div class="left-column">
                 <h2>Opciones</h2>
                 <p>
-                    <button id="index-asignatura">Asignaturas</button>
+                    <button id="index-equipo_prestamo">Estado Equipos Prestamo</button>
                 <p>
+<<<<<<< HEAD
                     <button id="index-externo">externo</button>
                 <p>
                 	 <button id="index-prestamo_equipo">Prestamo Equipo</button>
@@ -62,6 +65,10 @@
                 <p>
                     <button id="index-monitor">Monitor</button> 
                
+=======
+                    
+                <p>bla bla bla muahahah.
+>>>>>>> 877b6ad730ed93f57404a92327cdfd1ac445e1d8
             </div>
 
             <div id="index-contenido" class="right-column">
@@ -71,30 +78,53 @@
         </div> 
 
         <footer id="index-pie_pagina">
-            <p><a href="">Contáctenos</a> | <a href="">Mapa del sitio</a> | <a href="">Políticas de privacidad</a></p>
-            <p>&copy;2016 Todos los derechos de autor reservados...</p>
+            
         </footer>
 
         <!------------------------------------------------------------------------------>
 
-        <script type="text/javascript" src="../includes/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="../includes/jquery-3.1.0.min.js"></script>
         <!--------  el uso de jquery-migrate-3.0.0.min.js es temporal, mientras se revisa compatibilidad  ----------->
+<<<<<<< HEAD
         <script src="../includes/jquery-migrate-3.0.0.js"></script>
 
 
+=======
+        <script src="../includes/jquery-migrate-3.0.0.min.js"></script>
+        
+        
+>>>>>>> 877b6ad730ed93f57404a92327cdfd1ac445e1d8
 
-        <script type="text/javascript" src="../includes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="../includes/jquery-ui-1.12.1.custom/jquery.ui.datepicker-es.js"></script>
+        <script type="text/javascript" src="../includes/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../includes/jquery-ui-1.12.0.custom/jquery.ui.datepicker-es.js"></script>
 
         <script type="text/javascript" src="vista/js/index.js"></script>
 
+        <!-- Ver: https://github.com/free-jqgrid/jqGrid -->
         <link rel="stylesheet" type="text/css" media="screen" href="../includes/jqGridFree/css/ui.jqgrid.css" >
         <link rel="stylesheet" type="text/css" media="screen" href="../includes/jqGridFree/plugins/ui.multiselect.css" >
         <script src="../includes/jqGridFree/i18n/grid.locale-es.js" type="text/javascript"></script>
-        <script src="../includes/jqGridFree/jquery.jqgrid.min.js" type="text/javascript"></script>
+        <script src="../includes/jqGridFree/jquery.jqGrid.min.js" type="text/javascript"></script>
 
         <script src="../includes/moment.min.js" type="text/javascript"></script>
+<<<<<<< HEAD
 
+=======
+        
+        <!-- http://fullcalendar.io/ -->
+        <link href='../includes/fullcalendar/fullcalendar.css' rel='stylesheet' />
+        <link href='../includes/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+        <script src='../includes/fullcalendar/fullcalendar.min.js'></script>
+        <script src='../includes/fullcalendar/locale/es.js'></script>
+
+        <!-- https://github.com/xdan/datetimepicker    http://xdsoft.net/jqplugins/datetimepicker/ -->
+        <link rel="stylesheet" type="text/css" href="../includes/datetimepicker/jquery.datetimepicker.css"/ >
+        <script src="../includes/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../includes/qTip2/jquery.qtip.css" />
+        <script type="text/javascript" src="../includes/qTip2/jquery.qtip.js"></script>
+        
+>>>>>>> 877b6ad730ed93f57404a92327cdfd1ac445e1d8
         <script type="text/javascript" src="../includes/jquery.blockUI.min.js"></script>
 
         <script src="../includes/jquery.fileDownload.js" type="text/javascript"></script>

@@ -23,8 +23,13 @@ define('TMP_PATH', sys_get_temp_dir() . DIRECTORY_SEPARATOR);
 define('BASE_DATOS', 'USI');
 define('SERVIDOR', 'localhost');
 define('PUERTO', '5432');
+<<<<<<< HEAD
 define('USUARIO', 'camilo');//postgres
 define('CONTRASENA', 'coffeeandtv');//123456
+=======
+define('USUARIO', 'postgres');
+define('CONTRASENA', 'admin');
+>>>>>>> 877b6ad730ed93f57404a92327cdfd1ac445e1d8
 
 spl_autoload_register('__autoload');
 // Para PHP 6 E_STRICT es parte de E_ALL -- error_reporting(E_ALL | E_STRICT); para verificación exhaustivo --
@@ -39,8 +44,14 @@ error_reporting(E_ERROR);
  */
 function __autoload($nombreClase) {
 
-    if (substr($nombreClase, 0, 4) == 'Util') {
+    if (substr($nombreClase, 0, 7) == 'Reporte') {
+        $nombreClase = "../serviciosTecnicos/reportes/$nombreClase.php";
+    } else if (substr($nombreClase, 0, 4) == 'Util') {
         $nombreClase = "../serviciosTecnicos/utilidades/$nombreClase.php";
+    } else if (substr($nombreClase, 0, 8) == 'PHPExcel') {
+        $nombreClase = PHPEXCEL_ROOT . str_replace('_', '/', $nombreClase) . '.php';
+    } else if (substr($nombreClase, 0, 7) == 'PHPWord') {
+        $nombreClase = PHPWORD_ROOT . str_replace('_', '/', $nombreClase) . '.php';
     } else {
         $nombreClase = "../modelo/$nombreClase.php";
     }

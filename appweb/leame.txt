@@ -1,0 +1,12 @@
+
+* Es una simple prueba que nada tiene que ver con la base de datos real
+* La base de datos de prueba está en ../serviciosTecnicos/varios/...
+
+Cambios en esta versión:
+- Ageneral.css se le agregaron instrucciones para el formato del calendario
+- En index.html se referenciaron nuevas librerías
+- En index.js se agregan nuevas funciones
+- Se agrega ../serviciosTecnicos/utilidades/Utilidades.php como una librería genérica
+- Se agregan imágenes en ../vista/imagenes
+- Se agrega una demostración del uso de FullCalendar y registro de eventos en una base de datos
+     Evento.php, TurnoProduccion.php, turno_produccion.html|js
