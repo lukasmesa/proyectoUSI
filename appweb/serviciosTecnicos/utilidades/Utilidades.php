@@ -2,7 +2,7 @@
 
 /**
  * Librería de funciones varias que requiere la aplicación
- * @author
+ * @author Carlos Cuesta
  */
 class Utilidades {
     // Utilidades para el manejo de fechas

@@ -1,1 +1,30 @@
+[02-Nov-2016 13:12:06 America/Bogota] Array
+(
+    [clase] => equipos_para_prestamo
+    [oper] => del
+    [id] => 15
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
 
+        )
+
+)
+
+[02-Nov-2016 13:17:15 America/Bogota] Array
+(
+    [clase] => equipos_para_prestamo
+    [oper] => del
+    [id] => 8
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
