@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+</head>
+
+<body>
+<div id='cronograma-mensaje'></div>
+
+
+<div id="cronograma-calendario"></div>
+
+<div id="cronograma-dialog" title="cronograma" style="display:none">
+    <!-- defina aqui los campos del formulario -->
+    <label for="cronograma-actividad">Actividad:</label>
+    <select id="cronograma-actividad"></select>
+    <label for="cronograma-usuario">Usuario:</label>
+    <select id="cronograma-usuario"></select>
+    <label for="cronograma-start">Hora inicial:</label>
+    <input type="text" id="cronograma-start">
+    <label for="cronograma-end">Hora final:</label>
+    <input type="text" id="cronograma-end">
+    <label for="cronograma-sala">Sala:</label>
+    <select id="cronograma-sala"></select>
+    <label for="turno_produccion-color">Color:</label>
+    <input id="turno_produccion-color" type="color"/>
+</div>
+
+<script type="text/javascript" src="vista/js/cronograma.js"></script>
+</body>
+</html>
