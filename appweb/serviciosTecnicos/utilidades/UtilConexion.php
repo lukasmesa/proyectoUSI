@@ -3,7 +3,7 @@
 /**
  * Description of Conexion:
  * Ise encarga de proporcionar la conexión a la base de datos.
- * @author
+ * @author Carlos Cuesta Iglesias
  */
 class UtilConexion {
 
@@ -165,8 +165,48 @@ class UtilConexion {
         return $json ? json_encode(['ok' => $ok, 'mensaje' => $mensaje]) : ['ok' => $ok, 'mensaje' => $mensaje];
     }
 
+    /**
+     * prueba del comportamiento de una transacción
+     * @param type $param
+     */
+    public function pruebaTransaccion($param) {
+        extract($param);
+        $instrucciones = [
+            "INSERT INTO departamento(id, nombre) VALUES ('04', 'aaaaaaaaaaaaaaaaaaaaa')",
+            "INSERT INTO departamento(id, nombre) VALUES ('05', 'xxxxxxxxxxxxxxxx')",
+            "INSERT INTO departamento(id, nombre) VALUES ('06', 'bbbbbbbbbbbbbbbbbbbb')",
+            "INSERT INTO departamento(id, nombre) VALUES ('07', 'bbbbbbbbbbbbbbbbbbbb')",
+            "INSERT INTO departamento(id, nombre) VALUES ('11', 'xxxxxxxxxxxxxxxxxxxx')",
+            "INSERT INTO departamento(id, nombre) VALUES ('13', 'xxxxxxxxxxxxxxxxxxxx')"
+        ];
 
-    public function getEstados() {
+        if (!$obligarEjecucion) {
+            $this->pdo->beginTransaction();
+        }
+        $mensaje = '';
+        foreach ($instrucciones as $sql) {
+            $ok = $this->pdo->exec($sql);
+            if (!$ok) {
+                $mensaje .="Error en $sql\n";
+            }
+        }
+
+        if ($mensaje) {
+            $mensaje = "fallo la insercion de los siguientes registros:\n$mensaje";
+            $ok = FALSE;
+        }
+
+        if (!$obligarEjecucion) {
+            if ($mensaje) {
+                $this->pdo->rollBack();
+            } else {
+                $this->pdo->commit();
+            }
+        }
+        echo json_encode(['ok' => $ok, 'mensaje' => $mensaje]);
+    }
+
+    public function getEstadosProduccion() {
         echo json_encode(self::$tipoEstadoProduccion);
     }
 

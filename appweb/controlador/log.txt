@@ -1,1 +1,1276 @@
+[01-Sep-2016 13:49:08 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472737748866
+    [rows] => 10
+    [page] => 1
+    [sidx] => nro_orden
+    [sord] => asc
+)
+
+[01-Sep-2016 13:57:31 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1212
+                    [cell] => Array
+                        (
+                            [0] => 1212
+                            [1] => Q'HUBO
+                            [2] => Tiraje periódico
+                            [3] => 2016-02-10
+                            [4] => 5000
+                            [5] => 2
+                            [6] => Terminado
+                        )
 
+                )
+
+            [1] => Array
+                (
+                    [id] => 33335
+                    [cell] => Array
+                        (
+                            [0] => 33335
+                            [1] => TELEVISA
+                            [2] => Revista Farándula
+                            [3] => 2016-02-11
+                            [4] => 1000
+                            [5] => 2
+                            [6] => Pendiente
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 33334
+                    [cell] => Array
+                        (
+                            [0] => 33334
+                            [1] => NUEVO ESTADIO
+                            [2] => Tiraje de periódico
+                            [3] => 2016-05-06
+                            [4] => 1200
+                            [5] => 4
+                            [6] => Terminado
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 13:57:39 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472738259729
+    [rows] => 10
+    [page] => 1
+    [sidx] => nro_orden
+    [sord] => asc
+)
+
+[01-Sep-2016 13:57:41 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472738261840
+    [rows] => 10
+    [page] => 1
+    [sidx] => id_maquina
+    [sord] => desc
+)
+
+[01-Sep-2016 13:57:42 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472738262630
+    [rows] => 10
+    [page] => 1
+    [sidx] => id_maquina
+    [sord] => asc
+)
+
+[01-Sep-2016 13:57:43 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472738263311
+    [rows] => 10
+    [page] => 1
+    [sidx] => id_maquina
+    [sord] => desc
+)
+
+[01-Sep-2016 13:57:44 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472738264187
+    [rows] => 10
+    [page] => 1
+    [sidx] => id_maquina
+    [sord] => asc
+)
+
+[01-Sep-2016 13:59:14 UTC] Problemas en ::()
+No se pudo definir un receptor de mensajes. Argumentos recibidos:
+Array
+(
+    [clase] => Maquinas
+    [oper] => select
+    [_search] => false
+    [nd] => 1472738354230
+    [rows] => 10
+    [page] => 1
+    [sidx] => nro_orden
+    [sord] => asc
+)
+
+[01-Sep-2016 14:01:31 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:03:13 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => Heidelberg Gto 52
+                            [1] => #003399
+                            [2] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => Harris M 1000 5 cuerpos
+                            [1] => #009999
+                            [2] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:03:36 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => Heidelberg Gto 52
+                            [1] => #003399
+                            [2] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => Harris M 1000 5 cuerpos
+                            [1] => #009999
+                            [2] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:05:43 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:07:21 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:13 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:14 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1212
+                    [cell] => Array
+                        (
+                            [0] => 1212
+                            [1] => Q'HUBO
+                            [2] => Tiraje periódico
+                            [3] => 2016-02-10
+                            [4] => 5000
+                            [5] => 2
+                            [6] => Terminado
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 33335
+                    [cell] => Array
+                        (
+                            [0] => 33335
+                            [1] => TELEVISA
+                            [2] => Revista Farándula
+                            [3] => 2016-02-11
+                            [4] => 1000
+                            [5] => 2
+                            [6] => Pendiente
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 33334
+                    [cell] => Array
+                        (
+                            [0] => 33334
+                            [1] => NUEVO ESTADIO
+                            [2] => Tiraje de periódico
+                            [3] => 2016-05-06
+                            [4] => 1200
+                            [5] => 4
+                            [6] => Terminado
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:16 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:19 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:20 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1212
+                    [cell] => Array
+                        (
+                            [0] => 1212
+                            [1] => Q'HUBO
+                            [2] => Tiraje periódico
+                            [3] => 2016-02-10
+                            [4] => 5000
+                            [5] => 2
+                            [6] => Terminado
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 33335
+                    [cell] => Array
+                        (
+                            [0] => 33335
+                            [1] => TELEVISA
+                            [2] => Revista Farándula
+                            [3] => 2016-02-11
+                            [4] => 1000
+                            [5] => 2
+                            [6] => Pendiente
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 33334
+                    [cell] => Array
+                        (
+                            [0] => 33334
+                            [1] => NUEVO ESTADIO
+                            [2] => Tiraje de periódico
+                            [3] => 2016-05-06
+                            [4] => 1200
+                            [5] => 4
+                            [6] => Terminado
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:21 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:11:22 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1212
+                    [cell] => Array
+                        (
+                            [0] => 1212
+                            [1] => Q'HUBO
+                            [2] => Tiraje periódico
+                            [3] => 2016-02-10
+                            [4] => 5000
+                            [5] => 2
+                            [6] => Terminado
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 33335
+                    [cell] => Array
+                        (
+                            [0] => 33335
+                            [1] => TELEVISA
+                            [2] => Revista Farándula
+                            [3] => 2016-02-11
+                            [4] => 1000
+                            [5] => 2
+                            [6] => Pendiente
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 33334
+                    [cell] => Array
+                        (
+                            [0] => 33334
+                            [1] => NUEVO ESTADIO
+                            [2] => Tiraje de periódico
+                            [3] => 2016-05-06
+                            [4] => 1200
+                            [5] => 4
+                            [6] => Terminado
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:29:02 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:30:33 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 1500
+                    [cell] => Array
+                        (
+                            [0] => 1500
+                            [1] => buldocer
+                            [2] => #00123c
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[01-Sep-2016 14:30:40 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => A5929
+                    [cell] => Array
+                        (
+                            [0] => A5929
+                            [1] => Heidelberg Gto 52
+                            [2] => #003399
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => B2003
+                    [cell] => Array
+                        (
+                            [0] => B2003
+                            [1] => Harris M 1000 5 cuerpos
+                            [2] => #009999
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 1500
+                    [cell] => Array
+                        (
+                            [0] => 1500
+                            [1] => buldocer
+                            [2] => #00123c
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[27-Oct-2016 04:59:25 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[27-Oct-2016 04:59:28 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 12346
+                    [cell] => Array
+                        (
+                            [0] => 12346
+                            [1] => Plana
+                            [2] => #098789
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 12345
+                    [cell] => Array
+                        (
+                            [0] => 12345
+                            [1] => Plana
+                            [2] => #098909
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 12347
+                    [cell] => Array
+                        (
+                            [0] => 12347
+                            [1] => Rotativa
+                            [2] => #009090
+                            [3] => 
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 12348
+                    [cell] => Array
+                        (
+                            [0] => 12348
+                            [1] => Rotativa
+                            [2] => #000909
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[27-Oct-2016 04:59:34 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[27-Oct-2016 04:59:34 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 12346
+                    [cell] => Array
+                        (
+                            [0] => 12346
+                            [1] => Plana
+                            [2] => #098789
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 12345
+                    [cell] => Array
+                        (
+                            [0] => 12345
+                            [1] => Plana
+                            [2] => #098909
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 12347
+                    [cell] => Array
+                        (
+                            [0] => 12347
+                            [1] => Rotativa
+                            [2] => #009090
+                            [3] => 
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 12348
+                    [cell] => Array
+                        (
+                            [0] => 12348
+                            [1] => Rotativa
+                            [2] => #000909
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[27-Oct-2016 05:02:26 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[27-Oct-2016 05:02:29 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 12346
+                    [cell] => Array
+                        (
+                            [0] => 12346
+                            [1] => Plana
+                            [2] => #098789
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 12345
+                    [cell] => Array
+                        (
+                            [0] => 12345
+                            [1] => Plana
+                            [2] => #098909
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 12347
+                    [cell] => Array
+                        (
+                            [0] => 12347
+                            [1] => Rotativa
+                            [2] => #009090
+                            [3] => 
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 12348
+                    [cell] => Array
+                        (
+                            [0] => 12348
+                            [1] => Rotativa
+                            [2] => #000909
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[27-Oct-2016 05:02:31 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[27-Oct-2016 05:02:32 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 12346
+                    [cell] => Array
+                        (
+                            [0] => 12346
+                            [1] => Plana
+                            [2] => #098789
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 12345
+                    [cell] => Array
+                        (
+                            [0] => 12345
+                            [1] => Plana
+                            [2] => #098909
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 12347
+                    [cell] => Array
+                        (
+                            [0] => 12347
+                            [1] => Rotativa
+                            [2] => #009090
+                            [3] => 
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 12348
+                    [cell] => Array
+                        (
+                            [0] => 12348
+                            [1] => Rotativa
+                            [2] => #000909
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[27-Oct-2016 05:02:46 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[27-Oct-2016 05:02:46 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 12346
+                    [cell] => Array
+                        (
+                            [0] => 12346
+                            [1] => Plana
+                            [2] => #098789
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 12345
+                    [cell] => Array
+                        (
+                            [0] => 12345
+                            [1] => Plana
+                            [2] => #098909
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 12347
+                    [cell] => Array
+                        (
+                            [0] => 12347
+                            [1] => Rotativa
+                            [2] => #009090
+                            [3] => 
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 12348
+                    [cell] => Array
+                        (
+                            [0] => 12348
+                            [1] => Rotativa
+                            [2] => #000909
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[06-Nov-2016 02:13:12 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[06-Nov-2016 02:13:17 UTC] Array
+(
+    [total] => 0
+    [page] => id_maquina
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+    [rows] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 12346
+                    [cell] => Array
+                        (
+                            [0] => 12346
+                            [1] => Plana
+                            [2] => #098789
+                            [3] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 12345
+                    [cell] => Array
+                        (
+                            [0] => 12345
+                            [1] => Plana
+                            [2] => #098909
+                            [3] => 
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 12347
+                    [cell] => Array
+                        (
+                            [0] => 12347
+                            [1] => Rotativa
+                            [2] => #009090
+                            [3] => 
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 12348
+                    [cell] => Array
+                        (
+                            [0] => 12348
+                            [1] => Rotativa
+                            [2] => #000909
+                            [3] => 
+                        )
+
+                )
+
+        )
+
+)
+
+[06-Nov-2016 02:13:19 UTC] Array
+(
+    [total] => 0
+    [page] => nro_orden
+    [records] => 0
+    [otras cláusulas] => 10 ORDER BY asc LIMIT 1 OFFSET 0
+)
+
+[06-Nov-2016 19:22:39 America/Bogota] estado utilConexion::__construct
+[06-Nov-2016 19:22:39 America/Bogota] exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «postgres»' in C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\serviciosTecnicos\utilidades\UtilConexion.php:18
+Stack trace:
+#0 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\serviciosTecnicos\utilidades\UtilConexion.php(18): PDO->__construct('pgsql:host=loca...', 'postgres', 'jhona369')
+#1 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\controlador\fachada.php(50): UtilConexion->__construct()
+#2 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\controlador\fachada.php(28): Fachada->ejecutar(Array)
+#3 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\controlador\fachada.php(5): Fachada->__construct()
+#4 {main}
+[06-Nov-2016 19:22:39 America/Bogota] Problemas en ::()
+No se pudo establecer la conexión con la base de datos
+[06-Nov-2016 19:24:34 America/Bogota] estado utilConexion::__construct
+[06-Nov-2016 19:24:34 America/Bogota] exception 'PDOException' with message 'SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «postgres»' in C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\serviciosTecnicos\utilidades\UtilConexion.php:18
+Stack trace:
+#0 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\serviciosTecnicos\utilidades\UtilConexion.php(18): PDO->__construct('pgsql:host=loca...', 'postgres', 'jhona369')
+#1 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\controlador\fachada.php(50): UtilConexion->__construct()
+#2 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\controlador\fachada.php(28): Fachada->ejecutar(Array)
+#3 C:\wamp64\www\htdocs\demo0.1\DemoFullCalendar\controlador\fachada.php(5): Fachada->__construct()
+#4 {main}
+[06-Nov-2016 19:24:34 America/Bogota] Problemas en ::()
+No se pudo establecer la conexión con la base de datos
