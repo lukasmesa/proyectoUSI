@@ -49,7 +49,7 @@ class bloque {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
 
                 $respuesta['rows'][] = [
-                    'id' => $fila['$nombre_bloque'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['nombre_bloque'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['nombre_bloque'],
                         $fila['nombre_sede']
