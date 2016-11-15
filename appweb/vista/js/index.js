@@ -65,6 +65,10 @@ $(document).on('ready', function () {
         cargarPagina("#index-contenido", "vista/html/monitor.html");
 
     });
+    $("#index-calendario").button().on('click', function() {
+        cargarPagina("#index-contenido","vista/html/calendario.html");
+        /* Act on the event */
+    });
 	
 	
 	
@@ -165,3 +169,114 @@ function mostrarMensaje(mensaje, elemento) {
 function getMensaje(mensaje) {
     return '<h4><img src="vista/imagenes/ajax-loader.gif"><br>' + mensaje + '<br>Por favor espere...</h4>';
 }
+
+function getElementos(parametros) {
+    var asincrono, aviso, elementos = new Object(), tipoDatos, url;
+    aviso = ("aviso" in parametros) ? parametros['aviso'] : false;
+    asincrono = ("async" in parametros) ? parametros['async'] : false;
+    tipoDatos = ("tipoDatos" in parametros) ? parametros['tipoDatos'] : "json";
+    url = ("url" in parametros) ? parametros['url'] : "controlador/fachada.php";
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        beforeSend: function (xhr) {
+            if (aviso) {
+                // $.blockUI({message: getMensaje(aviso)});
+            }
+        },
+        data: parametros,
+        async: asincrono,
+        dataType: tipoDatos
+    }).done(function (data) {
+        elementos = data;
+    }).fail(function () {
+        console.log("Error de carga de datos: " + JSON.stringify(parametros));
+        alert("Error de carga de datos");
+    }).always(function () {
+        if (aviso) {
+            // $.unblockUI();
+        }
+    });
+    return elementos;
+}
+
+jQuery.fn.estiloFormulario = function (valoresEstilos) {
+    var div = this;
+    jQuery(this).each(function () {
+        var idDiv = $(this).attr('id');
+        var item;
+        if ($('#' + idDiv + '> ol').length) {
+            item = '#' + idDiv + '>ol>li>';
+        } else {
+            item = '#' + idDiv + '>';
+        }
+
+        var estilo = {
+            'claseFormulario': '',
+            'anchoFormulario': '700px',
+            'anchoEtiquetas': '100px',
+            'anchoEntradas': '550px',
+            'alturaTextArea': '90px',
+            'tamanioFuente': '100%',
+            'fondo': "url('vista/imagenes/fondo1.jpg') repeat"
+        };
+        if (typeof (valoresEstilos) === 'object') {
+            if (estilo.anchoFormurio === valoresEstilos && estilo.anchoFormulario !== '700px') {
+                valoresEstilos = 0
+            }
+            estilo = $.extend(true, estilo, valoresEstilos);
+        }
+
+        $('#' + idDiv).addClass(estilo.claseFormulario);
+        $(this).css({
+            "font-size": estilo.tamanioFuente,
+            "font-family": "Helvetica, sans-serif",
+            "width": estilo.anchoFormulario,
+            "margin-top": "5px",
+            "background": estilo.fondo
+        });
+        $(item + 'input,' + item + 'textarea,' + item + 'select').css({
+            'padding': '5px',
+            'width': estilo.anchoEntradas,
+            'font-family': 'Helvetica, sans-serif',
+            'font-size': estilo.tamanioFuente,
+            'margin': '0px 0px 2px 0px',
+            'border': '1px solid #ccc'
+        });
+        $('#' + idDiv + ' :button').css({
+            'width': (parseInt(estilo.anchoEntradas) + 11) + 'px'
+        });
+        // es raro...el ancho de los select no guarda la misma proporción de los otros componentes y hay que hacer ajustes
+        $(item + 'select').each(function () {
+            if (typeof this.attributes['multiple'] === 'undefined') {
+                $(this).css({'width': (parseInt(estilo.anchoEntradas)) + 'px', 'display': 'block'});
+            } else {
+                // suponiendo un select formateado con el plugin multiselect de Eric Hynds
+                $(this).css('width', (parseInt(estilo.anchoEntradas) + 6) + 'px');
+            }
+        });
+        $(item + 'textarea').css("height", estilo.alturaTextArea);
+        $(item + 'input,' + item + 'textarea,' + item + 'select').on('focus', function () {
+            $(this).css("border", "1px solid #900");
+        });
+        $(item + 'input,' + item + 'textarea,' + item + 'select').on('blur', function () {
+            $(this).css("border", "1px solid #ccc");
+        });
+        $(item + 'label').css({
+            'float': 'left',
+            'text-align': 'right',
+            'margin-right': '15px',
+            'width': estilo.anchoEtiquetas,
+            'padding-top': '5px',
+            'font-size': estilo.tamanioFuente
+        });
+        ////  excluir este tipo en los estilos anteriores por ahora dejarlo así/////////////////////
+        $(item + 'input:checkbox').css({
+            'margin-top': '10px',
+            'width': 10
+        });
+        $(item + 'input,' + item + 'label,' + item + 'button,' + item + 'textarea').css('display', 'block');
+    });
+    return div;
+};
