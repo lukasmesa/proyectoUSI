@@ -41,7 +41,7 @@ $(function () {
         width: anchoGrid,
         pager: "#" + idPager,
         viewrecords: true,
-        caption: "Asignaturas",
+        caption: "Bloque",
         multiselect: false,
         multiboxonly: true,
         hiddengrid: false,

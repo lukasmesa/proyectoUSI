@@ -1,8 +1,3 @@
-/* 
- * Permite la actualización de la información de órdenes de producción
- * Demostración de las posibilidades más usuales de un elemento jqGrid
- */
-
 $(function () {
 
     $(window).resize(); // forzar un resize para detectar el ancho del contenedor (ver index.js)
@@ -13,28 +8,21 @@ $(function () {
         altoGrid = 200;
     }
 
-    var clase = 'grupo';  // la clase que implementa el CRUD para este grid
-    var idPager = 'grupo-pager';  // la barra de navegación del grid ubicada en la parte inferior
+    var clase = 'sede';  // la clase que implementa el CRUD para este grid
+    var idPager = 'sede-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'numero_grupo', name: 'codigo_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Nombre Sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'cod_asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'nombre_asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Dirección', name: 'direccion', index: 'direccion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         }
-
     ];
 
     // inicializa el grid
-    var grid = jQuery('#grupo-grid').jqGrid({
+    var grid = jQuery('#sede-grid').jqGrid({
         url: 'controlador/fachada.php',
         datatype: "json",
         mtype: 'POST',
@@ -47,13 +35,13 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'codigo_grupo', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'nombre_sede', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
         pager: "#" + idPager,
         viewrecords: true,
-        caption: "Grupo",
+        caption: "Sede",
         multiselect: false,
         multiboxonly: true,
         hiddengrid: false,
@@ -114,14 +102,14 @@ $(function () {
      */
     function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'codigo_grupo') {
+        if (columna == 'nombre_sede') {
             if (valor === '0') {
-                return [false, "Falta seleccionar el codigo del grupo"];
+                return [false, "Falta seleccionar el nombre de la sede"];
             }
         }
-        if (columna == 'id_docente') {
+        if (columna == 'direccion') {
             if (valor === '0') {
-                return [false, "Falta seleccionar codigo de asignatura"];
+                return [false, "Falta seleccionar la falta la direccion de la sede"];
             }
         }
         return [true, ""];

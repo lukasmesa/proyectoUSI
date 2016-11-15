@@ -15,7 +15,23 @@ $(document).on('ready', function () {
     // una de las formas de manipular el css mediante jQuery
     var opciones = "#index-asignatura";
     $(opciones).css({'width': '13em'});
-    
+    $("#index-externo").css({'width': '13em'});
+    $("#index-prestamo_equipo").css({'width': '13em'});
+    $("#index-horas_disponibles_monitor").css({'width': '13em'});
+    $("#index-parte_equipo").css({'width': '13em'});
+    $("#index-grupo").css({'width': '13em'});
+    $("#index-bloque").css({'width': '13em'});
+    $("#index-equipos_sala").css({'width': '13em'});
+    $("#index-sala").css({'width': '13em'});
+    $("#index-docente").css({'width': '13em'});
+    $("#index-administrativo").css({'width': '13em'});
+    $("#index-monitor").css({'width': '13em'});
+    $("#index-reporte_danos").css({'width': '13em'});
+    $("#index-sede").css({'width': '13em'});
+    $("#index-equipos_para_prestamos").css({'width': '13em'});
+    $("#index-software").css({'width': '13em'});
+    $("#index-parte").css({'width': '13em'});
+
     $("#index-asignatura").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/asignatura.html");
     });
@@ -50,8 +66,7 @@ $(document).on('ready', function () {
 	$("#index-sala").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/sala.html");
 
-    });
-	
+    });	
 	
 	$("#index-docente").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/docente.html");
@@ -66,7 +81,30 @@ $(document).on('ready', function () {
 
     });
 	
+	$("#index-reporte_danos").button().on("click", function () {
+		cargarPagina("#index-contenido", "vista/html/reporte_danos.html");
+
+    });
 	
+	$("#index-sede").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/sede.html");
+
+    });
+
+    $("#index-equipos_para_prestamos").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/equipos_para_prestamos.html");
+
+    });
+    
+    $("#index-software").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/software.html");
+
+    });
+
+    $("#index-parte").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/parte.html");
+
+    });
 	
 	
     // un ejemplo de uso de selectores jQuery para controlar eventos sobre links

@@ -13,28 +13,25 @@ $(function () {
         altoGrid = 200;
     }
 
-    var clase = 'grupo';  // la clase que implementa el CRUD para este grid
-    var idPager = 'grupo-pager';  // la barra de navegación del grid ubicada en la parte inferior
+    var clase = 'equipos_para_prestamos';  // la clase que implementa el CRUD para este grid
+    var idPager = 'equipos_para_prestamos-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'numero_grupo', name: 'codigo_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Id Equipo para Préstamo', name: 'id_equipo_para_prestamo', index: 'id_equipo_para_prestamo', width: 100, sortable: true,          editable: true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+    	{'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable:              true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'cod_asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+		{'label': 'Descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,             editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre_asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        }
+		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, 				             editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
+        },		
+		
 
     ];
 
     // inicializa el grid
-    var grid = jQuery('#grupo-grid').jqGrid({
+    var grid = jQuery('#equipos_para_prestamos-grid').jqGrid({
         url: 'controlador/fachada.php',
         datatype: "json",
         mtype: 'POST',
@@ -47,13 +44,13 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'codigo_grupo', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_equipo_para_prestamo', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
         pager: "#" + idPager,
         viewrecords: true,
-        caption: "Grupo",
+        caption: "Equipos Para Préstamos",
         multiselect: false,
         multiboxonly: true,
         hiddengrid: false,
@@ -114,19 +111,29 @@ $(function () {
      */
     function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'codigo_grupo') {
+        if (columna == 'id_equipo_para_prestamo') {
             if (valor === '0') {
-                return [false, "Falta seleccionar el codigo del grupo"];
+                return [false, "Falta seleccionar identificador de equipo para prestamo"];
             }
         }
-        if (columna == 'id_docente') {
+        if (columna == 'nombre') {
             if (valor === '0') {
-                return [false, "Falta seleccionar codigo de asignatura"];
+                return [false, "Falta seleccionar nombre de equipo para prestamo"];
             }
+        }
+        if (columna=='descripcion') 
+        {
+            if (valor === '0') {
+                return [false, "Falta seleccionar descripcion de equipo para prestamo"];
+            }   
+        }
+        if (columna=='estado') 
+        {
+            if (valor === '0') {
+                return [false, "Falta seleccionar estado de equipo para prestamo"];
+            }   
         }
         return [true, ""];
     }
 
-});
-
-
+});// JavaScript Document

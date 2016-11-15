@@ -4,23 +4,32 @@ class administrativo {
     
     function add($param) {
         extract($param);
-        $sql1 = "INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena')";
-        $sql = "INSERT INTO administrativo values('$id_administrativo','$id_usuario')";
-        $conexion->getPDO()->exec($sql1);
+        
+		$sql = "DO $$
+
+BEGIN
+	INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+    INSERT INTO administrativo values('$id_administrativo','$id_usuario');
+END$$;";
+        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
     }
 
     function edit($param) {
         extract($param);
- 
-        $sql = "UPDATE administrativo
-                       SET id_administrativo = '$id_administrativo', id_usuario = '$id_usuario'
-                       WHERE id_administrativo = '$id_administrativo';";
-        $sql1 = "UPDATE usuario
-                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';";
-        $conexion->getPDO()->exec($sql1);
+		
+		$sql = "do $$
+			begin 
+				UPDATE administrativo SET id_administrativo = '$id_administrativo', id_usuario = '$id_usuario'
+                    WHERE id_administrativo = '$id_administrativo';
+			    UPDATE usuario SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
+                    WHERE id_usuario = '$id_usuario';
+			end$$;
+		
+		";
+		 
+  
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
 
@@ -29,9 +38,12 @@ class administrativo {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
-        $conexion->getPDO()->exec("DELETE FROM administrativo WHERE id_usuario = '$id';");
-        $conexion->getPDO()->exec("DELETE FROM usuario WHERE id_usuario = '$id';");
-        
+        $sql="do $$
+                begin
+                    DELETE FROM administrativo WHERE id_usuario = '$id';
+                    DELETE FROM usuario WHERE id_usuario = '$id';
+                end$$";                
+        $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
 
     }

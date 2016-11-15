@@ -5,23 +5,32 @@ class monitor {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO monitor values('$id_monitor','$id_usuario')";
-        $sql1 = "INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena')";
-        $conexion->getPDO()->exec($sql1);
+        $sql = "do $$
+                    begin
+                        INSERT INTO monitor values('$id_monitor','$id_usuario');
+                        INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                    end$$
+                ";
+        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
     }
 
     function edit($param) {
         extract($param);
- 
-        $sql = "UPDATE monitor
+        
+        $sql = "do $$
+                    begin
+                       UPDATE monitor
                        SET id_monitor = '$id_monitor', id_usuario = '$id_usuario'
-                       WHERE id_monitor = '$id_monitor';";
-        $sql1 = "UPDATE usuario
+                       WHERE id_monitor = '$id_monitor';
+
+                       UPDATE usuario
                        SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';";
-        $conexion->getPDO()->exec($sql1);
+                       WHERE id_usuario = '$id_usuario';
+                    end$$
+                    ";
+        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
 

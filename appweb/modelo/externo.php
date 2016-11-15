@@ -4,10 +4,13 @@ class externo {
     
     function add($param) {
         extract($param);
-        
-        $sql = "INSERT INTO externo values('$id_externo','$id_usuario')";
-        $sql1 = "INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena')";
-        $conexion->getPDO()->exec($sql1);
+               
+        $sql = "do $$
+                    begin
+                        INSERT INTO externo values('$id_externo','$id_usuario');
+                        INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                    end$$
+                ";
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
     }
@@ -15,13 +18,18 @@ class externo {
     function edit($param) {
         extract($param);
  
-        $sql = "UPDATE externo
+        $sql = "do $$
+                    begin
+                       UPDATE externo
                        SET id_externo = '$id_externo', id_usuario = '$id_usuario'
-                       WHERE id_externo = '$id_externo';";
-        $sql1 = "UPDATE usuario
+                       WHERE id_externo = '$id_externo';
+
+                       UPDATE usuario
                        SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';";
-        $conexion->getPDO()->exec($sql1);
+                       WHERE id_usuario = '$id_usuario';
+                    end$$
+                    ";           
+     
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
 
@@ -30,8 +38,14 @@ class externo {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
-        $conexion->getPDO()->exec("DELETE FROM usuario WHERE id_usuario = '$id';");
-        $conexion->getPDO()->exec("DELETE FROM externo WHERE id_externo = '$id';");
+        $sql = "do $$
+                    begin
+                        DELETE FROM externo WHERE id_usuario = '$id';
+                        DELETE FROM usuario WHERE id_usuario = '$id';
+                    end$$
+                ";
+
+        $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
 
     }

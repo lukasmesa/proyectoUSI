@@ -26,7 +26,7 @@ $(function () {
         },
 		{'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, 				             editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
         },
-		{'label': 'Equipo préstamo', name: 'equipo_prestamo', index: 'equipo_prestamo', width: 100, sortable: true,           editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
+		{'label': 'equipo_para_prestamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true,           editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
         },
 		
 
