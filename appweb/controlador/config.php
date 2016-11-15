@@ -20,11 +20,11 @@ define('PHPWORD_ROOT', '../../includes/PHPWord/');
 define('TMP_PATH', sys_get_temp_dir() . DIRECTORY_SEPARATOR);
 
 // Atributos de la conexión a la base de datos
-define('BASE_DATOS', 'USI');
-define('SERVIDOR', 'localhost');
+define('BASE_DATOS', 'usi');
+define('SERVIDOR', 'phpma.dijansoft.xyz');
 define('PUERTO', '5432');
-define('USUARIO', 'postgres');
-define('CONTRASENA', 'admin');
+define('USUARIO', 'usiuser');
+define('CONTRASENA', 'usiapp');
 
 
 spl_autoload_register('__autoload');
