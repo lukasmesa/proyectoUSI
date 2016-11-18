@@ -70,5 +70,4 @@ class horas_disponibles_monitor {
     }
 
 }
-
-
+?>

@@ -27,7 +27,7 @@ class Software {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
-        $conexion->getPDO()->exec("DELETE FROM software WHERE id_software = '$id_software';");
+        $conexion->getPDO()->exec("DELETE FROM software WHERE id_software = '$id';");
         echo $conexion->getEstado();
     }
     /**

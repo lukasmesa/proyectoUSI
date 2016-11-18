@@ -31,8 +31,7 @@ define('CONTRASENA', 'usiapp');//123456
 define('SERVIDOR', 'localhost');
 define('PUERTO', '5432');
 define('USUARIO', 'postgres');//postgres
-define('CONTRASENA', 'abc123');//123456*/ 
-
+define('CONTRASENA', 'abc123');//123456*/ 	
 
 
 spl_autoload_register('__autoload');

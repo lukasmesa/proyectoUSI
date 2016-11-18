@@ -91,8 +91,4 @@ class parte_equipo {
     }
 
 }
-
-
-
-
-
+?>

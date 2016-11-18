@@ -1,7 +1,6 @@
 <?php
 
 // La POO permite crear objetos anónimos, como este que se encarga de gestionar peticiones de la capa de presentación
-// Este demo se probó con versiones PHP 5.5 o superiores
 new Fachada();
 
 /**
@@ -38,14 +37,6 @@ class Fachada {
      * @throws Exception En caso de no encontrarse la clase o el método solicitado
      */
     function ejecutar($args) {
-//    // Verifique el estado de las sesiones
-//    if (session_status() === PHP_SESSION_ACTIVE) {
-//        error_log('ID de la sesión: ' . session_id());
-//    } else if (session_status() === PHP_SESSION_NONE) {
-//        error_log('No hay una sesión activa');
-//    } else if (session_status() === PHP_SESSION_DISABLED) {
-//        error_log('Las sesiones están deshabilitadas');
-//    }
         // agregar un objeto de tipo PDO a los argumentos que se enviarán al método
         $args['conexion'] = new UtilConexion();
         // obtener los nombres de la clase y el método
@@ -53,10 +44,6 @@ class Fachada {
         $metodo = $args['oper'];
 
         if (class_exists($clase)) {
-//        Un simple control de log        
-//        if ($metodo == 'del' || $metodo == 'edit') {
-//            file_put_contents(Utilidades::$dir_reporte . 'log.txt', date("Y-m-d H:i:s") . ' ' . $_SESSION['usuario'] . ' ' . $clase . '.' . $metodo . "(...)\n", FILE_APPEND);
-//        }
             if (substr($clase, 0, 4) === 'Util') {
                 if (method_exists($clase, $metodo)) {
                     $clase::$metodo($args);

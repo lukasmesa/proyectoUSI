@@ -55,20 +55,6 @@ class docente {
      * Procesa las filas que son enviadas a un objeto jqGrid
      * @param type $param un array asociativo con los datos que se reciben de la capa de presentación
      */
-
-    public function getSelect($param) {
-        $json = FALSE;
-        extract($param);
-        $select = "";
-        $select .= "<option value='0'>Seleccione un docente</option>";
-        foreach ($conexion->getPDO()->query("SELECT e.id_usuario,u.nombre, u.apellido FROM docente e inner join usuario u on e.id_usuario = u.id_usuario ") as $fila) {
-            $descripcion = $fila['id_usuario'].'-'.$fila['nombre'].' '.$fila['apellido'];
-            $select .= "<option value='{$fila['id_usuario']}'>$descripcion</option>";
-        }
-        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
-    }
-
-
     function select($param) {
         extract($param);
         $where = $conexion->getWhere($param);
@@ -104,3 +90,4 @@ class docente {
     }
 
 }
+?>
