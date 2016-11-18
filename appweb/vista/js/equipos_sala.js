@@ -24,7 +24,14 @@ $(function () {
         },
         {'label': 'nombre_sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'id_parte', name: 'id_parte', index: 'id_parte', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'id_software', name: 'id_sofware', index: 'id_sofware', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         }
+        
     ];
 
     // inicializa el grid

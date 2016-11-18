@@ -1,56 +1,35 @@
 <?php
-
-class parte_equipo {
-    
+/**
+ * Description of OrdenProduccion
+ * Implementa el CRUD para las órdenes de producción
+ * @author Administrador
+ */
+class Software {
     function add($param) {
+        // error_log(print_r($param, TRUE));  // cómo ver el contenido de una estructura de datos
         extract($param);
-
-
-        $sql = "do $$
-                    begin
-                        INSERT INTO parte values('$id_parte','$nombre' , '$descripcion');
-                        INSERT INTO parte_equipo values('$id_equipo_sala','$id_parte' );
-                    end$$
-                ";
-        
+        // nunca suponga el orden de las columnas: INSERT INTO tabla VALUES (v1, v2,v3, ...); tómese el trabajo de indicar los nombres de columnas
+        // los nombres de los elementos del array asociativo corresponden a los atributos name de las columnas del jqGrid
+        $sql = "INSERT INTO software(id_software, nombre, descripcion) VALUES ('$id_software', '$nombre','$descripcion');";
+        //error_log($sql); // cómo ver el contenido de una variable suscrita (dato atómico)
         $conexion->getPDO()->exec($sql);
+		
+		//pg_query($this->conexion,$sql);
         echo $conexion->getEstado();
     }
-
     function edit($param) {
         extract($param);
-
-        $sql = "do $$
-                    begin
-                       UPDATE parte
-                       SET  nombre = '$nombre', descripcion = '$descripcion'
-                       WHERE id_parte = '$id_parte';
-
-                       UPDATE parte_equipo
-                       SET  id_parte = '$id_parte'  
-                       WHERE id_parte = '$id_parte';
-                    end$$
-                    ";
+        $sql = "UPDATE software SET id_software='$id_software', nombre='$nombre', descripcion='$descripcion'
+                WHERE id_software = '$id_software';";  // <-- el ID de la fila asignado en el SELECT permite construir la condición de búsqueda del registro a modificar
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
-
     }
-
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
-        $sql = "do $$
-                    begin
-                        DELETE FROM parte WHERE id_usuario = '$id';
-                        DELETE FROM parte_equipo WHERE id_usuario = '$id';
-                    end$$
-                ";
-
-        $conexion->getPDO()->exec($sql);        
+        $conexion->getPDO()->exec("DELETE FROM software WHERE id_software = '$id';");
         echo $conexion->getEstado();
-
     }
-
     /**
      * Procesa las filas que son enviadas a un objeto jqGrid
      * @param type $param un array asociativo con los datos que se reciben de la capa de presentación
@@ -59,12 +38,12 @@ class parte_equipo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "select pe.id_equipo_sala, p.id_parte , p.nombre , p.descripcion , pe.id_parte  from  parte p inner join                parte_equipo pe on p.id_parte = pe.id_parte  $where";
+        $sql = "select id_software,nombre,descripcion from software $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
-
+        //error_log($sql);  // descomente para generar un log y probar si la instruccion tiene errores
+        // puede examinar aquí con error_log(..) el contenido de las variables 
         // agregar al objeto que se envía las filas de la página requerida
-        
         if (($rs = $conexion->getPDO()->query($sql))) {
             $cantidad = 999; // se pueden enviar al grid valores calculados o constantes
             $tiros_x_unidad = 2;
@@ -73,15 +52,14 @@ class parte_equipo {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['id_parte'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_software'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_equipo_sala'],
-                        $fila['id_parte'],
+                        $fila['id_software'],
                         $fila['nombre'],
                         $fila['descripcion'],
-                        
-                        
-                        
+                        $cantidad,  // <-- envío al grid de un valor calculado
+                        $tiros_x_unidad,
+                        $tipoEstado  // <-- OJO
                     ]
                 ];
             }
@@ -89,10 +67,5 @@ class parte_equipo {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-
 }
-
-
-
-
-
+?>

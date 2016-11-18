@@ -19,12 +19,20 @@ define('RUTA_DESCARGA', '../serviciosTecnicos/varios/');
 define('PHPWORD_ROOT', '../../includes/PHPWord/');
 define('TMP_PATH', sys_get_temp_dir() . DIRECTORY_SEPARATOR);
 
-// Atributos de la conexión a la base de datos
+// Atributos de la conexión a la base de datos (remota)
 define('BASE_DATOS', 'usi');
 define('SERVIDOR', 'phpma.dijansoft.xyz');
 define('PUERTO', '5432');
-define('USUARIO', 'usiuser');
-define('CONTRASENA', 'usiapp');
+define('USUARIO', 'usiuser');//postgres
+define('CONTRASENA', 'usiapp');//123456
+
+//conexion a BD local
+/*define('BASE_DATOS', 'Proyecto_USI');
+define('SERVIDOR', 'localhost');
+define('PUERTO', '5432');
+define('USUARIO', 'postgres');//postgres
+define('CONTRASENA', 'abc123');//123456*/ 
+
 
 
 spl_autoload_register('__autoload');
