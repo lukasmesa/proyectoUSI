@@ -80,14 +80,14 @@ $(document).on('ready', function () {
         cargarPagina("#index-contenido", "vista/html/monitor.html");
 
     });
-    $("#index-calendario").button().on('click', function() {
-        cargarPagina("#index-contenido","vista/html/calendario.html");
-        /* Act on the event */
-    });
 	
 	$("#index-reporte_danos").button().on("click", function () {
 		cargarPagina("#index-contenido", "vista/html/reporte_danos.html");
 
+    });
+	
+	$("#index-calendario").button().on('click', function() {
+        cargarPagina("#index-contenido","vista/html/calendario.html");        
     });
 	
 	$("#index-sede").button().on("click", function () {

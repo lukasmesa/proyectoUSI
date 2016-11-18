@@ -70,5 +70,4 @@ class prestamo_equipo {
     }
 
 }
-
-
+?>

@@ -45,19 +45,6 @@ class monitor {
 
     }
 
-
-    public function getSelect($param) {
-        $json = FALSE;
-        extract($param);
-        $select = "";
-        $select .= "<option value='0'>Seleccione un monitor</option>";
-        foreach ($conexion->getPDO()->query("SELECT e.id_usuario,u.nombre, u.apellido FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ") as $fila) {
-            $descripcion = $fila['id_usuario'].'-'.$fila['nombre'].' '.$fila['apellido'];
-            $select .= "<option value='{$fila['id_usuario']}'>$descripcion</option>";
-        }
-        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
-    }
-
     /**
      * Procesa las filas que son enviadas a un objeto jqGrid
      * @param type $param un array asociativo con los datos que se reciben de la capa de presentación
@@ -97,5 +84,4 @@ class monitor {
     }
 
 }
-
-
+?>
