@@ -7,6 +7,22 @@
  */
 
 'use strict';
+var initDatePicker = {
+    dateFormat: 'yy-mm-dd',
+    minDate: new Date(2010, 0, 1),
+    maxDate: new Date(2020, 0, 1),
+    showOn: 'focus'
+};
+var initTimePicker = {
+    timeFormat: 'hh:mm:ss',
+    interval: 60,
+    minTime: '6:00am',
+    maxTime: '10:00pm',
+    defaultTime: '6',
+    dynamic: true,
+    showOn: 'focus'
+
+};
 
 var anchoContenedor;
 

@@ -7,12 +7,32 @@
  */
 class cronograma {
     
-    function add($param) {
+    /*function add($param) {
         extract($param);
-        
         $sql = "INSERT INTO pruebas values('$inicio_periodo','$fin_periodo','$grupo','$sala','$dia','$hora','$horas')";
-
         $conexion->getPDO()->exec($sql);
+        echo $conexion->getEstado();
+    }*/
+    function add($param){
+        extract($param);
+
+        $inicio = new DateTime($inicio_periodo);
+        $fin = new DateTime($fin_periodo);
+        $interval = DateInterval::createFromDateString('1 day');
+        $fechas = new DatePeriod($inicio, $interval, $fin);
+
+
+
+        foreach ($fechas as $fecha) {
+            $fecha = $fecha->format('Y-m-d');
+            $inicio = "$fecha";
+            $fin = "$fecha";
+            $diaSemana = date("l", strtotime($fecha));
+            if($dia==$diaSemana){
+                $sql = "INSERT INTO pruebas values('$inicio','$fin','$grupo','$sala','$dia','$inicio_hora','$fin_hora')";
+                $conexion->getPDO()->exec($sql);
+            }
+        }
         echo $conexion->getEstado();
     }
 
