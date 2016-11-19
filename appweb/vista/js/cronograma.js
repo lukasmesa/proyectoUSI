@@ -18,27 +18,67 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Iniperiodo', name: 'inicio_periodo', index: 'inicio_periodo', width: 100, sortable: true, editable: true,  editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'In-período', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
+            editrules: {required: true, date: true, custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                title: 'AAAA-MM-DD',
+                dataInit: function (elemento) {
+                    $(elemento).datepicker(initDatePicker);
+                    $(elemento).width(260);
+                }
+            }
         },
-        {'label': 'Finperiodo', name: 'fin_periodo', index: 'fin_periodo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Fin-período', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
+            editrules: {required: true, date: true, custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                title: 'AAAA-MM-DD',
+                dataInit: function (elemento) {
+                    $(elemento).datepicker(initDatePicker);
+                    $(elemento).width(260);
+                }
+            }
         },
-        {'label': 'Grupo', name: 'grupo', index: 'grupo', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Grupo', name: 'grupo', index: 'grupo', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=Grupo&oper=getSelect',
+                dataInit: asignarAncho,
+                defaultValue: '0'
+            }
         },
-        {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=Sala&oper=getSelect',
+                dataInit: asignarAncho,
+                defaultValue: '0'
+            }
         },
-        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {value: { 0: 'Seleccione un dia', Monday: 'Lunes', Tuesday: 'Martes', Wednesday: 'Miércoles',
+                Thursday: 'Jueves', Friday: 'Viernes', Saturday: 'Sábado', Sunday: 'Domingo'}},
         },
-        {'label': 'Hora', name: 'hora', index: 'hora', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Hora inicio', name: 'inicio_hora', index: 'inicio_hora', width: 100, sortable: true, editable: true,
+            editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                title: 'H:i',
+                dataInit: function (elemento) {
+                    $(elemento).timepicker(initTimePicker);
+                    $(elemento).width(100);
+                }
+            },
         },
-        {'label': 'Horas', name: 'horas', index: 'horas', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        }
+        {'label': 'Hora fin', name: 'fin_hora', index: 'fin_hora', width: 100, sortable: true, editable: true,
+            editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                title: 'H:i',
+                dataInit: function (elemento) {
+                    $(elemento).timepicker(initTimePicker);
+                    $(elemento).width(100);
+                }
+            },
+        },
     ];
 
     // inicializa el grid
@@ -122,16 +162,38 @@ $(function () {
      */
     function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'Cod_Asignaturas') {
+        if (columna == 'Grupo') {
             if (valor === '0') {
-                return [false, "Falta seleccionar la Asignatura"];
+                return [false, "Falta seleccionar un grupo"];
             }
         }
-        if (columna == 'Nom_Asignaturas') {
+        if (columna == 'Sala') {
             if (valor === '0') {
-                return [false, "Falta seleccionar la Asignatura"];
+                return [false, "Falta seleccionar una sala"];
             }
         }
+        if (columna == 'Día') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar un día"];
+            }
+        }
+        if (columna === 'In-período') {
+            var fechaSolicitud = moment($('#inicio_periodo').val(), 'YYYY-MM-DD', true);
+
+            if (!fechaSolicitud.isValid()) {
+                return [false, "Ini - Revise que la fecha esté en formato AAAA-MM-DD"];
+            }
+            // pueden ser necesarias otras validaciones de la fecha de solicitud. Utilizar moment para dichos casos
+        }
+        if (columna === 'Fin-período') {
+            var fechaSolicitud = moment($('#fin_periodo').val(), 'YYYY-MM-DD', true);
+
+            if (!fechaSolicitud.isValid()) {
+                return [false, "Fin - Revise que la fecha esté en formato AAAA-MM-DD"];
+            }
+            // pueden ser necesarias otras validaciones de la fecha de solicitud. Utilizar moment para dichos casos
+        }
+
         return [true, ""];
     }
 
