@@ -2934,3 +2934,307 @@ LINE 1: ...            parte_equipo pe on p.id_parte = pe.id_parte   10
                                                                      ^
 )
 
+[15-Nov-2016 19:42:09 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
+                                                                 ^
+)
+
+[15-Nov-2016 19:42:15 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT id_parte, nombre, descripcion  FROM parte     10
+                                                             ^
+)
+
+[15-Nov-2016 19:42:17 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...            parte_equipo pe on p.id_parte = pe.id_parte   10
+                                                                     ^
+)
+
+[15-Nov-2016 19:42:23 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  10
+                                                                     ^
+)
+
+[15-Nov-2016 19:48:08 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
+                                                                 ^
+)
+
+[15-Nov-2016 19:48:10 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: select id_software,nombre,descripcion from software  10
+                                                             ^
+)
+
+[15-Nov-2016 19:49:57 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  10
+                                                                     ^
+)
+
+[15-Nov-2016 19:50:07 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  30
+                                                                     ^
+)
+
+[15-Nov-2016 19:52:55 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  30
+                                                                     ^
+)
+
+[15-Nov-2016 19:55:49 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  10
+                                                                     ^
+)
+
+[15-Nov-2016 19:59:41 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  10
+                                                                     ^
+)
+
+[15-Nov-2016 20:46:30 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  10
+                                                                     ^
+)
+
+[15-Nov-2016 20:49:32 UTC] ¡Pilas! Array
+(
+    [0] => 22001
+    [1] => 7
+    [2] => ERROR:  value too long for type character varying(80)
+CONTEXT:  SQL statement "INSERT INTO equipos_sala values('pc30','el equipo falla asjdfahsgfdkhagshgdajkhsgdkjhagsdhgfaghfsdkgfsadhgfajhsgfdad,shfdgkag','dañado','sala i ')"
+PL/pgSQL function inline_code_block line 3 at SQL statement
+)
+
+[15-Nov-2016 20:50:39 UTC] ¡Pilas! Array
+(
+    [0] => 22001
+    [1] => 7
+    [2] => ERROR:  value too long for type character varying(80)
+CONTEXT:  SQL statement "INSERT INTO equipos_sala values('p','el equipo falla asjdfahsgfdkhagshgdajkhsgdkjhagsdhgfaghfsdkgfsadhgfajhsgfdad,shfdgkag','dañado','sala i ')"
+PL/pgSQL function inline_code_block line 3 at SQL statement
+)
+
+[17-Nov-2016 02:11:29 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 3: ...tware_equipos se on E.id_equipo_sala = se.id_equipo_sala  10
+                                                                     ^
+)
+
+[20-Nov-2016 19:40:27 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
+                                                                 ^
+)
+
+[20-Nov-2016 19:41:35 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[20-Nov-2016 19:44:36 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
+                                                                     ^
+)
+
+[20-Nov-2016 19:48:48 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[20-Nov-2016 19:48:51 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
+                                                                 ^
+)
+
+[20-Nov-2016 19:48:53 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
+                                                                     ^
+)
+
+[20-Nov-2016 19:48:56 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[20-Nov-2016 19:49:05 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
+                                                                     ^
+)
+
+[20-Nov-2016 20:19:50 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
+                                                                     ^
+)
+
+[20-Nov-2016 20:19:57 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => prestamo_equipo
+    [oper] => getSelect
+)
+
+[20-Nov-2016 20:19:58 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => prestamo_equipo
+    [oper] => getSelect2
+)
+
+[20-Nov-2016 20:23:30 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "software" does not exist
+LINE 1: select id_software,nombre,descripcion from software 
+                                                   ^
+)
+
+[20-Nov-2016 20:25:08 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
+                                                                     ^
+)
+
+[20-Nov-2016 20:25:12 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
+                                                                     ^
+)
+
+[20-Nov-2016 20:26:58 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "parte_equipo" does not exist
+LINE 2:                 FROM ( equipos_sala E left join parte_equipo...
+                                                        ^
+)
+
+[20-Nov-2016 20:27:08 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "parte_equipo" does not exist
+LINE 2:                 FROM ( equipos_sala E left join parte_equipo...
+                                                        ^
+)
+
+[20-Nov-2016 20:27:11 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
+                                                                     ^
+)
+
+[20-Nov-2016 20:27:15 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[20-Nov-2016 20:40:55 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  10
+                                                                     ^
+)
+

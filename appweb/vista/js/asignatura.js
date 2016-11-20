@@ -16,6 +16,7 @@ $(function () {
     var clase = 'asignatura';  // la clase que implementa el CRUD para este grid
     var idPager = 'asignatura-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    
 
     var field1,check_function1 = function(value,colname) 
     {
@@ -25,7 +26,6 @@ $(function () {
         } 
         
         if(value.length<5){
-            console.log("t",value,colname);
             return [false, "El codigo de la asignatura debe tener una longitud mayor a 5"];
         }
         else
@@ -44,7 +44,6 @@ $(function () {
         }       
           
         if(value.length<3){
-            console.log("t",value,colname);
             return [false, "El nombre de la asignatura debe tener una longitud mayor a 3"];
         }
         else
