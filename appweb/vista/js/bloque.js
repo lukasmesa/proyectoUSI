@@ -11,13 +11,35 @@ $(function () {
     var clase = 'bloque';  // la clase que implementa el CRUD para este grid
     var idPager = 'bloque-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    var field1,check_function1 = function(value,colname) 
+    {
+
+        if (colname === "nombre_bloque") {
+            field1 = value;
+        } 
+
+        if(value.length<1){
+            
+            return [false, "El codigo del bloque debe tener una longitud mayor o igual a 1  "];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'nombre_sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=bloque&oper=getSelect',
+                dataInit: asignarAncho,
+                defaultValue: '0'
+            }
         }
     ];
 
