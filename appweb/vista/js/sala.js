@@ -11,15 +11,71 @@ $(function () {
     var clase = 'sala';  // la clase que implementa el CRUD para este grid
     var idPager = 'sala-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    var field1,check_function1 = function(value,colname) 
+    {
+        
+        if (colname === "nombre_sala") {
+            field1 = value;
+        } 
+        
+        if(value.length<1){
+            console.log("t",value,colname);
+            return [false, "El nombre debe tener logitud mayor a 1  "];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
+
+var field1,check_function2 = function(value,colname) 
+    {
+        
+        if (colname === "capacidad") {
+            field1 = value;
+        } 
+        
+        if(value.length<0){
+            console.log("t",value,colname);
+            return [false, "Capacidad de la sala incorrecta "];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
+
+var field1,check_function3 = function(value,colname) 
+    {
+        
+        if (colname === "descripcion") {
+            field1 = value;
+        } 
+        
+        if(value.length>50){
+            console.log("t",value,colname);
+            return [false, "La descripcion debe ser mas corta"];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'nombre_sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'nombre_sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'capacidad', name: 'capacidad', index: 'capacidad', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'capacidad', name: 'capacidad', index: 'capacidad', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},

@@ -16,6 +16,34 @@ $(function () {
     var clase = 'horas_disponibles_monitor';  // la clase que implementa el CRUD para este grid
     var idPager = 'horas_disponibles_monitor-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+     var field1, check_function1 = function (value, colname)
+    {
+
+        if (colname === "hora_inicio") {
+            field1 = value;
+        }
+
+        if (isNaN(value)|| value<=6 || value >=21) {
+            return [false, "El campo debe tener un numero entre 6 y 21"];
+        }
+
+        return [true];
+    };
+
+    var field1, check_function2 = function (value, colname)
+    {
+
+        if (colname === "hora_fin") {
+            field1 = value;
+        }
+
+        if (isNaN(value)|| value<=6 || value >=21) {
+           
+            return [false, "El campo debe tener un numero entre 6 y 21"];
+        }
+        return [true];
+    };
+
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
         {'label': 'Id Horario Monitor', name: 'id_horario', index: 'id_horario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
@@ -24,14 +52,18 @@ $(function () {
         {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         },
 		{'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=horas_disponibles_monitor&oper=getSelect',
+                dataInit: asignarAncho,
+                defaultValue: '0'
+            }
         }
 		
     ];
