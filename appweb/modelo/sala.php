@@ -32,6 +32,20 @@ class sala {
 
     }
 
+
+    public function getSelect($param) {
+        $json = FALSE;
+        extract($param);
+        $select = "";
+        $select .= "<option value='0'>Seleccione una sala</option>";
+        foreach ($conexion->getPDO()->query("SELECT nombre_sala FROM sala") as $fila) {
+            $descripcion = $fila['nombre_sala'];
+            $select .= "<option value='{$fila['nombre_sala']}'>$descripcion</option>";
+        }
+        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
+    }
+
+
     /**
      * Procesa las filas que son enviadas a un objeto jqGrid
      * @param type $param un array asociativo con los datos que se reciben de la capa de presentación
@@ -69,4 +83,4 @@ class sala {
     }
 
 }
-
+?>

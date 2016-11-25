@@ -9,7 +9,7 @@ new Fachada();
  * Delega a otras clases las peticiones recibidas y en algunas ocasiones
  * Envía las respuestas recibidas a la capa de presentación.
  * Basado en el patron GoF "Facade", ver Larman
- * @author
+ * @author Carlos Cuesta Iglesias
  * Versión 2.0, 28 de agosto de 2014
  */
 class Fachada {

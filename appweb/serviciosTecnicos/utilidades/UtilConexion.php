@@ -2,8 +2,7 @@
 
 /**
  * Description of Conexion:
- * Ise encarga de proporcionar la conexión a la base de datos.
- * @author
+ * Se encarga de proporcionar la conexión a la base de datos.
  */
 class UtilConexion {
 
@@ -165,9 +164,9 @@ class UtilConexion {
         return $json ? json_encode(['ok' => $ok, 'mensaje' => $mensaje]) : ['ok' => $ok, 'mensaje' => $mensaje];
     }
 
-
-    public function getEstados() {
+    public function getEstadosProduccion() {
         echo json_encode(self::$tipoEstadoProduccion);
     }
 
 }
+?>

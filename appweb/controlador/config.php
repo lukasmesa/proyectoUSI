@@ -31,7 +31,7 @@ define('CONTRASENA', 'usiapp');//123456
 define('SERVIDOR', 'localhost');
 define('PUERTO', '5432');
 define('USUARIO', 'postgres');//postgres
-define('CONTRASENA', 'abc123');//123456*/ 
+define('CONTRASENA', 'abc123');//123456*/ 	
 
 
 spl_autoload_register('__autoload');
@@ -47,8 +47,14 @@ error_reporting(E_ERROR);
  */
 function __autoload($nombreClase) {
 
-    if (substr($nombreClase, 0, 4) == 'Util') {
+    if (substr($nombreClase, 0, 7) == 'Reporte') {
+        $nombreClase = "../serviciosTecnicos/reportes/$nombreClase.php";
+    } else if (substr($nombreClase, 0, 4) == 'Util') {
         $nombreClase = "../serviciosTecnicos/utilidades/$nombreClase.php";
+    } else if (substr($nombreClase, 0, 8) == 'PHPExcel') {
+        $nombreClase = PHPEXCEL_ROOT . str_replace('_', '/', $nombreClase) . '.php';
+    } else if (substr($nombreClase, 0, 7) == 'PHPWord') {
+        $nombreClase = PHPWORD_ROOT . str_replace('_', '/', $nombreClase) . '.php';
     } else {
         $nombreClase = "../modelo/$nombreClase.php";
     }

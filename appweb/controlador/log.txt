@@ -1,1 +1,3248 @@
 
+[24-Nov-2016 13:30:11 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:30:23 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
+                                                                     ^
+)
+
+[24-Nov-2016 13:30:59 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 13:32:00 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 13:32:22 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  10
+                                                                     ^
+)
+
+[24-Nov-2016 13:37:44 UTC] estado utilConexion::__construct
+[24-Nov-2016 13:37:44 UTC] exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "phpma.dijansoft.xyz" (104.199.127.237) and accepting
+	TCP/IP connections on port 5432?' in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php:17
+Stack trace:
+#0 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php(17): PDO->__construct('pgsql:host=phpm...', 'usiuser', 'usiapp')
+#1 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php(41): UtilConexion->__construct()
+#2 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php(27): Fachada->ejecutar(Array)
+#3 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php(4): Fachada->__construct()
+#4 {main}
+[24-Nov-2016 13:37:44 UTC] Problemas en ::()
+No se pudo establecer la conexión con la base de datos
+[24-Nov-2016 13:38:05 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php on line 17
+[24-Nov-2016 13:38:05 UTC] PHP Stack trace:
+[24-Nov-2016 13:38:05 UTC] PHP   1. {main}() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:0
+[24-Nov-2016 13:38:05 UTC] PHP   2. Fachada->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:4
+[24-Nov-2016 13:38:05 UTC] PHP   3. Fachada->ejecutar() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:27
+[24-Nov-2016 13:38:05 UTC] PHP   4. UtilConexion->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:41
+[24-Nov-2016 13:38:05 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php on line 26
+[24-Nov-2016 13:38:05 UTC] PHP Stack trace:
+[24-Nov-2016 13:38:05 UTC] PHP   1. {main}() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:0
+[24-Nov-2016 13:38:05 UTC] PHP   2. Fachada->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:4
+[24-Nov-2016 13:38:05 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php on line 26
+[24-Nov-2016 13:38:05 UTC] PHP Stack trace:
+[24-Nov-2016 13:38:05 UTC] PHP   1. {main}() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:0
+[24-Nov-2016 13:38:05 UTC] PHP   2. Fachada->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:4
+[24-Nov-2016 13:38:05 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php on line 26
+[24-Nov-2016 13:38:05 UTC] PHP Stack trace:
+[24-Nov-2016 13:38:05 UTC] PHP   1. {main}() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:0
+[24-Nov-2016 13:38:05 UTC] PHP   2. Fachada->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:4
+[24-Nov-2016 13:39:33 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
+                                                                     ^
+)
+
+[24-Nov-2016 13:40:37 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:40:38 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 13:43:27 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:43:41 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:44:33 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:44:36 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:44:59 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:45:02 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 13:47:02 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:49:10 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:50:13 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:50:26 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:50:32 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:57:21 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 13:57:25 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 13:57:26 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 13:57:33 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 13:57:34 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 13:57:36 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 13:57:36 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 13:57:50 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 13:57:50 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 13:57:51 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 13:57:51 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 13:57:53 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 13:57:53 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 13:58:20 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "hora_fin" of relation "cronograma" does not exist
+LINE 1: UPDATE cronograma SET hora_fin='2016-09-10T16:00:00' WHERE i...
+                              ^
+)
+
+[24-Nov-2016 13:58:52 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 13:59:00 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:10:47 UTC] estado utilConexion::__construct
+[24-Nov-2016 14:10:47 UTC] exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "phpma.dijansoft.xyz" (104.199.127.237) and accepting
+	TCP/IP connections on port 5432?' in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php:17
+Stack trace:
+#0 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php(17): PDO->__construct('pgsql:host=phpm...', 'usiuser', 'usiapp')
+#1 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php(41): UtilConexion->__construct()
+#2 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php(27): Fachada->ejecutar(Array)
+#3 C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php(4): Fachada->__construct()
+#4 {main}
+[24-Nov-2016 14:10:48 UTC] Problemas en ::()
+No se pudo establecer la conexión con la base de datos
+[24-Nov-2016 14:11:18 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php on line 17
+[24-Nov-2016 14:11:18 UTC] PHP Stack trace:
+[24-Nov-2016 14:11:18 UTC] PHP   1. {main}() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:0
+[24-Nov-2016 14:11:18 UTC] PHP   2. Fachada->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:4
+[24-Nov-2016 14:11:18 UTC] PHP   3. Fachada->ejecutar() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:27
+[24-Nov-2016 14:11:18 UTC] PHP   4. UtilConexion->__construct() C:\wamp\www\2016-2\proyectoUSI-master2\Proyecto24nov\proyectoUSI\appweb\controlador\fachada.php:41
+[24-Nov-2016 14:11:28 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:11:29 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:11:32 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:11:35 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:11:36 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:11:59 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:12:03 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 14:12:35 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:12:45 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:12:53 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:13:00 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:13:00 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:13:15 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:13:15 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:13:17 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:13:18 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:13:19 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:13:19 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:13:21 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:13:21 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:13:37 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:13:46 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
+                                                                 ^
+)
+
+[24-Nov-2016 14:13:51 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:14:03 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 14:18:26 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:18:33 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 14:21:21 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:21:24 UTC] ¡Pilas! Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERROR:  relation "pruebas" does not exist
+LINE 1: ...odo,fin_periodo, grupo, sala, dia, hora, horas FROM pruebas 
+                                                               ^
+)
+
+[24-Nov-2016 14:23:31 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, tercero, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:23:32 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [tercero] => no
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:25:40 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:30:00 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:30:05 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:30:06 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:30:10 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:30:10 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:30:13 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:30:13 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:30:46 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:30:49 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:30:49 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:31:03 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:31:03 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:31:05 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:31:05 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:31:23 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:31:24 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:31:41 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:32:09 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:32:10 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:33:30 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:33:35 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:33:41 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:33:41 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
+[24-Nov-2016 14:34:12 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:34:17 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:34:22 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:34:45 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 14:35:55 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:36:00 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:36:20 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:36:23 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:37:37 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:37:43 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:38:05 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:39:07 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:40:51 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 14:45:51 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:46:48 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 14:47:34 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:47:42 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:48:00 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:48:03 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 14:48:07 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:50:03 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:50:05 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[24-Nov-2016 14:50:07 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[24-Nov-2016 14:50:20 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[24-Nov-2016 14:50:20 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => sala h
+            [id] => 1
+            [title] => clase de estructuras de datos En la sala h
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => sala q
+            [id] => 2
+            [title] => clase de redes En la sala q
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 3
+            [fecha_reserva] => 2016-09-19 09:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-21 09:00:00
+            [fecha_fin_prestamo] => 2016-09-21 12:00:00
+            [tipo] => exposicion
+            [descripcion] => exposicion de robotica
+            [id_usuario] => 176
+            [nombre_sala] => sala c
+            [id] => 3
+            [title] => exposicion de robotica En la sala c
+            [start] => 2016-09-21T09:00:00+00:00
+            [end] => 2016-09-21T12:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 4
+            [fecha_reserva] => 2016-09-22 07:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => sustentacion de proyectos
+            [id_usuario] => 190
+            [nombre_sala] => sala q2
+            [id] => 4
+            [title] => sustentacion de proyectos En la sala q2
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 5
+            [fecha_reserva] => 2016-09-18 15:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 15:00:00
+            [fecha_fin_prestamo] => 2016-09-23 18:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 186
+            [nombre_sala] => sala a
+            [id] => 5
+            [title] => monitoria de sala En la sala a
+            [start] => 2016-09-23T15:00:00+00:00
+            [end] => 2016-09-23T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 6
+            [fecha_reserva] => 2016-09-23 18:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-23 07:00:00
+            [fecha_fin_prestamo] => 2016-09-23 10:00:00
+            [tipo] => monitoria
+            [descripcion] => monitoria de sala
+            [id_usuario] => 179
+            [nombre_sala] => sala i
+            [id] => 6
+            [title] => monitoria de sala En la sala i
+            [start] => 2016-09-23T07:00:00+00:00
+            [end] => 2016-09-23T10:00:00+00:00
+        )
+
+)
+
