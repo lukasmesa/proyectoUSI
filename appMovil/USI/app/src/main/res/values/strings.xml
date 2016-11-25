@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">USI</string>
+    <string name="txt_USI_fecha_hoy">Fecha de hoy</string>
+    <string name="txt_USI_fecha_hoy_date">25/09/2020</string>
+    <string name="tet_USI_desea_buscar">Seleccione que desea buscar</string>
+    <string name="txt_USI_salas_description">Salas de Computo</string>
+    <string name="txt_USI_salas">Salas</string>
+    <string name="txt_USI_monitorias">Monitorias</string>
+    <string name="txt_USI_monitorias_description">Monitorias de Salas</string>
+    <string name="btn_USI_buscar">BUSCAR</string>
+    <string name="opt_menu_preferencias">Preferencias</string>
+    <string name="opt_menu_acerca_de">Acerca de</string>
+    <string name="opt_menu_filtrar_disp">Filtrar por salas diponibles</string>
+    <string name="opt_menu_filtrar_ocup">Filtrar por salas ocupadas</string>
+    <string name="buscar_salas">buscar salas</string>
+</resources>
