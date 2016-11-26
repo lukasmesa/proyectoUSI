@@ -56,9 +56,13 @@ $(function () {
         },
     	{'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable:true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}
+		{'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
+		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:"correcto:correcto;dañado:dañado;reparacion:reparacion"
+            }			
         },		
 		
 

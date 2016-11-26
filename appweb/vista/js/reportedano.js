@@ -19,14 +19,46 @@ $(function () {
         {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_equipo_sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'id_equipo_sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect1()
+            }
         }
 
     ];
+
+    function valoresSelect1(){
+
+        valoresIDEquipo="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=equipos_sala&oper=selectIdsEquipo",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIDEquipo+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresIDEquipo.substr(0,(valoresIDEquipo.length-1));  
+    }
 
     // inicializa el grid
     var grid = jQuery('#reporte_daño-grid').jqGrid({

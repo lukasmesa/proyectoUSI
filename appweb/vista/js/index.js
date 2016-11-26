@@ -23,7 +23,7 @@ $(document).on('ready', function () {
 
     });
     $("#index-calendario").button().on("click", function () {
-        //cargarPagina("#index-contenido", "vista/html/calendario.html");        
+        cargarPagina("#index-contenido", "vista/html/calendario.html");        
 
 
     });
@@ -62,7 +62,7 @@ $(document).on('ready', function () {
         clase: 'UtilConexion',
         oper: 'getEstados'
     }, function (estados) {
-        console.log(estados);
+       // console.log(estados);
     }, 'json');
 
     // cada que se redimensione el navegador se actualiza anchoContenedor
@@ -146,7 +146,7 @@ function getElementos(parametros) {
     }).done(function (data) {
         elementos = data;
     }).fail(function () {
-        console.log("Error de carga de datos: " + JSON.stringify(parametros));
+       // console.log("Error de carga de datos: " + JSON.stringify(parametros));
         alert("Error de carga de datos");
     }).always(function () {
         if (aviso) {

@@ -21,17 +21,87 @@ $(function () {
         {'label': 'numero_grupo', name: 'codigo_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect1()
+            }
         },
-        {'label': 'cod_asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'cod_asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect2()
+            }
         },
         {'label': 'nombre_asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         }
 
     ];
+
+    function valoresSelect1(){
+        
+        
+        valoresIdDocente="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=docente&oper=selectIdsDocente",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIdDocente+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresIdDocente.substr(0,(valoresIdDocente.length-1));    
+        
+        
+    }
+
+        function valoresSelect2(){
+        
+        //hacer corresponder con el nombre de la asignatura
+        valoresCodAsignatura="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=asignatura&oper=selectCodAsignaturas",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresCodAsignatura+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresCodAsignatura.substr(0,(valoresCodAsignatura.length-1));    
+        
+        
+    }
 
     // inicializa el grid
     var grid = jQuery('#grupo-grid').jqGrid({

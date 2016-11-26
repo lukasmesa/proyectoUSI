@@ -146,7 +146,7 @@ $(document).on('ready', function () {
         clase: 'UtilConexion',
         oper: 'getEstados'
     }, function (estados) {
-        console.log(estados);
+        //console.log(estados);
     }, 'json');
 
     // cada que se redimensione el navegador se actualiza anchoContenedor

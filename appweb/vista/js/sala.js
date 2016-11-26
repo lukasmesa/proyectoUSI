@@ -78,10 +78,42 @@ var field1,check_function3 = function(value,colname)
         {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect()}
         }
     ];
+
+
+    function valoresSelect(){
+
+        valoresNombreBloque="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=bloque&oper=selectNombresBloque",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresNombreBloque+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresNombreBloque.substr(0,(valoresNombreBloque.length-1)); 
+    }
 
     // inicializa el grid
     var grid = jQuery('#sala-grid').jqGrid({

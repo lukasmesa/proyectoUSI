@@ -24,24 +24,84 @@ $(function () {
         },
     {'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
         },
-    {'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true,edittype: 'select', editrules: {required: true, number: false, minValue: 1},
+    {'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect',
+                /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect',
                 dataInit: asignarAncho,
-                defaultValue: '0'
+                defaultValue: '0'*/
+                value:valoresSelect1()
             }
         },
-    {'label': 'Equipo para prestamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true, editable: true,       edittype: 'select', editrules: {required: true, number: false, minValue: 1},
+    {'label': 'Equipo para prestamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect2',
+                /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect2',
                 dataInit: asignarAncho,
-                defaultValue: '0'
+                defaultValue: '0'*/
+                value:valoresSelect2()
             }
         }
         
 
     ];
 
+
+    function valoresSelect1(){
+
+        valoresID="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=docente&oper=selectIdsDocente",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresID+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresID.substr(0,(valoresID.length-1)); 
+    }
+
+        function valoresSelect2(){
+
+        valoresIDEquipo="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=equipos_para_prestamos&oper=selectEquipos",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIDEquipo+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresIDEquipo.substr(0,(valoresIDEquipo.length-1)); 
+    }
 
     // inicializa el grid
     var grid = jQuery('#prestamo_equipo-grid').jqGrid({

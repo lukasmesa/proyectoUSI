@@ -9,7 +9,7 @@ class administrativo {
 
 BEGIN
 	INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
-    INSERT INTO administrativo values('$id_administrativo','$id_usuario');
+    INSERT INTO administrativo values('$id_usuario');
 END$$;";
         
         $conexion->getPDO()->exec($sql);
@@ -21,8 +21,8 @@ END$$;";
 		
 		$sql = "do $$
 			begin 
-				UPDATE administrativo SET id_administrativo = '$id_administrativo', id_usuario = '$id_usuario'
-                    WHERE id_administrativo = '$id_administrativo';
+				UPDATE administrativo SET id_usuario = '$id_usuario'
+                    WHERE id_usuario = '$id_usuario';
 			    UPDATE usuario SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
                     WHERE id_usuario = '$id_usuario';
 			end$$;
@@ -56,7 +56,7 @@ END$$;";
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_administrativo, e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM administrativo e inner join usuario u on e.id_usuario = u.id_usuario";
+        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM administrativo e inner join usuario u on e.id_usuario = u.id_usuario";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -71,7 +71,7 @@ END$$;";
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_administrativo'],
+                        
                         $fila['id_usuario'],
                         $fila['tipo_doc'],
                         $fila['nombre'],
