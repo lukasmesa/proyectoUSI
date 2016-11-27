@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_filtr_disp_sala"
+        android:title="@string/opt_menu_filtrar_disp"
+        ></item>
+
+    <item android:id="@+id/menu_filtr_ocup_sala"
+        android:title="@string/opt_menu_filtrar_ocup"
+        ></item>
+
+    <item android:id="@+id/menu_pref_sala"
+        android:title="@string/opt_menu_preferencias"
+        ></item>
+    <item android:id="@+id/menu_acer_de_sala"
+        android:title="@string/opt_menu_acerca_de"
+        ></item>
+
+</menu>
