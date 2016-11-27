@@ -11,21 +11,118 @@ $(function () {
     var clase = 'sala';  // la clase que implementa el CRUD para este grid
     var idPager = 'sala-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    var field1,check_function1 = function(value,colname) 
+    {
+        
+        if (colname === "nombre_sala") {
+            field1 = value;
+        } 
+        
+        if(value.length<1){
+            console.log("t",value,colname);
+            return [false, "El nombre debe tener logitud mayor a 1  "];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
+
+var field1,check_function2 = function(value,colname) 
+    {
+        
+        if (colname === "capacidad") {
+            field1 = value;
+        } 
+        
+        if(value.length<0){
+            console.log("t",value,colname);
+            return [false, "Capacidad de la sala incorrecta "];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
+
+var field1,check_function3 = function(value,colname) 
+    {
+        
+        if (colname === "descripcion") {
+            field1 = value;
+        } 
+        
+        if(value.length>50){
+            console.log("t",value,colname);
+            return [false, "La descripcion debe ser mas corta"];
+        }
+        else
+        {
+            return [true];
+        }
+        
+        return [true];
+    };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'nombre_sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'nombre_sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'capacidad', name: 'capacidad', index: 'capacidad', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'capacidad', name: 'capacidad', index: 'capacidad', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect()}
+        },
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
+            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
+
     ];
+
+
+    function valoresSelect(){
+
+        valoresNombreBloque="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=bloque&oper=selectNombresBloque",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresNombreBloque+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresNombreBloque.substr(0,(valoresNombreBloque.length-1)); 
+    }
 
     // inicializa el grid
     var grid = jQuery('#sala-grid').jqGrid({
@@ -77,10 +174,16 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

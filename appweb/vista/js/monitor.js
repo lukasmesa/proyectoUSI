@@ -16,32 +16,108 @@ $(function () {
     var clase = 'monitor';  // la clase que implementa el CRUD para este grid
     var idPager = 'monitor-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    var field1, check_function1 = function (value, colname)
+    {
+
+        if (colname === "nombre") {
+            field1 = value;
+        }
+
+        if (value.length < 3) {
+            console.log("t", value, colname);
+            return [false, "El nombre de usuario tiene que ser un como minimo de 3 caracteres"];
+        } else
+        {
+            return [true];
+        }
+
+        return [true];
+    };
+
+    var field1, check_function2 = function (value, colname)
+    {
+
+        if (colname === "apellido") {
+            field1 = value;
+        }
+
+        if (value.length < 3) {
+            console.log("t", value, colname);
+            return [false, "El apellido de usuario tiene que ser un como minimo de 3 caracteres"];
+        } else
+        {
+            return [true];
+        }
+
+        return [true];
+    };
+    var field1, check_function3 = function (value, colname)
+    {
+
+        if (colname === "correo_login") {
+            field1 = value;
+        }
+
+        expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!expr.test(value)) {
+            return [false, "correo invalido"];
+        }
+        return [true];
+    };
+    var field1, check_function4 = function (value, colname)
+    {
+
+        if (colname === "contrasena") {
+            field1 = value;
+        }
+
+        if (value.length < 6) {
+            return [false, "La contraseña debe ser mayor a 6 caracteres"];
+        }
+        return [true];
+    };
+
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'id_monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
+        
         {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'tipo_doc', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'tipo_doc', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {defaultValue: '0',
+                dataInit: asignarAncho,
+                value:valoresSelect()}
+        },
+        {'label': 'nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'correo_login', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'correo_login', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'contrasena', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'contrasena', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
+            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
 
     ];
 
+
+    function valoresSelect(){
+
+        
+        valores = "codigo:codigo";
+        return valores;
+    }
     // inicializa el grid
     var grid = jQuery('#monitor-grid').jqGrid({
         url: 'controlador/fachada.php',
@@ -56,7 +132,7 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'id_monitor', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_usuario', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
@@ -92,10 +168,16 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+           beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+           beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

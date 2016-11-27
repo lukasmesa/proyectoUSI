@@ -16,6 +16,7 @@ $(function () {
     var clase = 'asignatura';  // la clase que implementa el CRUD para este grid
     var idPager = 'asignatura-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    
 
     var field1,check_function1 = function(value,colname) 
     {
@@ -25,7 +26,6 @@ $(function () {
         } 
         
         if(value.length<5){
-            console.log("t",value,colname);
             return [false, "El codigo de la asignatura debe tener una longitud mayor a 5"];
         }
         else
@@ -44,7 +44,6 @@ $(function () {
         }       
           
         if(value.length<3){
-            console.log("t",value,colname);
             return [false, "El nombre de la asignatura debe tener una longitud mayor a 3"];
         }
         else
@@ -57,10 +56,10 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Casignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+        {'label': 'Código Asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Nasignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
+        {'label': 'Nombre Asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         }
     ];

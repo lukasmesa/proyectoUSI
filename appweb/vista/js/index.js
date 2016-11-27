@@ -7,13 +7,22 @@
  */
 
 'use strict';
-
+var initDatePicker = {
+    dateFormat: 'yy-mm-dd hh:ii',
+    minDate: new Date(2010, 0, 1),
+    maxDate: new Date(2020, 0, 1),
+    showOn: 'focus'
+};
 var anchoContenedor;
 
 $(document).on('ready', function () {
 
     // una de las formas de manipular el css mediante jQuery
     var opciones = "#index-asignatura";
+var opciones_cronograma = "#index-cronograma";
+    $(opciones_cronograma).css({'width': '13em'});
+    
+    
     $(opciones).css({'width': '13em'});
     $("#index-externo").css({'width': '13em'});
     $("#index-prestamo_equipo").css({'width': '13em'});
@@ -31,6 +40,10 @@ $(document).on('ready', function () {
     $("#index-equipos_para_prestamos").css({'width': '13em'});
     $("#index-software").css({'width': '13em'});
     $("#index-parte").css({'width': '13em'});
+	
+	$("#index-cronograma").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+    });
 
     $("#index-asignatura").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/asignatura.html");

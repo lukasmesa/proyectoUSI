@@ -18,19 +18,117 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-         {'label': 'Código préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true,          editable: true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
-         },
-    	{'label': 'Fecha inicio', name: 'fecha_inicio', index: 'fecha_inicio', width: 100, sortable: true, editable:              true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
+        
+       
+       {'label': 'Código Préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                dataInit: asignarAncho,
+                defaultValue:function()
+                {
+                    return jQuery("#prestamo_equipo-grid").jqGrid('getGridParam', 'records') +1;
+                }
+                
+            }
+       },
+       {'label': 'Fecha inicio', name: 'fecha_inicio', index: 'fecha_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                //dataInit: asignarAncho
+                dataInit: function (e) {
+                    $(e).datetimepicker({});
+                }
+            }
+       },
+
+        {'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                //dataInit: asignarAncho
+                dataInit: function (e) {
+                    $(e).datetimepicker({});
+                }
+            }
         },
-		{'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,             editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
+        {'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect',
+                dataInit: asignarAncho,
+                defaultValue: '0'*/
+                value:valoresSelect1()
+            }
         },
-		{'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, 				             editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
-        },
-		{'label': 'equipo_para_prestamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true,           editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
-        },
-		
+        {'label': 'Equipo para prestamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect2',
+                dataInit: asignarAncho,
+                defaultValue: '0'*/
+                value:valoresSelect2()
+            }
+        }
+        
 
     ];
+
+
+    function valoresSelect1(){
+
+        valoresID="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=docente&oper=selectIdsDocente",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresID+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresID.substr(0,(valoresID.length-1)); 
+    }
+
+    function valoresSelect2(){
+
+        valoresIDEquipo="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=equipos_para_prestamos&oper=selectEquipos",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIDEquipo+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresIDEquipo.substr(0,(valoresIDEquipo.length-1)); 
+    }
+
+
+
+
 
     // inicializa el grid
     var grid = jQuery('#prestamo_equipo-grid').jqGrid({

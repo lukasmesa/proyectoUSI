@@ -5,11 +5,11 @@ class grupo {
     function add($param) {
         extract($param);
 
-        
+        //INSERT INTO asignatura values('$cod_asignatura','$nombre_asignatura');
         $sql = "do $$
                     begin
-                        INSERT INTO asignatura values('$cod_asignatura','$nombre_asignatura');
-                        INSERT INTO grupo values('$numero_grupo','$id_docente' , '$cod_asignatura' );
+                        
+                        INSERT INTO grupo values('$numero_grupo','$id_docente' , '$cod_asignatura','$color' );
                     end$$
                 ";
         $conexion->getPDO()->exec($sql);
@@ -20,15 +20,16 @@ class grupo {
     function edit($param) {
         extract($param);
 
+        //UPDATE asignatura
+        //               SET cod_asignatura = '$cod_asignatura', nombre_asignatura = '$nombre_asignatura'
+        //               WHERE cod_asignatura = '$cod_asignatura';
         $sql = "do $$
                     begin
                        UPDATE grupo
-                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente' 
+                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color' 
                        WHERE codigo_grupo = '$codigo_grupo';
 
-                       UPDATE asignatura
-                       SET cod_asignatura = '$cod_asignatura', nombre_asignatura = '$nombre_asignatura'
-                       WHERE cod_asignatura = '$cod_asignatura';
+                       
                     end$$
                     ";          
         
@@ -41,10 +42,11 @@ class grupo {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
+        //DELETE FROM asignatura WHERE id_usuario = '$id';
         $sql = "do $$
                     begin
                         DELETE FROM grupo WHERE id_usuario = '$id';
-                        DELETE FROM asignatura WHERE id_usuario = '$id';
+                        
                     end$$
                 ";
 

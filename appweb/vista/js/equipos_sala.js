@@ -11,28 +11,119 @@ $(function () {
     var clase = 'equipos_sala';  // la clase que implementa el CRUD para este grid
     var idPager = 'equipos_sala-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
+    var field1, check_function1 = function (value, colname)
+    {
+
+        if (colname === "nombre") {
+            field1 = value;
+        }
+
+        if (value.length < 3) {
+            return [false, "El id del equipo debe tener como minimo 6 caracteres"];
+        }
+
+        return [true];
+    };
+    var field1, check_function2 = function (value, colname)
+    {
+
+        if (colname === "descripcion") {
+            field1 = value;
+        }
+
+        if (value.length >= 50) {
+            return [false, "Se han excedido la cantidad de caracteres de la descripcion"];
+        }
+        return [true];
+    };
+
+    var field1, check_function3 = function (value, colname)
+    {
+
+        if (colname === "software_equipo") {
+            field1 = value;
+        }
+
+        if (value.length >= 50) {
+            return [false, "Se han excedido la cantidad de caracteres de la descripcion del Software del equipo"];
+        }
+        return [true];
+    };
+
+    var field1, check_function4 = function (value, colname)
+    {
+
+        if (colname === "partes_equipo") {
+            field1 = value;
+        }
+
+        if (value.length >= 800) {
+            return [false, "Se han excedido la cantidad de caracteres de la descripcion de las partes equipo"];
+        }
+        return [true];
+    };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'id_equipo_sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Id Equipo Sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {defaultValue: '0',
+                dataInit: asignarAncho,
+                value:valoresSelect2()}
         },
-        {'label': 'nombre_sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'id_parte', name: 'id_parte', index: 'id_parte', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'id_software', name: 'id_sofware', index: 'id_sofware', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        }
         
+        {'label': 'Software Equipo', name: 'software_equipo', index: 'id_parte', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'Partes Equipo', name: 'partes_equipo', index: 'id_sofware', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {defaultValue: '0',
+                dataInit: asignarAncho,
+                value:valoresSelect1()}
+        },
+
     ];
+
+    function valoresSelect1(){
+
+        valoresNS="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=sala&oper=selectNombresSala",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresNS+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresNS.substr(0,(valoresNS.length-1)); 
+    }
+
+    function valoresSelect2(){
+
+        valores = "correcto:correcto;dañado:dañado;reparacion:reparacion";
+        return valores;
+    }
 
     // inicializa el grid
     var grid = jQuery('#equipos_sala-grid').jqGrid({
@@ -54,7 +145,7 @@ $(function () {
         width: anchoGrid,
         pager: "#" + idPager,
         viewrecords: true,
-        caption: "Equipos de salas sala",
+        caption: "Equipos de sala",
         multiselect: false,
         multiboxonly: true,
         hiddengrid: false,
@@ -113,30 +204,17 @@ $(function () {
      * @param {type} columna nombre con que está etiquetada la columna
      * @returns {Array} un array indicando si la validación fue exitosa o no
      */
-    function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'id_equipo_sala') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar la el id del equipo"];
-            }
-        }
-        if (columna == 'descripcion') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar la descripcion del equipo"];
-            }
-        }
-        if (columna == 'estado') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar la estado del equipo"];
-            }
-        }
-        if (columna == 'nombre_sala') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar el nombre de la sala del equipo"];
-            }
-        }
-        return [true, ""];
-    }
+
+     //------------------------------------------------------------------------
+   
+
+    
+
+
+
+
+
 
 });
 

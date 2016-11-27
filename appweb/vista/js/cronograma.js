@@ -18,68 +18,60 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'In-período', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
-            editrules: {required: true, date: true, custom: true, custom_func: validarOrdenProduccion},
+
+        {'label': 'Inicio período', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
+            editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
-                title: 'AAAA-MM-DD',
+                title: 'AAAA-MM-DD HH:ii',
                 dataInit: function (elemento) {
-                    $(elemento).datepicker(initDatePicker);
+                    $(elemento).datetimepicker(initDatePicker);
                     $(elemento).width(260);
                 }
             }
         },
-        {'label': 'Fin-período', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
-            editrules: {required: true, date: true, custom: true, custom_func: validarOrdenProduccion},
+        {'label': 'Fin período', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
+            editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
-                title: 'AAAA-MM-DD',
+                title: 'AAAA-MM-DD HH:ii',
                 dataInit: function (elemento) {
-                    $(elemento).datepicker(initDatePicker);
+                    $(elemento).datetimepicker(initDatePicker);
                     $(elemento).width(260);
                 }
             }
         },
-        {'label': 'Grupo', name: 'grupo', index: 'grupo', width: 100, sortable: true, editable: true, edittype: "select",
+        {'label': 'Tipo de actividad', name: 'tipo', index: 'tipo', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: { value: { 0: 'Seleccione tipo actividad', Clase: 'Clase', Monitoria: 'Monitoría', Exposicion: 'Exposición'}
+            }
+        },
+        {'label': 'Descripción de actividad', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, edittype: "textarea",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=Grupo&oper=getSelect',
-                dataInit: asignarAncho,
-                defaultValue: '0'
+                dataInit: asignarAncho
+            }
+        },
+        {'label': 'Usuario', name: 'usuario', index: 'usuario', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=usuario&oper=getSelectUsuario',
+                dataInit: asignarAncho
             }
         },
         {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=Sala&oper=getSelect',
-                dataInit: asignarAncho,
-                defaultValue: '0'
+                dataUrl: 'controlador/fachada.php?clase=sala&oper=getSelectSala',
+                dataInit: asignarAncho
             }
         },
         {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
             editoptions: {value: { 0: 'Seleccione un dia', Monday: 'Lunes', Tuesday: 'Martes', Wednesday: 'Miércoles',
-                Thursday: 'Jueves', Friday: 'Viernes', Saturday: 'Sábado', Sunday: 'Domingo'}},
-        },
-        {'label': 'Hora inicio', name: 'inicio_hora', index: 'inicio_hora', width: 100, sortable: true, editable: true,
-            editrules: {required: true, number: false, minValue: 1},
-            editoptions: {
-                title: 'H:i',
-                dataInit: function (elemento) {
-                    $(elemento).timepicker(initTimePicker);
-                    $(elemento).width(100);
-                }
-            },
-        },
-        {'label': 'Hora fin', name: 'fin_hora', index: 'fin_hora', width: 100, sortable: true, editable: true,
-            editrules: {required: true, number: false, minValue: 1},
-            editoptions: {
-                title: 'H:i',
-                dataInit: function (elemento) {
-                    $(elemento).timepicker(initTimePicker);
-                    $(elemento).width(100);
-                }
-            },
+                Thursday: 'Jueves', Friday: 'Viernes', Saturday: 'Sábado', Sunday: 'Domingo'}
+            }
         },
     ];
+
 
     // inicializa el grid
     var grid = jQuery('#cronograma-grid').jqGrid({
@@ -162,9 +154,10 @@ $(function () {
      */
     function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'Grupo') {
+        if (columna == 'Usuario') {
             if (valor === '0') {
-                return [false, "Falta seleccionar un grupo"];
+                return [false, "Falta seleccionar un Usuario"];
+
             }
         }
         if (columna == 'Sala') {
@@ -176,22 +169,12 @@ $(function () {
             if (valor === '0') {
                 return [false, "Falta seleccionar un día"];
             }
-        }
-        if (columna === 'In-período') {
-            var fechaSolicitud = moment($('#inicio_periodo').val(), 'YYYY-MM-DD', true);
-
-            if (!fechaSolicitud.isValid()) {
-                return [false, "Ini - Revise que la fecha esté en formato AAAA-MM-DD"];
-            }
             // pueden ser necesarias otras validaciones de la fecha de solicitud. Utilizar moment para dichos casos
         }
-        if (columna === 'Fin-período') {
-            var fechaSolicitud = moment($('#fin_periodo').val(), 'YYYY-MM-DD', true);
-
-            if (!fechaSolicitud.isValid()) {
-                return [false, "Fin - Revise que la fecha esté en formato AAAA-MM-DD"];
+        if (columna == 'Tipo de actividad') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar un tipo de actividad"];
             }
-            // pueden ser necesarias otras validaciones de la fecha de solicitud. Utilizar moment para dichos casos
         }
 
         return [true, ""];
