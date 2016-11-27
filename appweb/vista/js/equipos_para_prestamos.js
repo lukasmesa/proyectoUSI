@@ -52,17 +52,29 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Id Equipo para Préstamo', name: 'id_equipo_para_prestamo', index: 'id_equipo_para_prestamo', width: 100, sortable: true,editable: true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
+        {'label': 'Id Equipo para Préstamo', name: 'id_equipo_para_prestamo', index: 'id_equipo_para_prestamo', width: 100, sortable: true,editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                defaultValue:function()
+                {
+                    return jQuery("#equipos_para_prestamos-grid").jqGrid('getGridParam', 'records') +1;
+                }
+                
+            }
         },
     	{'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable:true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}
+		{'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}			
+		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:"correcto:correcto;dañado:dañado;reparacion:reparacion"
+            }			
         },		
 		
 
     ];
+
 
     // inicializa el grid
     var grid = jQuery('#equipos_para_prestamos-grid').jqGrid({
@@ -110,15 +122,17 @@ $(function () {
         del: true,
         view: false,
         search: true,
-        closeOnEscape: false
+        closeOnEscape: false,     
+
+
     }, {// edit
         width: 420,
         modal: true,
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
-        modal: true,
-        afterSubmit: respuestaServidor
+        modal: true,    
+        //respuestaServidor
     }, {// del
         width: 335,
         modal: true, // jqModal: true,

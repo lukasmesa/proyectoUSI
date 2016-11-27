@@ -1,0 +1,44 @@
+﻿
+        // Para incluir un campo de tipo color se procede así (name e index puede ser cualquier nombre):
+ 
+       
+		...
+		
+            {name: 'color', index: 'color', width: 100, editable: true, edittype: 'text',
+                editoptions: {
+                    dataInit: function (e) {
+                        $(e).attr("type", "color");
+                    }
+                }},
+        ...
+
+        
+// Para la edición y la adición se forza el envío al servidor del dato color
+
+   
+ grid.jqGrid('navGrid', "#" + idPager, {
+        refresh: true,
+        edit: true,
+        add: true,
+        del: true,
+        view: false,
+        search: true,
+        closeOnEscape: false
+    }, 
+{// edit       //  OJO  <<<<<<<<<
+        width: #######,
+        modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
+        afterSubmit: respuestaServidor
+    }, {// add       //  OJO  <<<<<<<<<
+        width: #####,
+        modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
+            postdata.color = $('#color').val();
+        },
+        afterSubmit: respuestaServidor
+    }, 
+	
+	...
