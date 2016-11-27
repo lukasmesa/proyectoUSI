@@ -99,6 +99,14 @@ $(function () {
         },
         {'label': 'contrasena', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
             editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
+            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
 
     ];
@@ -160,10 +168,16 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+           beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+           beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

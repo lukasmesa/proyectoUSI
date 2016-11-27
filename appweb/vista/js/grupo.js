@@ -18,7 +18,7 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'numero_grupo', name: 'codigo_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'numero_grupo', name: 'numero_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -32,10 +32,16 @@ $(function () {
                 dataInit: asignarAncho,
                 value:valoresSelect2()
             }
-        },
-        {'label': 'nombre_asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        },        
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
+            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
+
 
     ];
 
@@ -153,10 +159,16 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

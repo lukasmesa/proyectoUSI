@@ -7,8 +7,8 @@ class docente {
         
         $sql = "do $$
                     begin
-                        INSERT INTO docente values('$id_usuario');
                         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                        INSERT INTO docente values('$id_usuario','$color');                        
                     end$$
                 ";
         
@@ -22,7 +22,7 @@ class docente {
         $sql = "do $$
                     begin
                        UPDATE docente
-                       SET id_usuario = '$id_usuario'
+                       SET id_usuario = '$id_usuario',color='$color'
                        WHERE id_usuario = '$id_usuario';
 
                        UPDATE usuario
@@ -96,7 +96,9 @@ class docente {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_usuario FROM docente e inner join usuario u on e.id_usuario = u.id_usuario ";
+        $sql = "select d.id_usuario from docente d inner join usuario u on u.id_usuario = d.id_usuario
+                union
+                select a.id_usuario from administrativo a inner join usuario u2 on a.id_usuario = u2.id_usuario; ";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 

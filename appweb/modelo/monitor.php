@@ -7,8 +7,8 @@ class monitor {
         
         $sql = "do $$
                     begin
-                        INSERT INTO monitor values('$id_usuario');
                         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                        INSERT INTO monitor values('$id_usuario');                        
                     end$$
                 ";
         
@@ -22,7 +22,7 @@ class monitor {
         $sql = "do $$
                     begin
                        UPDATE monitor
-                       id_usuario = '$id_usuario'
+                       id_usuario = '$id_usuario',color='$color'
                        WHERE id_monitor = '$id_monitor';
 
                        UPDATE usuario

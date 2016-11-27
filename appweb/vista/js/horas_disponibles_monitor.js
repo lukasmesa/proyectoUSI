@@ -49,7 +49,13 @@ $(function () {
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
         {'label': 'Id Horario Monitor', name: 'id_horario', index: 'id_horario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+            editoptions: {
+                dataInit: asignarAncho,
+                defaultValue:function()
+                {
+                    return jQuery("#horas_disponibles_monitor-grid").jqGrid('getGridParam', 'records') +1;
+                }
+            }
         },
         {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
@@ -95,6 +101,7 @@ $(function () {
 
 
     
+
 
     function valoresSelect3(){
         

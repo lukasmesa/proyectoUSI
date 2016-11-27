@@ -14,13 +14,21 @@ $(function () {
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
         {'label': 'id_reporte', name: 'id_reporte', index: 'id_reporte', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+            editoptions: {
+                dataInit: asignarAncho,
+                defaultValue:function()
+                {
+                    return jQuery("#reporte_daño-grid").jqGrid('getGridParam', 'records') +1;
+                }
+            }
         },
         {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
-            editoptions: {dataInit: asignarAncho}
+            editoptions: {dataInit: asignarAncho,
+                value:valoresSelect2
+            }
         },
         {'label': 'id_equipo_sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
@@ -59,6 +67,37 @@ $(function () {
 
         return valoresIDEquipo.substr(0,(valoresIDEquipo.length-1));  
     }
+
+        function valoresSelect2(){
+
+        valoresIDUsuario="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=reportedano&oper=selectIDUSuario",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIDUsuario+=s;
+                
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresIDUsuario.substr(0,(valoresIDUsuario.length-1));  
+    }
+
+
 
     // inicializa el grid
     var grid = jQuery('#reporte_daño-grid').jqGrid({

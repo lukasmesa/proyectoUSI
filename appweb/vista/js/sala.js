@@ -82,7 +82,16 @@ var field1,check_function3 = function(value,colname)
             editoptions: {
                 dataInit: asignarAncho,
                 value:valoresSelect()}
+        },
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
+            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
+
     ];
 
 
@@ -165,10 +174,16 @@ var field1,check_function3 = function(value,colname)
     }, {// edit
         width: 420,
         modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+        beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

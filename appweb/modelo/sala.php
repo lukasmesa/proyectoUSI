@@ -5,7 +5,7 @@ class sala {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO sala values('$nombre_sala','$capacidad','$descripcion','$nombre_bloque')";
+        $sql = "INSERT INTO sala values('$nombre_sala','$capacidad','$descripcion','$nombre_bloque','$color')";
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -15,7 +15,7 @@ class sala {
         extract($param);
  
         $sql = "UPDATE sala
-                       SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',
+                       SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',color='$color'
 					   nombre_bloque='$nombre_bloque'
                        WHERE nombre_sala = '$nombre_sala';";
        
