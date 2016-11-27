@@ -317,4 +317,4 @@ jQuery.fn.estiloFormulario = function (valoresEstilos) {
         $(item + 'input,' + item + 'label,' + item + 'button,' + item + 'textarea').css('display', 'block');
     });
     return div;
-};
+}
