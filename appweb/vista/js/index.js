@@ -7,7 +7,12 @@
  */
 
 'use strict';
-
+var initDatePicker = {
+    dateFormat: 'yy-mm-dd hh:ii',
+    minDate: new Date(2010, 0, 1),
+    maxDate: new Date(2020, 0, 1),
+    showOn: 'focus'
+};
 var anchoContenedor;
 
 $(document).on('ready', function () {
