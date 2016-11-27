@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.appusi.usiunidaddeserviciosinformaticos.MainActivity"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+    android:scrollbarAlwaysDrawVerticalTrack="false">
+
+    <TextView
+        android:text="@string/txt_USI_fecha_hoy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/txt_fecha_hoy"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_fecha_hoy_date"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:text="@string/txt_USI_fecha_hoy_date"
+        android:textSize="18sp"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_fecha_hoy"
+        android:layout_marginTop="110dp"
+        android:id="@+id/txt_desea_buscar"
+        android:text="@string/tet_USI_desea_buscar"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@string/txt_USI_monitorias_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_USI_monitorias_description"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textColor="@color/colorControlNormal"
+        android:layout_below="@+id/txt_USI_monitorias"
+        android:layout_alignLeft="@+id/txt_USI_monitorias"
+        android:layout_alignStart="@+id/txt_USI_monitorias" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdButton_salas"
+        android:layout_alignBottom="@+id/txt_USI_salas_description"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdButton_monitorias"
+        android:layout_alignBottom="@+id/imgSearchMonitorias"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        app:srcCompat="@android:drawable/ic_search_category_default"
+        android:id="@+id/imgSearchSalas"
+        tools:ignore="ContentDescription"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/txt_desea_buscar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/txt_USI_salas" />
+
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        app:srcCompat="@android:drawable/ic_search_category_default"
+        android:id="@+id/imgSearchMonitorias"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/imgSearchSalas"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/txt_USI_monitorias" />
+
+    <TextView
+        android:text="@string/txt_USI_monitorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_USI_monitorias"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/imgSearchMonitorias"
+        android:layout_toRightOf="@+id/imgSearchMonitorias"
+        android:layout_toEndOf="@+id/imgSearchMonitorias"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp" />
+
+    <TextView
+        android:text="@string/txt_USI_salas_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_USI_salas_description"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textColor="@color/colorControlNormal"
+        android:layout_alignBottom="@+id/imgSearchSalas"
+        android:layout_alignLeft="@+id/txt_USI_monitorias"
+        android:layout_alignStart="@+id/txt_USI_monitorias" />
+
+    <TextView
+        android:text="@string/txt_USI_salas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_USI_salas"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="18sp"
+        android:layout_above="@+id/txt_USI_salas_description"
+        android:layout_alignLeft="@+id/txt_USI_salas_description"
+        android:layout_alignStart="@+id/txt_USI_salas_description" />
+
+    <Button
+        android:text="@string/btn_USI_buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnConsultar"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

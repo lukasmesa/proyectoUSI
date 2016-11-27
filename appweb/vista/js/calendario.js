@@ -165,7 +165,7 @@ $(document).ready(function() {
         var sala = $("#calendario-sala").val();
         var fecha_reserva=calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm'); //la hroa y fecha del regustro de la actividad
         var estado_reserva="disponible";
-        var tercero="no";
+        /*var tercero="no";*/
         var tipo=$("#calendario-actividad").val();
         var descripcion=$("#calendario-descripcion").val();
         alert(idUsuario+"\n"+start+"\n"+end+"\n"+sala+"\n"+fecha_reserva+"\n"+estado_reserva+"\n"+tipo+"\n"+descripcion+"\n");
@@ -179,7 +179,7 @@ $(document).ready(function() {
                 fecha_ini_prestamo: start,
                 fecha_fin_prestamo: end,
                 nombre_sala: sala,
-                tercero:tercero,
+                /*tercero:tercero,*/
                 fecha_reserva:fecha_reserva,
                 estado_reserva:estado_reserva,
                 descripcion:descripcion,

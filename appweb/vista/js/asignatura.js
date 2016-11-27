@@ -56,10 +56,10 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Casignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+        {'label': 'Código Asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Nasignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
+        {'label': 'Nombre Asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         }
     ];
