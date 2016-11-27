@@ -26,8 +26,8 @@ class grupo {
         $sql = "do $$
                     begin
                        UPDATE grupo
-                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color' 
-                       WHERE codigo_grupo = '$codigo_grupo';
+                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color',cod_asignatura='$cod_asignatura'
+                       WHERE numero_grupo = '$numero_grupo' and cod_asignatura='$cod_asignatura';
 
                        
                     end$$

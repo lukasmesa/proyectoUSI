@@ -15,8 +15,7 @@ class sala {
         extract($param);
  
         $sql = "UPDATE sala
-                       SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',color='$color'
-					   nombre_bloque='$nombre_bloque'
+                       SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',nombre_bloque='$nombre_bloque',color='$color'					   
                        WHERE nombre_sala = '$nombre_sala';";
        
         $conexion->getPDO()->exec($sql);

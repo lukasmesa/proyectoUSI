@@ -5,10 +5,11 @@ class externo {
     function add($param) {
         extract($param);
                
-        $sql = "do $$
+      $sql = "do $$
                     begin
-                        INSERT INTO externo values('$id_usuario');
                         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                        INSERT INTO externo values('$id_usuario');
+                        
                     end$$
                 ";
         $conexion->getPDO()->exec($sql);
@@ -20,13 +21,15 @@ class externo {
  
         $sql = "do $$
                     begin
+                    UPDATE usuario
+                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', 
+                       correo_login = '$correo_login', contrasena = '$contrasena'
+                       WHERE id_usuario = '$id_usuario';
+
                        UPDATE externo
                        id_usuario = '$id_usuario'
-                       WHERE id_externo = '$id_externo';
-
-                       UPDATE usuario
-                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
                        WHERE id_usuario = '$id_usuario';
+
                     end$$
                     ";           
      

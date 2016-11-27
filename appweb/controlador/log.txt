@@ -1,4 +1,4 @@
-
+﻿
 [24-Nov-2016 13:30:11 UTC] Problemas en ::()
 Imposible responder al mensaje enviado. Argumentos recibidos:
 Array
@@ -13925,5 +13925,624 @@ LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
     [2] => ERROR:  syntax error at or near "10"
 LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
                                                                      ^
+)
+
+[27-Nov-2016 21:13:09 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:13:12 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:13:17 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  10
+                                                                     ^
+)
+
+[27-Nov-2016 21:13:20 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[27-Nov-2016 21:13:31 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:13:39 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='D'
+                ^
+)
+
+[27-Nov-2016 21:13:48 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='A'
+                ^
+)
+
+[27-Nov-2016 21:13:54 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='X'
+                ^
+)
+
+[27-Nov-2016 21:15:14 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='A'
+                ^
+)
+
+[27-Nov-2016 21:15:19 UTC] Array
+(
+    [clase] => sala
+    [oper] => del
+    [id] => sala ñ
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[27-Nov-2016 21:15:21 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:15:45 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:15:56 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='Z'
+                ^
+)
+
+[27-Nov-2016 21:17:13 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='A'
+                ^
+)
+
+[27-Nov-2016 21:17:19 UTC] Array
+(
+    [clase] => sala
+    [oper] => del
+    [id] => sala ñ
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[27-Nov-2016 21:17:20 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:19:13 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:19:15 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:19:20 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
+                                                                     ^
+)
+
+[27-Nov-2016 21:19:24 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
+                                                                     ^
+)
+
+[27-Nov-2016 21:19:36 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
+                                                                     ^
+)
+
+[27-Nov-2016 21:19:44 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
+                                                                     ^
+)
+
+[27-Nov-2016 21:19:50 UTC] Array
+(
+    [clase] => bloque
+    [oper] => del
+    [id] => LL
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[27-Nov-2016 21:19:52 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
+                                                                     ^
+)
+
+[27-Nov-2016 21:19:58 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[27-Nov-2016 21:20:01 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:20:10 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "nombre_bloque"
+LINE 3:         nombre_bloque='Z'
+                ^
+)
+
+[27-Nov-2016 21:21:25 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[27-Nov-2016 21:21:43 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:21:45 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:21:51 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[27-Nov-2016 21:22:14 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[27-Nov-2016 21:22:18 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:22:24 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "WHERE"
+LINE 3:                        WHERE nombre_sala = 'sala ñ';
+                               ^
+)
+
+[27-Nov-2016 21:22:41 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:22:49 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:22:54 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[27-Nov-2016 21:22:59 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:23:09 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[27-Nov-2016 21:25:57 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:26:04 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 30
+                                                                     ^
+)
+
+[27-Nov-2016 21:26:14 UTC] ¡Pilas! Array
+(
+    [0] => 23514
+    [1] => 7
+    [2] => ERROR:  new row for relation "usuario" violates check constraint "ck_contrasena"
+DETAIL:  Failing row contains (182, cedula, leonel, alvarez, leomechas@gmail.com, 456571).
+CONTEXT:  SQL statement "UPDATE usuario
+                       SET id_usuario = '182', tipo_doc = 'cedula', nombre = 'leonel', apellido = 'alvarez', correo_login = 'leomechas@gmail.com', contrasena = '456571'
+                       WHERE id_usuario = '182'"
+PL/pgSQL function inline_code_block line 7 at SQL statement
+)
+
+
+[27-Nov-2016 21:30:12 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:30:49 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:30:52 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:31:05 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:32:47 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:33:05 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:33:07 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:33:19 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:33:26 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:33:40 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
+                                                                     ^
+)
+
+[27-Nov-2016 21:35:06 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
+                                                                     ^
+)
+
+[27-Nov-2016 21:35:20 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "="
+LINE 4:                        id_usuario = '151'
+                                          ^
+)
+
+[27-Nov-2016 21:36:16 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:36:42 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:36:45 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
+                                                                     ^
+)
+
+[27-Nov-2016 21:37:00 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "="
+LINE 9:                        id_usuario = '301'
+                                          ^
+)
+
+[27-Nov-2016 21:38:03 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:38:07 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 21:38:10 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
+                                                                     ^
+)
+
+[27-Nov-2016 21:38:19 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "="
+LINE 9:                        id_usuario = '300'
+                                          ^
+)
+
+[27-Nov-2016 21:46:33 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
+                                                                     ^
+)
+
+[27-Nov-2016 21:47:01 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 22:00:55 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
+)
+
+[27-Nov-2016 22:01:00 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
+                                                                     ^
+)
+
+[27-Nov-2016 22:01:12 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "codigo_grupo" does not exist
+LINE 3:                        WHERE codigo_grupo = ''
+                                     ^
+QUERY:  UPDATE grupo
+                       SET numero_grupo = '13', id_docente = '176',color = '#000000' 
+                       WHERE codigo_grupo = ''
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at SQL statement
+)
+
+[27-Nov-2016 22:03:08 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getEstados
 )
 
