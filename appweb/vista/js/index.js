@@ -12,19 +12,22 @@ var initDatePicker = {
     minDate: new Date(2010, 0, 1),
     maxDate: new Date(2020, 0, 1),
     showOn: 'focus'
-};
+    };
+
 var anchoContenedor;
 
 $(document).on('ready', function () {
+	
+	
 
     // una de las formas de manipular el css mediante jQuery
-    var opciones = "#index-CRUDS";
-    $(opciones).css({'width': '13em'});   
+    //var opciones = "#index-CRUDS";
+    $("#index-CRUDS").css({'width': '13em'});   
     $("#index-calendario").css({'width': '13em'});
-    var opciones = "#index-asignatura";
-var opciones_cronograma = "#index-cronograma";
-    $(opciones_cronograma).css({'width': '13em'});
-    $(opciones).css({'width': '13em'});
+    //var opciones_asigantura = "#index-asignatura";
+	$("#index-asignatura").css({'width': '13em'});
+    //var opciones_cronograma = "#index-cronograma";
+    $("#index-cronograma").css({'width': '13em'});    
     $("#index-externo").css({'width': '13em'});
     $("#index-prestamo_equipo").css({'width': '13em'});
     $("#index-horas_disponibles_monitor").css({'width': '13em'});
@@ -45,7 +48,6 @@ var opciones_cronograma = "#index-cronograma";
 	$("#index-cronograma").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/cronograma.html");
     });
-
     $("#index-asignatura").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/asignatura.html");
     });
@@ -54,32 +56,36 @@ var opciones_cronograma = "#index-cronograma";
     });
 	$("#index-prestamo_equipo").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/prestamo_equipo.html");
-   
+	});   
     $("#index-CRUDS").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/CRUDS.html");
-
     });
     $("#index-calendario").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/calendario.html");        
-
-
+        cargarPagina("#index-contenido", "vista/html/calendario.html"); 
     });
 	$("#index-sala").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/sala.html");
-
+    });
+    $("#index-equipos_sala").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/equipos_sala.html");
     });	
-	
+	$("#index-bloque").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/bloque.html");
+    });	
+	$("#index-grupo").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/grupo.html");
+    });	
 	$("#index-docente").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/docente.html");
-
     });
 	$("#index-administrativo").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/administrativo.html");
-
     });
 	$("#index-monitor").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/monitor.html");
-
+    });
+	$("#index-horas_disponibles_monitor").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/horas_disponibles_monitor.html");
     });
 	
 	$("#index-reporte_danos").button().on("click", function () {
@@ -319,7 +325,7 @@ jQuery.fn.estiloFormulario = function (valoresEstilos) {
     });
     return div;
 
-}
+};
 
-});
+
 
