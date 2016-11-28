@@ -78,44 +78,29 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        
-        {'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'TIpo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
-            editoptions: {defaultValue: '0',
-                dataInit: asignarAncho,
-                value:valoresSelect()}
-        },
-        {'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
+        {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
+        {'label': 'tipo_doc', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Correo', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
+        {'label': 'nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Contraseña', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+        {'label': 'apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
-            
-            editoptions: {
-                dataInit: function (e) {
-                    $(e).attr("type", "color");
-                 }
-            }
+        {'label': 'correo_login', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'contrasena', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+            editoptions: {dataInit: asignarAncho}
         }
 
     ];
-
-    function valoresSelect(){
-
-        
-        valores = "cedula:cedula";
-        return valores;
-    }
 
     // inicializa el grid
     var grid = jQuery('#docente-grid').jqGrid({
@@ -131,7 +116,7 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'id_usuario', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_docente', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
@@ -167,16 +152,10 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
-        beforeSubmit: function (postdata) {   //  OJO  <<<< 
-            postdata.color = $('#color').val();
-        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
-         beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
-            postdata.color = $('#color').val();
-        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

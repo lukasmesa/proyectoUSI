@@ -7,7 +7,7 @@ class externo {
                
         $sql = "do $$
                     begin
-                        INSERT INTO externo values('$id_usuario');
+                        INSERT INTO externo values('$id_externo','$id_usuario');
                         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
                     end$$
                 ";
@@ -21,7 +21,7 @@ class externo {
         $sql = "do $$
                     begin
                        UPDATE externo
-                       id_usuario = '$id_usuario'
+                       SET id_externo = '$id_externo', id_usuario = '$id_usuario'
                        WHERE id_externo = '$id_externo';
 
                        UPDATE usuario
@@ -58,7 +58,7 @@ class externo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM externo e inner join usuario u on e.id_usuario = u.id_usuario ";
+        $sql = "SELECT e.id_externo, e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM externo e inner join usuario u on e.id_usuario = u.id_usuario ";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -73,7 +73,7 @@ class externo {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_externo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        
+                        $fila['id_externo'],
                         $fila['id_usuario'],
                         $fila['tipo_doc'],
                         $fila['nombre'],
