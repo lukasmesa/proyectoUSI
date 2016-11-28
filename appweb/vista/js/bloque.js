@@ -7,7 +7,7 @@ $(function () {
     if (altoGrid < 200) {
         altoGrid = 200;
     }
-
+    
     var clase = 'bloque';  // la clase que implementa el CRUD para este grid
     var idPager = 'bloque-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
@@ -31,17 +31,52 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
+        {'label': 'Nombre Bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre_sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Nombre Sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=bloque&oper=getSelect',
+            /*    dataUrl: 'controlador/fachada.php?clase=bloque&oper=getSelect',
                 dataInit: asignarAncho,
-                defaultValue: '0'
+                defaultValue: '0'*/
+                defaultValue: '0',
+                dataInit: asignarAncho,
+                //value:valoresSelect()
+                value:valoresSelect()
             }
         }
     ];
+
+    function valoresSelect(){
+
+        valoresNombreSede="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=sede&oper=selectNombreSedes",
+            data: {},
+            success: function(data)
+            {
+                
+                var datos=jQuery.parseJSON(data);
+                //console.log("data: "+datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresNombreSede+=s;
+                  //  console.log("datos: "+rows[i]['id']);
+                }            
+                    
+            },
+              
+            async:false
+        });
+        
+
+        return valoresNombreSede.substr(0,(valoresNombreSede.length-1));  
+        
+    }
 
     // inicializa el grid
     var grid = jQuery('#bloque-grid').jqGrid({
