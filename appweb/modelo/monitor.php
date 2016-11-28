@@ -7,8 +7,8 @@ class monitor {
         
         $sql = "do $$
                     begin
+                        INSERT INTO monitor values('$id_monitor','$id_usuario');
                         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
-                        INSERT INTO monitor values('$id_usuario');                        
                     end$$
                 ";
         
@@ -22,7 +22,7 @@ class monitor {
         $sql = "do $$
                     begin
                        UPDATE monitor
-                       id_usuario = '$id_usuario',color='$color'
+                       SET id_monitor = '$id_monitor', id_usuario = '$id_usuario'
                        WHERE id_monitor = '$id_monitor';
 
                        UPDATE usuario
@@ -53,7 +53,7 @@ class monitor {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
+        $sql = "SELECT e.id_monitor, e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -68,7 +68,7 @@ class monitor {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        
+                        $fila['id_monitor'],
                         $fila['id_usuario'],
                         $fila['tipo_doc'],
                         $fila['nombre'],
@@ -83,37 +83,5 @@ class monitor {
         echo json_encode($respuesta);
     }
 
-    //funcion requerida para desplega los IDs de monitores disponibles a la hora de ingresar en una tabla que referencie este campo
-    function selectIds($param)
-    {
-        extract($param);
-        $where = $conexion->getWhere($param);
-        // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_usuario FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
-        // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
-        $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
-
-        // agregar al objeto que se envía las filas de la página requerida
-        if (($rs = $conexion->getPDO()->query($sql))) {
-            $cantidad = 999; // se pueden enviar al grid valores calculados o constantes
-            $tiros_x_unidad = 2;
-                    
-            while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
-                
-                $respuesta['rows'][] = [
-                    'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
-                    'cell' => [ // los campos que se muestra en las columnas del grid
-                        
-                        $fila['id_usuario'],
-                        
-                    ]
-                ];
-            }
-        }
-        $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
-        echo json_encode($respuesta);
-    }
-	
 }
 ?>
