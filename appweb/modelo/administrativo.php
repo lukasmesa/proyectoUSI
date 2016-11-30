@@ -20,11 +20,9 @@ END$$;";
         extract($param);
 		
 		$sql = "do $$
-			begin 
-				UPDATE administrativo SET id_usuario = '$id_usuario'
-                    WHERE id_usuario = '$id_usuario';
-			    UPDATE usuario SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                    WHERE id_usuario = '$id_usuario';
+			begin
+                UPDATE usuario SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
+                    WHERE id_usuario = '$id';			    
 			end$$;
 		
 		";

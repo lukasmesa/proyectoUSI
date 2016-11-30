@@ -19,15 +19,17 @@ class monitor {
     function edit($param) {
         extract($param);
         
+        error_log(print_r($param,1));
         $sql = "do $$
                     begin
-                       UPDATE monitor
-                       id_usuario = '$id_usuario',color='$color'
-                       WHERE id_monitor = '$id_monitor';
-
                        UPDATE usuario
-                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';
+                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', 
+                       correo_login = '$correo_login', contrasena = '$contrasena'
+                       WHERE id_usuario = '$id';
+
+                       UPDATE monitor
+                       set color='$color'
+                       WHERE id_usuario = '$id_usuario';                       
                     end$$
                     ";
         

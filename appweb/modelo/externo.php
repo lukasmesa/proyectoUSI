@@ -16,19 +16,16 @@ class externo {
         echo $conexion->getEstado();
     }
 
+
     function edit($param) {
         extract($param);
  
         $sql = "do $$
-                    begin
+                   begin
                     UPDATE usuario
                        SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', 
                        correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';
-
-                       UPDATE externo
-                       id_usuario = '$id_usuario'
-                       WHERE id_usuario = '$id_usuario';
+                       WHERE id_usuario = '$id';                               
 
                     end$$
                     ";           
@@ -38,12 +35,14 @@ class externo {
 
     }
 
+    //DELETE FROM externo WHERE id_usuario = '$id';
+
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
         $sql = "do $$
                     begin
-                        DELETE FROM externo WHERE id_usuario = '$id';
+                        
                         DELETE FROM usuario WHERE id_usuario = '$id';
                     end$$
                 ";
@@ -74,7 +73,7 @@ class externo {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['id_externo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         
                         $fila['id_usuario'],

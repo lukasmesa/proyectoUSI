@@ -27,9 +27,7 @@ class grupo {
                     begin
                        UPDATE grupo
                        SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color',cod_asignatura='$cod_asignatura'
-                       WHERE numero_grupo = '$numero_grupo' and cod_asignatura='$cod_asignatura';
-
-                       
+                       WHERE numero_grupo = '$numero_grupo' and cod_asignatura='$cod_asignatura';                       
                     end$$
                     ";          
         
@@ -45,7 +43,7 @@ class grupo {
         //DELETE FROM asignatura WHERE id_usuario = '$id';
         $sql = "do $$
                     begin
-                        DELETE FROM grupo WHERE id_usuario = '$id';
+                        DELETE FROM grupo WHERE numero_grupo = '$id' and cod_asignatura='$cod_asignatura';
                         
                     end$$
                 ";

@@ -58,12 +58,12 @@ $(document).on('ready', function () {
     });
 
     // ejemplo de llamado de una instrucción $.post
-    $.post("controlador/fachada.php", {
+ /*   $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
         oper: 'getEstados'
     }, function (estados) {
        // console.log(estados);
-    }, 'json');
+    }, 'json');*/
 
     // cada que se redimensione el navegador se actualiza anchoContenedor
     $(window).on('resize', function () {

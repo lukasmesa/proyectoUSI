@@ -10,7 +10,7 @@ class reportedano {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO reporte_danos values('$id_reporte','$descripcion','$id_usuario','$id_equipo_sala')";
+        $sql = "INSERT INTO reporte_danos (descripcion,id_usuario,id_equipo_sala) values('$descripcion','$id_usuario','$id_equipo_sala')";
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -20,7 +20,7 @@ class reportedano {
         extract($param);
  
         $sql = "UPDATE reporte_danos
-                       SET id_reporte = '$id_reporte', descripcion = '$descripcion',id_usuario='$id_usuario',id_equipo_sala='$id_equipo_sala'
+                       SET descripcion = '$descripcion',id_usuario='$id_usuario',id_equipo_sala='$id_equipo_sala'
                        WHERE id_reporte = '$id';";
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -58,7 +58,7 @@ class reportedano {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_reporte'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_reporte'],
+          //              $fila['id_reporte'],
                         $fila['descripcion'],
                         $fila['id_usuario'],
                         $fila['id_equipo_sala']

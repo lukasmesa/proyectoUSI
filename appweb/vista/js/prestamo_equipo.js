@@ -20,7 +20,7 @@ $(function () {
     var columnas = [
         
        
-       {'label': 'Código Préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+     /*  {'label': 'Código Préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
                 dataInit: asignarAncho,
                 defaultValue:function()
@@ -29,7 +29,7 @@ $(function () {
                 }
                 
             }
-       },
+       },*/
        {'label': 'Fecha inicio', name: 'fecha_inicio', index: 'fecha_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
                 //dataInit: asignarAncho

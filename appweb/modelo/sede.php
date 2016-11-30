@@ -15,7 +15,7 @@ class sede {
 		extract($param);
 		$sql = "UPDATE sede
 					   SET nombre_sede = '$nombre_sede', direccion = '$direccion'
-					   WHERE nombre_sede = '$nombre_sede';";
+					   WHERE nombre_sede = '$id';";
 		$conexion->getPDO()->exec($sql);
 		echo $conexion->getEstado();
 	}
