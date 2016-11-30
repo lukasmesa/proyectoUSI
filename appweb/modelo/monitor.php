@@ -85,7 +85,6 @@ class monitor {
         echo json_encode($respuesta);
     }
 
-
     //funcion requerida para desplega los IDs de monitores disponibles a la hora de ingresar en una tabla que referencie este campo
     function selectIds($param)
     {
@@ -117,8 +116,6 @@ class monitor {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-
-
-
+	
 }
 ?>

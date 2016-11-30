@@ -100,10 +100,6 @@ class equipos_para_prestamos {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-
-
-
-
-
+	
 }
 ?>

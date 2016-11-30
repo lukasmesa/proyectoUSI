@@ -7,12 +7,38 @@
  */
 class reportedano {
     
-    function add($param) {
+    /*function add($param) {
         extract($param);
+<<<<<<< HEAD:appweb/modelo/reportedano.php
         
         $sql = "INSERT INTO reporte_danos (descripcion,id_usuario,id_equipo_sala) values('$descripcion','$id_usuario','$id_equipo_sala')";
 
+=======
+        $sql = "INSERT INTO pruebas values('$inicio_periodo','$fin_periodo','$grupo','$sala','$dia','$hora','$horas')";
+>>>>>>> 90f84c98c0e3ede79f3ee8a2d9311ca2e9277e1e:cronograma.php
         $conexion->getPDO()->exec($sql);
+        echo $conexion->getEstado();
+    }*/
+    function add($param){
+        extract($param);
+
+        $inicio = new DateTime($inicio_periodo);
+        $fin = new DateTime($fin_periodo);
+        $interval = DateInterval::createFromDateString('1 day');
+        $fechas = new DatePeriod($inicio, $interval, $fin);
+
+
+
+        foreach ($fechas as $fecha) {
+            $fecha = $fecha->format('Y-m-d');
+            $inicio = "$fecha";
+            $fin = "$fecha";
+            $diaSemana = date("l", strtotime($fecha));
+            if($dia==$diaSemana){
+                $sql = "INSERT INTO pruebas values('$inicio','$fin','$grupo','$sala','$dia','$inicio_hora','$fin_hora')";
+                $conexion->getPDO()->exec($sql);
+            }
+        }
         echo $conexion->getEstado();
     }
 
