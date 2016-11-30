@@ -15,7 +15,7 @@ class bloque {
         extract($param);
         $sql = "UPDATE bloque
                        SET nombre_bloque = '$nombre_bloque', nombre_sede = '$nombre_sede'
-                       WHERE nombre_bloque = '$nombre_bloque';";
+                       WHERE nombre_bloque = '$id';";
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
     }

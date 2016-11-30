@@ -18,9 +18,32 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-         {'label': 'Código préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
-         },
-        {'label': 'Fecha inicio', name: 'fecha_inicio', index: 'fecha_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
+     /*  {'label': 'Código Préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                dataInit: asignarAncho,
+                defaultValue:function()
+                {
+                    return jQuery("#prestamo_equipo-grid").jqGrid('getGridParam', 'records') +1;
+                }
+                
+            }
+       },*/
+       {'label': 'Fecha inicio', name: 'fecha_inicio', index: 'fecha_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                //dataInit: asignarAncho
+                dataInit: function (e) {
+                    $(e).datetimepicker({});
+                }
+            }
+       },
+
+        {'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                //dataInit: asignarAncho
+                dataInit: function (e) {
+                    $(e).datetimepicker({});
+                }
+            }
         },
     {'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
         },

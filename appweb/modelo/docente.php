@@ -21,12 +21,12 @@ class docente {
  
         $sql = "do $$
                     begin
-                       UPDATE docente
-                       SET id_docente = '$id_docente', id_usuario = '$id_usuario'
-                       WHERE id_docente = '$id_docente';
-
-                       UPDATE usuario
+                    UPDATE usuario
                        SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
+                       WHERE id_usuario = '$id';   
+                    
+                       UPDATE docente
+                       set color='$color'
                        WHERE id_usuario = '$id_usuario';
                     end$$
                     ";

@@ -175,25 +175,6 @@ $(function () {
         $(elemento).width(260);
     }
 
-    /**
-     * Validación personalizada de los campos de un jqGrid
-     * @param {type} valor el dato contenido en un campo
-     * @param {type} columna nombre con que está etiquetada la columna
-     * @returns {Array} un array indicando si la validación fue exitosa o no
-     */
-    function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'id_externo') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar identificador usuario externo"];
-            }
-        }
-        if (columna == 'id_usuario') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar identificador del usuario"];
-            }
-        }
-        return [true, ""];
-    }
 
 });

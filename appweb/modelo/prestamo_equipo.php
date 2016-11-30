@@ -5,7 +5,7 @@ class prestamo_equipo {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO prestamo_equipo values('$codigo_prestamo','$fecha_inicio','$fecha_fin','$id_usuario','$equipo_para_prestamo')";
+        $sql = "INSERT INTO prestamo_equipo (fecha_inicio,fecha_fin,id_usuario,equipo_para_prestamo) values('$fecha_inicio','$fecha_fin','$id_usuario','$equipo_para_prestamo')";
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -15,9 +15,9 @@ class prestamo_equipo {
         extract($param);
  
         $sql = "UPDATE prestamo_equipo
-                       SET codigo_prestamo = '$codigo_prestamo', fecha_inicio = '$fecha_inicio',fecha_fin='$fecha_fin',
+                       SET fecha_inicio = '$fecha_inicio',fecha_fin='$fecha_fin',
 					   id_usuario='$id_usuario', equipo_para_prestamo='$equipo_para_prestamo'
-                       WHERE codigo_prestamo = '$codigo_prestamo';";
+                       WHERE codigo_prestamo = '$id';";
        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -55,7 +55,7 @@ class prestamo_equipo {
                 $respuesta['rows'][] = [
                     'id' => $fila['codigo_prestamo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['codigo_prestamo'],
+                       // $fila['codigo_prestamo'],
 					    $fila['fecha_inicio'],
                         $fila['fecha_fin'],
                         $fila['id_usuario'],

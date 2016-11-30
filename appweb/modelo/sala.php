@@ -16,8 +16,9 @@ class sala {
  
         $sql = "UPDATE sala
                        SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',
-					   nombre_bloque='$nombre_bloque'
-                       WHERE nombre_sala = '$nombre_sala';";
+                       nombre_bloque='$nombre_bloque',color='$color'					   
+                       WHERE nombre_sala = '$id';";
+>>>>>>> pr/31
        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();

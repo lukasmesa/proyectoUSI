@@ -52,8 +52,15 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Id Equipo para Préstamo', name: 'id_equipo_para_prestamo', index: 'id_equipo_para_prestamo', width: 100, sortable: true,editable: true, editrules: {required: true, number: false, minValue: 1},editoptions: {dataInit: asignarAncho}
-        },
+        /*{'label': 'Id Equipo para Préstamo', name: 'id_equipo_para_prestamo', index: 'id_equipo_para_prestamo', width: 100, sortable: true,editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                defaultValue:function()
+                {
+                    return jQuery("#equipos_para_prestamos-grid").jqGrid('getGridParam', 'records') +1;
+                }
+                
+            }
+        },*/
     	{'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable:true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},editoptions: {dataInit: asignarAncho}
         },
 		{'label': 'Descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}

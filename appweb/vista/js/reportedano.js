@@ -13,9 +13,15 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'id_reporte', name: 'id_reporte', index: 'id_reporte', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
+       /* {'label': 'id_reporte', name: 'id_reporte', index: 'id_reporte', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                dataInit: asignarAncho,
+                defaultValue:function()
+                {
+                    return jQuery("#reporte_daño-grid").jqGrid('getGridParam', 'records') +1;
+                }
+            }
+        },*/
         {'label': 'descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
