@@ -169,7 +169,7 @@ public class Monitorias extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         Monitores Monitores = result.get(position);
-                        Intent intent = new Intent(Monitorias.this, detalles.class);
+                        Intent intent = new Intent(Monitorias.this, Detalles.class);
                         intent.putExtra("mostrar_detalles", new Gson().toJson(Monitores));
                         startActivity(intent);
                         //Toast.makeText(getApplicationContext(), "Click en la imagen", Toast.LENGTH_SHORT).show();

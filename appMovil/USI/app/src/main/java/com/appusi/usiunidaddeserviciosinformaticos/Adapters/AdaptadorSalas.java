@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.appusi.usiunidaddeserviciosinformaticos.Clases.Sala;
 import com.appusi.usiunidaddeserviciosinformaticos.Clases.SalaInfo;
 import com.appusi.usiunidaddeserviciosinformaticos.R;
 
@@ -18,13 +19,18 @@ import java.util.ArrayList;
 public class AdaptadorSalas
         extends RecyclerView.Adapter<AdaptadorSalas.SalasViewHolder> {
 
-    private ArrayList<SalaInfo> informacionSalas;//ARREGLO CON LOS DATOS -> DE TIPO TITULAR PARA QUE TENGA UN TITULO Y SUBTITULO;
+    private ArrayList<Sala> informacionSalas;//ARREGLO CON LOS DATOS -> DE TIPO TITULAR PARA QUE TENGA UN TITULO Y SUBTITULO;
+    private int layout;
+    private OnItemListener itemListener;
+
 
     //...
 
     //CONSTRUCTOR QUE RECIBE LOS DATOS
-    public AdaptadorSalas(ArrayList<SalaInfo> informacionSalas) {
+    public AdaptadorSalas(ArrayList<Sala> informacionSalas, int layout, OnItemListener onItemListener) {
         this.informacionSalas = informacionSalas;
+        this.layout = layout;
+        this.itemListener = onItemListener;
     }
 
     @Override
@@ -40,9 +46,8 @@ public class AdaptadorSalas
 
     @Override
     public void onBindViewHolder(SalasViewHolder salasViewHolder, int pos) {
-        SalaInfo item = informacionSalas.get(pos);
+        salasViewHolder.bindSalaInfo(informacionSalas.get(pos), this.itemListener);
 
-        salasViewHolder.bindSalaInfo(item);
     }
 
     @Override
@@ -55,6 +60,7 @@ public class AdaptadorSalas
 
         private TextView txtTitulo;
         private TextView txtSubtitulo;
+        private TextView txtBloque;
         //private TextView txtHoraSala;
 
         public SalasViewHolder(View itemView) {
@@ -62,15 +68,30 @@ public class AdaptadorSalas
 
             txtTitulo = (TextView)itemView.findViewById(R.id.LblTitulo);
             txtSubtitulo = (TextView)itemView.findViewById(R.id.LblSubTitulo);
+            txtBloque = (TextView)itemView.findViewById(R.id.LblBloque);
             //txtHoraSala = (TextView) itemView.findViewById(R.id.LblHoraSala);
         }
 
-        public void bindSalaInfo(SalaInfo t) {
-            txtTitulo.setText(t.getTitulo());
-            txtSubtitulo.setText(t.getSubtitulo());
+        public void bindSalaInfo(final Sala t, final OnItemListener listener) {
+            txtTitulo.setText(t.getNombre());
+            txtSubtitulo.setText(t.getDescripcionPrestamo());
+            txtBloque.setText(t.getNombreBloque());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnItemClick(t, getAdapterPosition());
+                }
+            });
+
             //txtHoraSala.setText(t.getHorasala());
         }
     }
+
+    public interface OnItemListener{
+        public void OnItemClick(Sala salita, int position);
+    }
+
 
     //...
 }
