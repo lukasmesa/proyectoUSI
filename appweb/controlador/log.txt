@@ -1,354 +1,4 @@
-﻿[30-Nov-2016 21:51:52 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:53:29 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:53:37 UTC] Array
-(
-    [clase] => monitor
-    [id_usuario] => 999
-    [tipo_doc] => codigo
-    [nombre] => leonel
-    [apellido] => alvarez
-    [correo_login] => leomechas@gmail.com
-    [contrasena] => 45657112
-    [color] => #000000
-    [oper] => edit
-    [id] => 184
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 21:53:39 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:53:49 UTC] Array
-(
-    [clase] => monitor
-    [id_usuario] => 999
-    [tipo_doc] => codigo
-    [nombre] => leonel ll
-    [apellido] => alvarez
-    [correo_login] => leomechas@gmail.com
-    [contrasena] => 45657112
-    [color] => #400040
-    [oper] => edit
-    [id] => 184
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 21:53:51 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:54:07 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:54:28 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:55:01 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
-                                                                     ^
-)
-
-[30-Nov-2016 21:55:13 UTC] Array
-(
-    [clase] => monitor
-    [id_usuario] => 888
-    [tipo_doc] => codigo
-    [nombre] => leonel
-    [apellido] => alvarez
-    [correo_login] => leomechas@gmail.com
-    [contrasena] => 45657112
-    [color] => #000000
-    [oper] => edit
-    [id] => 999
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 21:55:15 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
-                                                                     ^
-)
-
-[30-Nov-2016 21:55:52 UTC] Array
-(
-    [clase] => monitor
-    [id_usuario] => 777
-    [tipo_doc] => codigo
-    [nombre] => leonel
-    [apellido] => alvarez
-    [correo_login] => leomechas@gmail.com
-    [contrasena] => 45657112
-    [color] => #000000
-    [oper] => edit
-    [id] => 888
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 21:55:54 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
-                                                                     ^
-)
-
-[30-Nov-2016 21:56:19 UTC] Array
-(
-    [clase] => monitor
-    [id_usuario] => 777
-    [tipo_doc] => codigo
-    [nombre] => leonel d
-    [apellido] => alvarez
-    [correo_login] => leomechas@gmail.com
-    [contrasena] => 45657112
-    [color] => #ff0000
-    [oper] => edit
-    [id] => 777
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 21:56:21 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
-                                                                     ^
-)
-
-[30-Nov-2016 21:59:31 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:59:41 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 21:59:48 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:00:03 UTC] Array
-(
-    [clase] => externo
-    [oper] => del
-    [id] => 323
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 22:00:05 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:00:09 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:01:08 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:01:34 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:01:51 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:02:29 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:02:44 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:03:14 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:03:27 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:03:35 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:03:42 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:03:56 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:04:15 UTC] ¡Pilas! Array
+﻿[01-Dec-2016 02:26:55 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -357,182 +7,51 @@ LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
                                                                      ^
 )
 
-[30-Nov-2016 22:05:22 UTC] ¡Pilas! Array
+[01-Dec-2016 02:26:59 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:09:28 UTC] ¡Pilas! Array
+[01-Dec-2016 02:27:13 UTC] ¡Pilas! Array
 (
-    [0] => 00000
+    [0] => 22P02
     [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:09:43 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:10:17 UTC] ¡Pilas! Array
-(
-    [0] => 42601
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "sirve"
-LINE 1: INSERT INTO reporte_danos values(nada sirve','199','pc9')
+    [2] => ERROR:  invalid input syntax for integer: "null"
+LINE 3:                        WHERE id_grupo='null'
                                               ^
+QUERY:  UPDATE grupo
+                       SET numero_grupo = '11', id_docente = '181',color = '#800080',cod_asignatura='GAW111'
+                       WHERE id_grupo='null'
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at SQL statement
 )
 
-[30-Nov-2016 22:10:54 UTC] ¡Pilas! Array
+[01-Dec-2016 02:29:00 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
                                                                      ^
 )
 
-[30-Nov-2016 22:11:10 UTC] ¡Pilas! Array
-(
-    [0] => 22P02
-    [1] => 7
-    [2] => ERROR:  invalid input syntax for integer: "nada"
-LINE 1: INSERT INTO reporte_danos values('nada','777','pc9')
-                                         ^
-)
-
-[30-Nov-2016 22:13:25 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:13:38 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:15:29 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:15:34 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:15:51 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:16:18 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:16:24 UTC] ¡Pilas! Array
+[01-Dec-2016 02:29:08 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:16:58 UTC] ¡Pilas! Array
+[01-Dec-2016 02:29:15 UTC] Array
 (
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:17:31 UTC] ¡Pilas! Array
-(
-    [0] => 22P02
-    [1] => 7
-    [2] => ERROR:  invalid input syntax for integer: ""
-LINE 4:                        WHERE codigo_prestamo = '';
-                                                       ^
-)
-
-[30-Nov-2016 22:17:44 UTC] ¡Pilas! Array
-(
-    [0] => 22P02
-    [1] => 7
-    [2] => ERROR:  invalid input syntax for integer: ""
-LINE 4:                        WHERE codigo_prestamo = '';
-                                                       ^
-)
-
-[30-Nov-2016 22:18:24 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:18:27 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:18:36 UTC] ¡Pilas! Array
-(
-    [0] => 22P02
-    [1] => 7
-    [2] => ERROR:  invalid input syntax for integer: ""
-LINE 4:                        WHERE codigo_prestamo = '';
-                                                       ^
-)
-
-[30-Nov-2016 22:19:01 UTC] Array
-(
-    [clase] => prestamo_equipo
+    [clase] => grupo
     [oper] => del
-    [id] => 24
+    [id] => null
     [conexion] => UtilConexion Object
         (
             [pdo:UtilConexion:private] => PDO Object
@@ -543,99 +62,109 @@ LINE 4:                        WHERE codigo_prestamo = '';
 
 )
 
-[30-Nov-2016 22:19:03 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:19:27 UTC] ¡Pilas! Array
+[01-Dec-2016 02:29:15 UTC] ¡Pilas! Array
 (
     [0] => 22P02
     [1] => 7
-    [2] => ERROR:  invalid input syntax for integer: ""
-LINE 4:                        WHERE codigo_prestamo = '';
-                                                       ^
+    [2] => ERROR:  invalid input syntax for integer: "null"
+LINE 1: DELETE FROM grupo WHERE id_grupo = 'null'
+                                           ^
+QUERY:  DELETE FROM grupo WHERE id_grupo = 'null'
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at SQL statement
 )
 
-[30-Nov-2016 22:20:30 UTC] ¡Pilas! Array
+[01-Dec-2016 02:32:36 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
                                                                      ^
 )
 
-[30-Nov-2016 22:20:34 UTC] ¡Pilas! Array
+[01-Dec-2016 02:33:58 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "20"
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  20
+                                                                     ^
+)
+
+[01-Dec-2016 02:34:20 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:20:43 UTC] ¡Pilas! Array
+[01-Dec-2016 02:34:26 UTC] Array
 (
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
-                                                                     ^
+    [clase] => grupo
+    [oper] => del
+    [id] => null
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
 )
 
-[30-Nov-2016 22:21:03 UTC] ¡Pilas! Array
+[01-Dec-2016 02:34:27 UTC] ¡Pilas! Array
 (
-    [0] => 00000
+    [0] => 22P02
     [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
-                                                                     ^
+    [2] => ERROR:  invalid input syntax for integer: "null"
+LINE 1: DELETE FROM grupo WHERE id_grupo = 'null'
+                                           ^
+QUERY:  DELETE FROM grupo WHERE id_grupo = 'null'
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at SQL statement
 )
 
-[30-Nov-2016 22:21:25 UTC] ¡Pilas! Array
+[01-Dec-2016 02:35:45 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "."
+LINE 1: select g.numero_grupo, g.id_docente,g.id_grupo a.cod_asignat...
+                                                        ^
+)
+
+[01-Dec-2016 02:35:49 UTC] ¡Pilas! Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "."
+LINE 1: select g.numero_grupo, g.id_docente,g.id_grupo a.cod_asignat...
+                                                        ^
+)
+
+[01-Dec-2016 02:36:59 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
                                                                      ^
 )
 
-[30-Nov-2016 22:21:57 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:24:37 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:24:56 UTC] ¡Pilas! Array
+[01-Dec-2016 02:37:03 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:25:08 UTC] Array
+[01-Dec-2016 02:37:17 UTC] Array
 (
-    [clase] => equipos_para_prestamos
+    [clase] => grupo
     [oper] => del
     [id] => 22
     [conexion] => UtilConexion Object
@@ -648,70 +177,91 @@ LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
 
 )
 
-[30-Nov-2016 22:25:10 UTC] ¡Pilas! Array
+[01-Dec-2016 02:37:18 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:26:04 UTC] ¡Pilas! Array
+[01-Dec-2016 02:37:36 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:26:28 UTC] ¡Pilas! Array
+[01-Dec-2016 02:37:44 UTC] Array
+(
+    [clase] => grupo
+    [oper] => del
+    [id] => 27
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:37:45 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
+LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  30
                                                                      ^
 )
 
-[30-Nov-2016 22:27:07 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:27:35 UTC] ¡Pilas! Array
+[01-Dec-2016 02:37:54 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  10
-                                                                     ^
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
+                                                                 ^
 )
 
-[30-Nov-2016 22:27:38 UTC] ¡Pilas! Array
+[01-Dec-2016 02:37:58 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...no e inner join usuario u on e.id_usuario = u.id_usuario  10
-                                                                     ^
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
+                                                                 ^
 )
 
-[30-Nov-2016 22:27:44 UTC] ¡Pilas! Array
+[01-Dec-2016 02:38:05 UTC] Array
+(
+    [clase] => asignatura
+    [oper] => del
+    [id] => GGG000
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:38:07 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...join asignatura a on a.cod_asignatura = g.cod_asignatura  10
-                                                                     ^
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
+                                                                 ^
 )
 
-[30-Nov-2016 22:27:52 UTC] ¡Pilas! Array
+[01-Dec-2016 02:38:20 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -720,16 +270,7 @@ LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
                                                                      ^
 )
 
-[30-Nov-2016 22:29:24 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:29:37 UTC] ¡Pilas! Array
+[01-Dec-2016 02:38:24 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -738,7 +279,7 @@ LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
                                                                      ^
 )
 
-[30-Nov-2016 22:29:55 UTC] ¡Pilas! Array
+[01-Dec-2016 02:38:41 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -747,7 +288,7 @@ LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
                                                                      ^
 )
 
-[30-Nov-2016 22:30:50 UTC] ¡Pilas! Array
+[01-Dec-2016 02:40:42 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -756,7 +297,31 @@ LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
                                                                      ^
 )
 
-[30-Nov-2016 22:31:01 UTC] ¡Pilas! Array
+[01-Dec-2016 02:40:59 UTC] Array
+(
+    [clase] => horas_disponibles_monitor
+    [oper] => del
+    [id] => 39
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:41:01 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[01-Dec-2016 02:41:04 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -765,7 +330,90 @@ LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  10
                                                                      ^
 )
 
-[30-Nov-2016 22:31:35 UTC] ¡Pilas! Array
+[01-Dec-2016 02:41:09 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
+                                                                     ^
+)
+
+[01-Dec-2016 02:42:35 UTC] ¡Pilas! Array
+(
+    [0] => 23505
+    [1] => 7
+    [2] => ERROR:  duplicate key value violates unique constraint "pk_usuario"
+DETAIL:  Key (id_usuario)=(666) already exists.
+CONTEXT:  SQL statement "INSERT INTO usuario values('666','codigo','arturo ','cova','acova@gmail.com','1234567')"
+PL/pgSQL function inline_code_block line 3 at SQL statement
+)
+
+[01-Dec-2016 02:42:57 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
+                                                                     ^
+)
+
+[01-Dec-2016 02:43:16 UTC] Array
+(
+    [clase] => monitor
+    [id_usuario] => 667
+    [tipo_doc] => codigo
+    [nombre] => arturo alberto
+    [apellido] => cova a
+    [correo_login] => acovaa@gmail.com
+    [contrasena] => 12345670
+    [color] => #ff80c0
+    [oper] => edit
+    [id] => 666
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:43:18 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
+                                                                     ^
+)
+
+[01-Dec-2016 02:43:33 UTC] Array
+(
+    [clase] => monitor
+    [oper] => del
+    [id] => 667
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:43:34 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...or e inner join usuario u on e.id_usuario = u.id_usuario  30
+                                                                     ^
+)
+
+[01-Dec-2016 02:43:40 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -774,7 +422,58 @@ LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
                                                                      ^
 )
 
-[30-Nov-2016 22:31:40 UTC] ¡Pilas! Array
+[01-Dec-2016 02:44:10 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 10
+                                                                     ^
+)
+
+[01-Dec-2016 02:44:30 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
+                                                                     ^
+)
+
+[01-Dec-2016 02:44:50 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
+                                                                     ^
+)
+
+[01-Dec-2016 02:45:03 UTC] Array
+(
+    [clase] => prestamo_equipo
+    [oper] => del
+    [id] => 26
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:45:04 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ..._fin,id_usuario,equipo_para_prestamo from prestamo_equipo 30
+                                                                     ^
+)
+
+[01-Dec-2016 02:45:16 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -783,7 +482,49 @@ LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
                                                                      ^
 )
 
-[30-Nov-2016 22:31:44 UTC] ¡Pilas! Array
+[01-Dec-2016 02:47:14 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
+                                                                     ^
+)
+
+[01-Dec-2016 02:47:30 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
+                                                                     ^
+)
+
+[01-Dec-2016 02:47:39 UTC] Array
+(
+    [clase] => reportedano
+    [oper] => del
+    [id] => 6
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:47:41 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...descripcion,id_usuario,id_equipo_sala FROM reporte_danos  10
+                                                                     ^
+)
+
+[01-Dec-2016 02:47:47 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -792,7 +533,58 @@ LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
                                                                      ^
 )
 
-[30-Nov-2016 22:31:49 UTC] ¡Pilas! Array
+[01-Dec-2016 02:47:50 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[01-Dec-2016 02:49:32 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[01-Dec-2016 02:49:53 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[01-Dec-2016 02:49:59 UTC] Array
+(
+    [clase] => sala
+    [oper] => del
+    [id] => sala ño
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[01-Dec-2016 02:50:00 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[01-Dec-2016 02:50:05 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
@@ -801,47 +593,29 @@ LINE 1: SELECT nombre_sede,direccion from sede  10
                                                 ^
 )
 
-[30-Nov-2016 22:32:43 UTC] ¡Pilas! Array
+[01-Dec-2016 02:50:47 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
+LINE 1: SELECT nombre_sede,direccion from sede  10
+                                                ^
 )
 
-[30-Nov-2016 22:32:52 UTC] ¡Pilas! Array
+[01-Dec-2016 02:51:01 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
+LINE 1: SELECT nombre_sede,direccion from sede  10
+                                                ^
 )
 
-[30-Nov-2016 22:33:38 UTC] ¡Pilas! Array
+[01-Dec-2016 02:51:09 UTC] Array
 (
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:34:07 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:34:29 UTC] Array
-(
-    [clase] => administrativo
+    [clase] => sede
     [oper] => del
-    [id] => 888
+    [id] => Ciencias 
     [conexion] => UtilConexion Object
         (
             [pdo:UtilConexion:private] => PDO Object
@@ -852,348 +626,12 @@ LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
 
 )
 
-[30-Nov-2016 22:34:31 UTC] ¡Pilas! Array
+[01-Dec-2016 02:51:10 UTC] ¡Pilas! Array
 (
     [0] => 00000
     [1] => 7
     [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...ivo e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:34:34 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
-                                                                 ^
-)
-
-[30-Nov-2016 22:35:17 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  10
-                                                                 ^
-)
-
-[30-Nov-2016 22:35:21 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
-                                                                 ^
-)
-
-[30-Nov-2016 22:35:32 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
-                                                                 ^
-)
-
-[30-Nov-2016 22:35:39 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
-                                                                 ^
-)
-
-[30-Nov-2016 22:35:50 UTC] Array
-(
-    [clase] => asignatura
-    [oper] => del
-    [id] => GGG001
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 22:35:52 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
-                                                                 ^
-)
-
-[30-Nov-2016 22:35:57 UTC] Array
-(
-    [clase] => asignatura
-    [oper] => del
-    [id] => GAW689
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 22:35:59 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura  30
-                                                                 ^
-)
-
-[30-Nov-2016 22:36:03 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:03 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:07 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:16 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:22 UTC] Array
-(
-    [clase] => bloque
-    [oper] => del
-    [id] => Bloque
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 22:37:23 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...que b inner join sede s on b.nombre_sede = s.nombre_sede  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:26 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:32 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:37:59 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:39:32 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:39:38 UTC] Array
-(
-    [clase] => docente
-    [oper] => del
-    [id] => 6667
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 22:39:40 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...nte e inner join usuario u on e.id_usuario = u.id_usuario 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:42:12 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:42:33 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
-                                                                     ^
-)
-
-[30-Nov-2016 22:43:04 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:43:14 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:43:31 UTC] Array
-(
-    [clase] => equipos_para_prestamos
-    [oper] => del
-    [id] => 47
-    [conexion] => UtilConexion Object
-        (
-            [pdo:UtilConexion:private] => PDO Object
-                (
-                )
-
-        )
-
-)
-
-[30-Nov-2016 22:43:32 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 30
-                                                                     ^
-)
-
-[30-Nov-2016 22:43:46 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "10"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  10
-                                                                     ^
-)
-
-[30-Nov-2016 22:43:50 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:44:21 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:44:31 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:45:08 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:45:26 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  30
-                                                                     ^
-)
-
-[30-Nov-2016 22:45:35 UTC] ¡Pilas! Array
-(
-    [0] => 00000
-    [1] => 7
-    [2] => ERROR:  syntax error at or near "30"
-LINE 1: ...tware_equipo,partes_equipo,nombre_sala from equipos_sala  30
-                                                                     ^
+LINE 1: SELECT nombre_sede,direccion from sede  10
+                                                ^
 )
 
