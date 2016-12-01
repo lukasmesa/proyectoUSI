@@ -635,3 +635,524 @@ LINE 1: SELECT nombre_sede,direccion from sede  10
                                                 ^
 )
 
+[01-Dec-2016 10:51:34 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[01-Dec-2016 15:51:35 UTC] Array
+(
+    [0] => Array
+        (
+            [id_reserva] => 1
+            [fecha_reserva] => 2016-09-02 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-10 12:00:00
+            [fecha_fin_prestamo] => 2016-09-10 14:00:00
+            [tipo] => clase
+            [descripcion] => clase de estructuras de datos
+            [id_usuario] => 181
+            [nombre_sala] => 3
+            [id] => 1
+            [title] => clase de estructuras de datos En la 3
+            [start] => 2016-09-10T12:00:00+00:00
+            [end] => 2016-09-10T14:00:00+00:00
+        )
+
+    [1] => Array
+        (
+            [id_reserva] => 2
+            [fecha_reserva] => 2016-09-12 12:00:00
+            [estado_reserva] => disponible
+            [fecha_ini_prestamo] => 2016-09-14 15:00:00
+            [fecha_fin_prestamo] => 2016-09-14 17:00:00
+            [tipo] => clase
+            [descripcion] => clase de redes
+            [id_usuario] => 191
+            [nombre_sala] => 3
+            [id] => 2
+            [title] => clase de redes En la 3
+            [start] => 2016-09-14T15:00:00+00:00
+            [end] => 2016-09-14T17:00:00+00:00
+        )
+
+    [2] => Array
+        (
+            [id_reserva] => 12
+            [fecha_reserva] => 2016-11-26 16:33:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-09-18 17:00:00
+            [fecha_fin_prestamo] => 2016-09-18 19:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría redes
+            [id_usuario] => 170
+            [nombre_sala] => 3
+            [id] => 12
+            [title] => Monitoría redes En la 3
+            [start] => 2016-09-18T17:00:00+00:00
+            [end] => 2016-09-18T19:00:00+00:00
+        )
+
+    [3] => Array
+        (
+            [id_reserva] => 13
+            [fecha_reserva] => 2016-11-26 16:33:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-09-25 17:00:00
+            [fecha_fin_prestamo] => 2016-09-25 19:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría redes
+            [id_usuario] => 170
+            [nombre_sala] => 3
+            [id] => 13
+            [title] => Monitoría redes En la 3
+            [start] => 2016-09-25T17:00:00+00:00
+            [end] => 2016-09-25T19:00:00+00:00
+        )
+
+    [4] => Array
+        (
+            [id_reserva] => 15
+            [fecha_reserva] => 2016-11-27 15:35:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-27 16:00:00
+            [fecha_fin_prestamo] => 2016-11-27 18:00:00
+            [tipo] => Exposicion
+            [descripcion] => Redes
+            [id_usuario] => 177
+            [nombre_sala] => 3
+            [id] => 15
+            [title] => Redes En la 3
+            [start] => 2016-11-27T16:00:00+00:00
+            [end] => 2016-11-27T18:00:00+00:00
+        )
+
+    [5] => Array
+        (
+            [id_reserva] => 17
+            [fecha_reserva] => 2016-11-27 16:35:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-27 14:00:00
+            [fecha_fin_prestamo] => 2016-11-27 16:00:00
+            [tipo] => Clase
+            [descripcion] => Clase de redes
+            [id_usuario] => 176
+            [nombre_sala] => 3
+            [id] => 17
+            [title] => Clase de redes En la 3
+            [start] => 2016-11-27T14:00:00+00:00
+            [end] => 2016-11-27T16:00:00+00:00
+        )
+
+    [6] => Array
+        (
+            [id_reserva] => 19
+            [fecha_reserva] => 2016-11-30 16:39:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-27 13:00:00
+            [fecha_fin_prestamo] => 2016-11-27 21:00:00
+            [tipo] => Clase
+            [descripcion] => Clase de autómatas
+            [id_usuario] => 170
+            [nombre_sala] => 3
+            [id] => 19
+            [title] => Clase de autómatas En la 3
+            [start] => 2016-11-27T13:00:00+00:00
+            [end] => 2016-11-27T21:00:00+00:00
+        )
+
+    [7] => Array
+        (
+            [id_reserva] => 20
+            [fecha_reserva] => 2016-11-30 16:47:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-30 17:00:00
+            [fecha_fin_prestamo] => 2016-11-30 19:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría prog I
+            [id_usuario] => 172
+            [nombre_sala] => 3
+            [id] => 20
+            [title] => Monitoría prog I En la 3
+            [start] => 2016-11-30T17:00:00+00:00
+            [end] => 2016-11-30T19:00:00+00:00
+        )
+
+    [8] => Array
+        (
+            [id_reserva] => 21
+            [fecha_reserva] => 2016-11-30 16:48:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-30 20:00:00
+            [fecha_fin_prestamo] => 2016-11-30 22:00:00
+            [tipo] => Exposicion
+            [descripcion] => Exposición Biología
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 21
+            [title] => Exposición Biología En la 3
+            [start] => 2016-11-30T20:00:00+00:00
+            [end] => 2016-11-30T22:00:00+00:00
+        )
+
+    [9] => Array
+        (
+            [id_reserva] => 22
+            [fecha_reserva] => 2016-11-30 16:54:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-29 13:00:00
+            [fecha_fin_prestamo] => 2016-11-29 20:00:00
+            [tipo] => Clase
+            [descripcion] => Logica
+            [id_usuario] => 180
+            [nombre_sala] => 3
+            [id] => 22
+            [title] => Logica En la 3
+            [start] => 2016-11-29T13:00:00+00:00
+            [end] => 2016-11-29T20:00:00+00:00
+        )
+
+    [10] => Array
+        (
+            [id_reserva] => 23
+            [fecha_reserva] => 2016-11-30 16:57:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-07 17:00:00
+            [fecha_fin_prestamo] => 2016-11-07 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 177
+            [nombre_sala] => 3
+            [id] => 23
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-07T17:00:00+00:00
+            [end] => 2016-11-07T20:00:00+00:00
+        )
+
+    [11] => Array
+        (
+            [id_reserva] => 24
+            [fecha_reserva] => 2016-11-30 16:57:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-14 17:00:00
+            [fecha_fin_prestamo] => 2016-11-14 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 177
+            [nombre_sala] => 3
+            [id] => 24
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-14T17:00:00+00:00
+            [end] => 2016-11-14T20:00:00+00:00
+        )
+
+    [12] => Array
+        (
+            [id_reserva] => 25
+            [fecha_reserva] => 2016-11-30 16:57:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-21 17:00:00
+            [fecha_fin_prestamo] => 2016-11-21 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 177
+            [nombre_sala] => 3
+            [id] => 25
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-21T17:00:00+00:00
+            [end] => 2016-11-21T20:00:00+00:00
+        )
+
+    [13] => Array
+        (
+            [id_reserva] => 26
+            [fecha_reserva] => 2016-11-30 16:57:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-28 17:00:00
+            [fecha_fin_prestamo] => 2016-11-28 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 177
+            [nombre_sala] => 3
+            [id] => 26
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-28T17:00:00+00:00
+            [end] => 2016-11-28T20:00:00+00:00
+        )
+
+    [14] => Array
+        (
+            [id_reserva] => 27
+            [fecha_reserva] => 2016-11-30 16:57:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-12-05 17:00:00
+            [fecha_fin_prestamo] => 2016-12-05 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 177
+            [nombre_sala] => 3
+            [id] => 27
+            [title] => Monitoría software En la 3
+            [start] => 2016-12-05T17:00:00+00:00
+            [end] => 2016-12-05T20:00:00+00:00
+        )
+
+    [15] => Array
+        (
+            [id_reserva] => 28
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-02 17:00:00
+            [fecha_fin_prestamo] => 2016-11-02 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 28
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-02T17:00:00+00:00
+            [end] => 2016-11-02T20:00:00+00:00
+        )
+
+    [16] => Array
+        (
+            [id_reserva] => 29
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-09 17:00:00
+            [fecha_fin_prestamo] => 2016-11-09 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 29
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-09T17:00:00+00:00
+            [end] => 2016-11-09T20:00:00+00:00
+        )
+
+    [17] => Array
+        (
+            [id_reserva] => 30
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-16 17:00:00
+            [fecha_fin_prestamo] => 2016-11-16 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 30
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-16T17:00:00+00:00
+            [end] => 2016-11-16T20:00:00+00:00
+        )
+
+    [18] => Array
+        (
+            [id_reserva] => 31
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-23 17:00:00
+            [fecha_fin_prestamo] => 2016-11-23 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 31
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-23T17:00:00+00:00
+            [end] => 2016-11-23T20:00:00+00:00
+        )
+
+    [19] => Array
+        (
+            [id_reserva] => 32
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-30 17:00:00
+            [fecha_fin_prestamo] => 2016-11-30 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 32
+            [title] => Monitoría software En la 3
+            [start] => 2016-11-30T17:00:00+00:00
+            [end] => 2016-11-30T20:00:00+00:00
+        )
+
+    [20] => Array
+        (
+            [id_reserva] => 33
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-12-07 17:00:00
+            [fecha_fin_prestamo] => 2016-12-07 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 33
+            [title] => Monitoría software En la 3
+            [start] => 2016-12-07T17:00:00+00:00
+            [end] => 2016-12-07T20:00:00+00:00
+        )
+
+    [21] => Array
+        (
+            [id_reserva] => 35
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-12-21 17:00:00
+            [fecha_fin_prestamo] => 2016-12-21 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 35
+            [title] => Monitoría software En la 3
+            [start] => 2016-12-21T17:00:00+00:00
+            [end] => 2016-12-21T20:00:00+00:00
+        )
+
+    [22] => Array
+        (
+            [id_reserva] => 36
+            [fecha_reserva] => 2016-11-30 16:59:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-12-28 17:00:00
+            [fecha_fin_prestamo] => 2016-12-28 20:00:00
+            [tipo] => Monitoria
+            [descripcion] => Monitoría software
+            [id_usuario] => 174
+            [nombre_sala] => 3
+            [id] => 36
+            [title] => Monitoría software En la 3
+            [start] => 2016-12-28T17:00:00+00:00
+            [end] => 2016-12-28T20:00:00+00:00
+        )
+
+    [23] => Array
+        (
+            [id_reserva] => 14
+            [fecha_reserva] => 2016-11-27 11:24:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-11-26 12:00:00
+            [fecha_fin_prestamo] => 2016-11-26 15:00:00
+            [tipo] => Clase
+            [descripcion] => Clase autómatas
+            [id_usuario] => 150
+            [nombre_sala] => 3
+            [id] => 14
+            [title] => Clase autómatas En la 3
+            [start] => 2016-11-26T12:00:00+00:00
+            [end] => 2016-11-26T15:00:00+00:00
+        )
+
+    [24] => Array
+        (
+            [id_reserva] => 41
+            [fecha_reserva] => 2016-12-01 08:00:00
+            [estado_reserva] => Disponible
+            [fecha_ini_prestamo] => 2016-12-01 08:00:00
+            [fecha_fin_prestamo] => 2016-12-01 10:00:00
+            [tipo] => Clase
+            [descripcion] => Clase de redes
+            [id_usuario] => 171
+            [nombre_sala] => 3
+            [id] => 41
+            [title] => Clase de redes En la 3
+            [start] => 2016-12-01T08:00:00+00:00
+            [end] => 2016-12-01T10:00:00+00:00
+        )
+
+)
+
+[01-Dec-2016 10:54:09 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column e.id_administrativo does not exist
+LINE 1: SELECT e.id_administrativo, e.id_usuario, u.tipo_doc, u.nomb...
+               ^
+)
+
+[01-Dec-2016 10:54:26 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column u.correo_login does not exist
+LINE 1: ...T  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_l...
+                                                             ^
+)
+
+[01-Dec-2016 10:58:10 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column e.id_administrativo does not exist
+LINE 1: SELECT e.id_administrativo, e.id_usuario, u.tipo_doc, u.nomb...
+               ^
+)
+
+[01-Dec-2016 10:58:16 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column e.id_monitor does not exist
+LINE 1: SELECT e.id_monitor, e.id_usuario, u.tipo_doc, u.nombre, u.a...
+               ^
+)
+
+[01-Dec-2016 10:58:29 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[01-Dec-2016 10:58:30 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[01-Dec-2016 10:58:30 America/Bogota] 
+[01-Dec-2016 10:58:50 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[01-Dec-2016 10:58:50 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[01-Dec-2016 10:58:50 America/Bogota] 
+[01-Dec-2016 10:59:21 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[01-Dec-2016 10:59:21 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[01-Dec-2016 10:59:21 America/Bogota] 
+[01-Dec-2016 11:00:12 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[01-Dec-2016 11:00:12 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[01-Dec-2016 11:00:12 America/Bogota] 
+[01-Dec-2016 11:05:43 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[01-Dec-2016 11:05:43 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[01-Dec-2016 11:05:43 America/Bogota] 
