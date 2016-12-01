@@ -5,7 +5,7 @@ class horas_disponibles_monitor {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO horas_disp_monitor values('$id_horario','$dia','$hora_inicio','$hora_fin','$id_monitor')";
+        $sql = "INSERT INTO horas_disp_monitor (dia,hora_inicio,hora_fin,id_monitor) values('$dia','$hora_inicio','$hora_fin','$id_monitor')";
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -15,9 +15,9 @@ class horas_disponibles_monitor {
         extract($param);
  
         $sql = "UPDATE horas_disp_monitor
-                       SET id_horario = '$id_horario', dia = '$dia',hora_inicio='$hora_inicio',
+                       SET  dia = '$dia',hora_inicio='$hora_inicio',
 					   hora_fin='$hora_fin', id_monitor='$id_monitor'
-                       WHERE id_horario = '$id_horario';";
+                       WHERE id_horario = '$id';";
        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -55,7 +55,7 @@ class horas_disponibles_monitor {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_horario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_horario'],
+                     //   $fila['id_horario'],
 					    $fila['dia'],
                         $fila['hora_inicio'],
                         $fila['hora_fin'],
@@ -68,6 +68,6 @@ class horas_disponibles_monitor {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-	
+
 }
 ?>

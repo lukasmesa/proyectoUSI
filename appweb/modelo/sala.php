@@ -15,9 +15,9 @@ class sala {
         extract($param);
  
         $sql = "UPDATE sala
-                       SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',color='$color'
-					   nombre_bloque='$nombre_bloque'
-                       WHERE nombre_sala = '$nombre_sala';";
+                       SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',
+                       nombre_bloque='$nombre_bloque',color='$color'					   
+                       WHERE nombre_sala = '$id';";
        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -41,16 +41,6 @@ class sala {
         foreach ($conexion->getPDO()->query("SELECT nombre_sala FROM sala") as $fila) {
             $descripcion = $fila['nombre_sala'];
             $select .= "<option value='{$fila['nombre_sala']}'>$descripcion</option>";
-        }
-        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
-    }
-	public function getSelectSala($param) {
-        $json = FALSE;
-        extract($param);
-        $select = "";
-        $select .= "<option value='0'>Seleccione una sala</option>";
-        foreach ($conexion->getPDO()->query("SELECT nombre_sala FROM sala ORDER BY sala") as $fila) {
-            $select .= "<option value='{$fila['nombre_sala']}'>{$fila['nombre_sala']}</option>";
         }
         echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
     }
@@ -123,6 +113,6 @@ class sala {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-	
+
 }
 ?>

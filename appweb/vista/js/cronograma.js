@@ -18,60 +18,28 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-
-        {'label': 'Inicio período', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
-            editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {
-                title: 'AAAA-MM-DD HH:ii',
-                dataInit: function (elemento) {
-                    $(elemento).datetimepicker(initDatePicker);
-                    $(elemento).width(260);
-                }
-            }
+        {'label': 'Iniperiodo', name: 'inicio_periodo', index: 'inicio_periodo', width: 100, sortable: true, editable: true,  editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Fin período', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
-            editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {
-                title: 'AAAA-MM-DD HH:ii',
-                dataInit: function (elemento) {
-                    $(elemento).datetimepicker(initDatePicker);
-                    $(elemento).width(260);
-                }
-            }
+        {'label': 'Finperiodo', name: 'fin_periodo', index: 'fin_periodo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Tipo de actividad', name: 'tipo', index: 'tipo', width: 100, sortable: true, editable: true, edittype: "select",
-            editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: { value: { 0: 'Seleccione tipo actividad', Clase: 'Clase', Monitoria: 'Monitoría', Exposicion: 'Exposición'}
-            }
+        {'label': 'Grupo', name: 'grupo', index: 'grupo', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Descripción de actividad', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, edittype: "textarea",
-            editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {
-                dataInit: asignarAncho
-            }
+        {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Usuario', name: 'usuario', index: 'usuario', width: 100, sortable: true, editable: true, edittype: "select",
-            editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=usuario&oper=getSelectUsuario',
-                dataInit: asignarAncho
-            }
+        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select",
-            editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=sala&oper=getSelectSala',
-                dataInit: asignarAncho
-            }
+        {'label': 'Hora', name: 'hora', index: 'hora', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
-            editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {value: { 0: 'Seleccione un dia', Monday: 'Lunes', Tuesday: 'Martes', Wednesday: 'Miércoles',
-                Thursday: 'Jueves', Friday: 'Viernes', Saturday: 'Sábado', Sunday: 'Domingo'}
-            }
-        },
+        {'label': 'Horas', name: 'horas', index: 'horas', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
+        }
     ];
-
 
     // inicializa el grid
     var grid = jQuery('#cronograma-grid').jqGrid({
@@ -154,29 +122,16 @@ $(function () {
      */
     function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'Usuario') {
+        if (columna == 'Cod_Asignaturas') {
             if (valor === '0') {
-                return [false, "Falta seleccionar un Usuario"];
-
+                return [false, "Falta seleccionar la Asignatura"];
             }
         }
-        if (columna == 'Sala') {
+        if (columna == 'Nom_Asignaturas') {
             if (valor === '0') {
-                return [false, "Falta seleccionar una sala"];
+                return [false, "Falta seleccionar la Asignatura"];
             }
         }
-        if (columna == 'Día') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar un día"];
-            }
-            // pueden ser necesarias otras validaciones de la fecha de solicitud. Utilizar moment para dichos casos
-        }
-        if (columna == 'Tipo de actividad') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar un tipo de actividad"];
-            }
-        }
-
         return [true, ""];
     }
 

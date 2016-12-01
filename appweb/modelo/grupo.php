@@ -9,7 +9,7 @@ class grupo {
         $sql = "do $$
                     begin
                         
-                        INSERT INTO grupo values('$numero_grupo','$id_docente' , '$cod_asignatura','$color' );
+                        INSERT INTO grupo (numero_grupo,id_docente,cod_asignatura,color) values('$numero_grupo','$id_docente' , '$cod_asignatura','$color' );
                     end$$
                 ";
         $conexion->getPDO()->exec($sql);
@@ -26,10 +26,8 @@ class grupo {
         $sql = "do $$
                     begin
                        UPDATE grupo
-                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color' 
-                       WHERE codigo_grupo = '$codigo_grupo';
-
-                       
+                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color',cod_asignatura='$cod_asignatura'
+                       WHERE id_grupo='$id';                       
                     end$$
                     ";          
         
@@ -45,7 +43,7 @@ class grupo {
         //DELETE FROM asignatura WHERE id_usuario = '$id';
         $sql = "do $$
                     begin
-                        DELETE FROM grupo WHERE id_usuario = '$id';
+                        DELETE FROM grupo WHERE id_grupo = '$id';
                         
                     end$$
                 ";
@@ -63,7 +61,7 @@ class grupo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "select g.numero_grupo, g.id_docente, a.cod_asignatura , a.nombre_asignatura from grupo g inner join asignatura a on a.cod_asignatura = g.cod_asignatura $where";
+        $sql = "select g.numero_grupo, g.id_docente,g.id_grupo,a.cod_asignatura from grupo g inner join asignatura a on a.cod_asignatura = g.cod_asignatura $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -77,12 +75,11 @@ class grupo {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['numero_grupo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_grupo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['numero_grupo'],
                         $fila['id_docente'],                        
-                        $fila['cod_asignatura'],
-                        $fila['nombre_asignatura']
+                        $fila['cod_asignatura']                       
                         
                     ]
                 ];
