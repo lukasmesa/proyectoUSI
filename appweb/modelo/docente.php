@@ -7,8 +7,8 @@ class docente {
         
         $sql = "do $$
                     begin
-                        INSERT INTO docente values('$id_docente','$id_usuario');
                         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                        INSERT INTO docente values('$id_usuario','$color');                        
                     end$$
                 ";
         
@@ -28,6 +28,8 @@ class docente {
                        UPDATE docente
                        set color='$color'
                        WHERE id_usuario = '$id_usuario';
+
+                       
                     end$$
                     ";
         
@@ -59,7 +61,7 @@ class docente {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_docente, e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM docente e inner join usuario u on e.id_usuario = u.id_usuario";
+        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM docente e inner join usuario u on e.id_usuario = u.id_usuario";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -74,13 +76,48 @@ class docente {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_docente'],
+                        
                         $fila['id_usuario'],
                         $fila['tipo_doc'],
                         $fila['nombre'],
                         $fila['apellido'],
                         $fila['correo_login'],
                         $fila['contrasena']
+                    ]
+                ];
+            }
+        }
+        $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
+        echo json_encode($respuesta);
+    }
+
+
+    //funcion requerida para desplega los IDs de docenter disponibles a la hora de ingresar en una tabla que referencie este campo
+    function selectIdsDocente($param)
+    {
+        extract($param);
+        $where = $conexion->getWhere($param);
+        // conserve siempre esta sintaxis para enviar filas al grid:
+        $sql = "select d.id_usuario from docente d inner join usuario u on u.id_usuario = d.id_usuario
+                union
+                select a.id_usuario from administrativo a inner join usuario u2 on a.id_usuario = u2.id_usuario; ";
+        // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
+        $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
+
+        // agregar al objeto que se envía las filas de la página requerida
+        if (($rs = $conexion->getPDO()->query($sql))) {
+            $cantidad = 999; // se pueden enviar al grid valores calculados o constantes
+            $tiros_x_unidad = 2;
+                    
+            while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
+                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                
+                $respuesta['rows'][] = [
+                    'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'cell' => [ // los campos que se muestra en las columnas del grid
+                        
+                        $fila['id_usuario'],
+                        
                     ]
                 ];
             }

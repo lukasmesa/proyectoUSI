@@ -5,11 +5,11 @@ class grupo {
     function add($param) {
         extract($param);
 
-        
+        //INSERT INTO asignatura values('$cod_asignatura','$nombre_asignatura');
         $sql = "do $$
                     begin
-                        INSERT INTO asignatura values('$cod_asignatura','$nombre_asignatura');
-                        INSERT INTO grupo values('$numero_grupo','$id_docente' , '$cod_asignatura' );
+                        
+                        INSERT INTO grupo (numero_grupo,id_docente,cod_asignatura,color) values('$numero_grupo','$id_docente' , '$cod_asignatura','$color' );
                     end$$
                 ";
         $conexion->getPDO()->exec($sql);
@@ -20,11 +20,14 @@ class grupo {
     function edit($param) {
         extract($param);
 
+        //UPDATE asignatura
+        //               SET cod_asignatura = '$cod_asignatura', nombre_asignatura = '$nombre_asignatura'
+        //               WHERE cod_asignatura = '$cod_asignatura';
         $sql = "do $$
                     begin
                        UPDATE grupo
                        SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color',cod_asignatura='$cod_asignatura'
-                       WHERE numero_grupo = '$numero_grupo' and cod_asignatura='$cod_asignatura';                       
+                       WHERE id_grupo='$id';                       
                     end$$
                     ";          
         
@@ -37,15 +40,11 @@ class grupo {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
+        //DELETE FROM asignatura WHERE id_usuario = '$id';
         $sql = "do $$
                     begin
-<<<<<<< HEAD
-                        DELETE FROM grupo WHERE id_usuario = '$id';
-                        DELETE FROM asignatura WHERE id_usuario = '$id';
-=======
-                        DELETE FROM grupo WHERE numero_grupo = '$id' and cod_asignatura='$cod_asignatura';
+                        DELETE FROM grupo WHERE id_grupo = '$id';
                         
->>>>>>> pr/31
                     end$$
                 ";
 
@@ -62,7 +61,7 @@ class grupo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "select g.numero_grupo, g.id_docente, a.cod_asignatura , a.nombre_asignatura from grupo g inner join asignatura a on a.cod_asignatura = g.cod_asignatura $where";
+        $sql = "select g.numero_grupo, g.id_docente,g.id_grupo,a.cod_asignatura from grupo g inner join asignatura a on a.cod_asignatura = g.cod_asignatura $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -76,12 +75,11 @@ class grupo {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['numero_grupo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_grupo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['numero_grupo'],
                         $fila['id_docente'],                        
-                        $fila['cod_asignatura'],
-                        $fila['nombre_asignatura']
+                        $fila['cod_asignatura']                       
                         
                     ]
                 ];

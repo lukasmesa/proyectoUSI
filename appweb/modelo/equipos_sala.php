@@ -17,7 +17,7 @@ class equipos_sala {
         $sql = "UPDATE equipos_sala 
                     set id_equipo_sala='$id_equipo_sala',descripcion='$descripcion',estado='$estado',
                     software_equipo='$software_equipo',partes_equipo='$partes_equipo',nombre_sala='$nombre_sala'
-                    where id_equipo_sala='$id_equipo_sala';";
+                    where id_equipo_sala='$id';";
             
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
