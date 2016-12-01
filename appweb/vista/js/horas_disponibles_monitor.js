@@ -13,8 +13,6 @@ $(function () {
         altoGrid = 200;
     }
 
-    valoresSelect3();
-
     var clase = 'horas_disponibles_monitor';  // la clase que implementa el CRUD para este grid
     var idPager = 'horas_disponibles_monitor-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
@@ -62,80 +60,21 @@ $(function () {
                 dataInit: asignarAncho,
                 value:"lunes:lunes;martes:martes;miercoles:miercoles;jueves:jueves;viernes:viernes;sabado:sabado"}
         },
-		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},edittype:'select',
-            editoptions: {
-                dataInit: asignarAncho,
-                value:valoresSelect2()}
+		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+            editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},edittype:'select',
-            editoptions: {
-                dataInit: asignarAncho,
-                value:valoresSelect2()}
+		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
+            editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+		{'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
-                /*dataUrl: 'controlador/fachada.php?clase=horas_disponibles_monitor&oper=getSelect',
+                dataUrl: 'controlador/fachada.php?clase=horas_disponibles_monitor&oper=getSelect',
                 dataInit: asignarAncho,
-                defaultValue: '0'*/
-                dataInit: asignarAncho,
-                value:valoresSelect3()
-                
+                defaultValue: '0'
             }
         }
 		
     ];
-
-    function valoresSelect1(){
-
-        
-        valores = "lunes:lunes;martes:martes;miercoles:miercoles;jueves:jueves;viernes:viernes;sabado:sabado";
-        return valores;
-    }
-
-    function valoresSelect2(){
-        //modificar para coger valores del id monitor de la BD
-        
-        valores = "7:7 AM;8:8 AM;9:9 AM;10:10 AM;11:11 AM;12:12 M;13:1 PM;14:2 PM;15:3 PM;16:4 PM;17:5 PM;18:6 PM;19:7 PM;20:8 PM";
-        return valores;
-    }
-
-
-    
-
-
-    function valoresSelect3(){
-        
-        
-        valoresID="";      
-        $.ajax({
-            type: 'POST',
-            url: "controlador/fachada.php?clase=monitor&oper=selectIds",
-            data: {},
-            success: function(data)
-            {
-                var datos=jQuery.parseJSON(data);
-                console.log(datos);
-                var rows = datos['rows'];                
-                for(i in rows)
-                {
-                    var id=rows[i]['id'];
-                    var s=id+":"+id+";";
-                    valoresID+=s;
-                
-                }            
-                    
-            },
-              
-            async:false
-        });
-        
-
-        return valoresID.substr(0,(valoresID.length-1));    
-        
-        
-    }
-
-    
 
     // inicializa el grid
     var grid = jQuery('#horas_disponibles_monitor-grid').jqGrid({

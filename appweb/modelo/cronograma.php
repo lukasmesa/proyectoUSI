@@ -15,7 +15,14 @@ class cronograma {
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
     }
-  
+    function agregarActividad($param){
+        extract($param);
+        $sql = "INSERT INTO cronograma(fecha_reserva, estado_reserva, tercero,fecha_ini_prestamo,fecha_fin_prestamo,tipo,descripcion,id_usuario,nombre_sala) VALUES ('{$turno['fecha_reserva']}', '{$turno['estado_reserva']}', '{$turno['tercero']}','{$turno['fecha_ini_prestamo']}', '{$turno['fecha_fin_prestamo']}', '{$turno['tipo']}', '{$turno['descripcion']}', '{$turno['id_usuario']}', '{$turno['nombre_sala']}')";
+        $conexion->getPDO()->exec($sql);
+
+        echo $conexion->getEstado();
+
+    }
 
     function edit($param) {
         extract($param);
@@ -40,8 +47,6 @@ class cronograma {
      * Procesa las filas que son enviadas a un objeto jqGrid
      * @param type $param un array asociativo con los datos que se reciben de la capa de presentación
      */
-
-
     function select($param) {
         extract($param);
         $where = $conexion->getWhere($param);
@@ -77,14 +82,7 @@ class cronograma {
     }
 
 
-      function agregarActividad($param){
-        extract($param);
-        $sql = "INSERT INTO cronograma(fecha_reserva, estado_reserva,fecha_ini_prestamo,fecha_fin_prestamo,tipo,descripcion,id_usuario,nombre_sala) VALUES ('{$turno['fecha_reserva']}', '{$turno['estado_reserva']}','{$turno['fecha_ini_prestamo']}', '{$turno['fecha_fin_prestamo']}', '{$turno['tipo']}', '{$turno['descripcion']}', '{$turno['id_usuario']}', '{$turno['nombre_sala']}')";
-        $conexion->getPDO()->exec($sql);
 
-        echo $conexion->getEstado();
-
-    }
 
     public function getProgramacion($param) {
         $timezone = null;
@@ -109,7 +107,7 @@ class cronograma {
 
         /*$sql = "SELECT id_turno_produccion, hora_inicio, hora_fin, fk_maquina, maquina.color, maquina.descripcion
                   FROM turno_produccion JOIN maquina ON maquina.id_maquina = turno_produccion.fk_maquina WHERE $condicion";*/
-        $sql = "SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma ";
+        $sql = "SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma ";
         error_log($sql);
         // error_log($sql);
 
@@ -133,11 +131,11 @@ class cronograma {
     public function actualizarActividad($param) {
         extract($param);
         if ($caso == 'mover') {
-            $sql = "UPDATE turno_produccion SET hora_inicio='{$turno['start']}', hora_fin='{$turno['end']}' WHERE id_turno_maquina='{$turno['id']}'";
+            $sql = "UPDATE cronograma SET fecha_ini_prestamo='{$turno['start']}', fecha_fin_prestamo='{$turno['end']}' WHERE id_reserva='{$turno['id_reserva']}'";
         } else if ($caso == 'actualizar') {
             $sql = "UPDATE cronograma SET fecha_ini_prestamo='{$turno['start']}', fecha_fin_prestamo='{$turno['end']}', tipo='{$turno['tipo']}',descripcion='{$turno['descripcion']}',id_usuario='{$turno['id_usuario']}',nombre_sala='{$turno['sala']}' WHERE id_reserva='{$turno['id_reserva']}'";
         } else if ($caso == 'redimensionar') {
-            $sql = "UPDATE cronograma SET hora_fin='{$turno['end']}' WHERE id_reserva='{$turno['id_reserva']}'";
+            $sql = "UPDATE cronograma SET fecha_fin_prestamo='{$turno['end']}' WHERE id_reserva='{$turno['id_reserva']}'";
         }
 
         $conexion->getPDO()->exec($sql);
