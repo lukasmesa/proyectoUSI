@@ -6,8 +6,7 @@ class administrativo {
         extract($param);
         
 		$sql = "DO $$
-
-                BEGIN
+		        BEGIN
                 	INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena','$tipo_doc');
                     INSERT INTO administrativo values('$id_usuario');
                 END$$;";
@@ -69,7 +68,7 @@ class administrativo {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        
+                        $fila['id_administrativo'],
                         $fila['id_usuario'],
                         $tipoDoc,
                         $fila['nombre'],

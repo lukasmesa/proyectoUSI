@@ -70,7 +70,5 @@ class horas_disponibles_monitor {
         echo json_encode($respuesta);
     }
 
-
-
 }
 ?>

@@ -69,7 +69,5 @@ class prestamo_equipo {
         echo json_encode($respuesta);
     }
 
-
-
 }
 ?>

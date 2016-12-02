@@ -63,18 +63,15 @@ $(function () {
         },*/
     	{'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable:true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},editoptions: {dataInit: asignarAncho}
         },
-		{'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}
+		{'label': 'Descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},editoptions: {dataInit: asignarAncho}
         },
 		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
                 value:estadosEquipos
             }			
-        },		
-		
-
+        },
     ];
-
 
     // inicializa el grid
     var grid = jQuery('#equipos_para_prestamos-grid').jqGrid({
@@ -122,17 +119,15 @@ $(function () {
         del: true,
         view: false,
         search: true,
-        closeOnEscape: false,     
-
-
+        closeOnEscape: false
     }, {// edit
         width: 420,
         modal: true,
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
-        modal: true,    
-        //respuestaServidor
+        modal: true,
+        afterSubmit: respuestaServidor
     }, {// del
         width: 335,
         modal: true, // jqModal: true,

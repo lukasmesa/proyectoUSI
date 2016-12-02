@@ -12,6 +12,8 @@ var anchoContenedor;
 var tipoDoc;
 var diasSemana;
 var estadosEquipos;
+var tipoReserva;
+
 
 $(document).on('ready', function () {
 
@@ -67,6 +69,22 @@ $(document).on('ready', function () {
     }, function (estados) {
        // console.log(estados);
     }, 'json');*/
+	
+	$.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoReserva'
+    }, function (tipos) {
+        console.log(tipos);
+        tipoReserva = tipos;
+    }, 'json');
+
+    $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getDias'
+    }, function (datosDias) {
+        console.log(datosDias);
+        dias = datosDias;
+    }, 'json');
 
         // ejemplo de llamado de una instrucción $.post
     $.post("controlador/fachada.php", {

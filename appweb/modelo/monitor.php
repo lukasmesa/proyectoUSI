@@ -10,7 +10,7 @@ class monitor {
                         INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena''$tipo_doc');
                         INSERT INTO monitor values('$id_usuario');                        
                     end$$
-                ";
+				";
         
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -70,7 +70,7 @@ class monitor {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        
+                        $fila['id_monitor'],
                         $fila['id_usuario'],
                         $tipoDoc,
                         $fila['nombre'],
@@ -84,41 +84,6 @@ class monitor {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-
-
-    //funcion requerida para desplega los IDs de monitores disponibles a la hora de ingresar en una tabla que referencie este campo
-    function selectIds($param)
-    {
-        extract($param);
-        $where = $conexion->getWhere($param);
-        // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_usuario FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
-        // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
-        $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
-
-        // agregar al objeto que se envía las filas de la página requerida
-        if (($rs = $conexion->getPDO()->query($sql))) {
-            $cantidad = 999; // se pueden enviar al grid valores calculados o constantes
-            $tiros_x_unidad = 2;
-                    
-            while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
-                
-                $respuesta['rows'][] = [
-                    'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
-                    'cell' => [ // los campos que se muestra en las columnas del grid
-                        
-                        $fila['id_usuario'],
-                        
-                    ]
-                ];
-            }
-        }
-        $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
-        echo json_encode($respuesta);
-    }
-
-
 
 }
 ?>

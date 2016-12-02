@@ -22,15 +22,15 @@ $(function () {
 //            editoptions: {dataInit: asignarAncho}
 //        },
         
-        {'label': 'Nombre Equipo', name: 'nombre', index: 'nombre', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'nombre del equipo', name: 'nombre', index: 'nombre', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         
-        {'label': 'Descripción Equipo', name: 'descripcion', index: 'descripcion', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Descripcion del Equipo', name: 'descripcion', index: 'descripcion', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         
-        {'label': 'Estado Equipo', name: 'estado', index: 'estado', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'estado', name: 'estado', index: 'estado', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         }
     ];

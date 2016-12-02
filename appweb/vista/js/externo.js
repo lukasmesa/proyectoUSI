@@ -78,8 +78,7 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        
-        {'label': 'Id Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Id Externo', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -97,7 +96,7 @@ $(function () {
         {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Contraseña', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+        {'label': 'contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
             editoptions: {dataInit: asignarAncho}
         }
 
@@ -123,7 +122,7 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'id_usuario', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_externo', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,

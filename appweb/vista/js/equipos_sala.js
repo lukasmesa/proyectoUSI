@@ -36,38 +36,12 @@ $(function () {
         }
         return [true];
     };
-
-    var field1, check_function3 = function (value, colname)
-    {
-
-        if (colname === "software_equipo") {
-            field1 = value;
-        }
-
-        if (value.length >= 50) {
-            return [false, "Se han excedido la cantidad de caracteres de la descripcion del Software del equipo"];
-        }
-        return [true];
-    };
-
-    var field1, check_function4 = function (value, colname)
-    {
-
-        if (colname === "partes_equipo") {
-            field1 = value;
-        }
-
-        if (value.length >= 800) {
-            return [false, "Se han excedido la cantidad de caracteres de la descripcion de las partes equipo"];
-        }
-        return [true];
-    };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
         {'label': 'Id Equipo Sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
+        {'label': 'Descripcion', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -75,56 +49,22 @@ $(function () {
                 dataInit: asignarAncho,
                 value:estadosEquipos
             }
-        },
-        
-        {'label': 'Software Equipo', name: 'software_equipo', index: 'id_parte', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
+        },        
+        {'label': 'Software Equipo', name: 'software_equipo', index: 'id_parte', width: 100, sortable: true, editable: true,
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Partes Equipo', name: 'partes_equipo', index: 'id_sofware', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+        {'label': 'Partes Equipo', name: 'partes_equipo', index: 'id_sofware', width: 100, sortable: true, editable: true,
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
-            editoptions: {defaultValue: '0',
+        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true,edittype: 'select', editrules: {required: true, number: false, minValue: 1},
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=equipos_sala&oper=getSelect',
                 dataInit: asignarAncho,
-                value:valoresSelect1()}
-        },
+                defaultValue: '0'
+            }
+        }
 
     ];
-
-    function valoresSelect1(){
-
-        valoresNS="";      
-        $.ajax({
-            type: 'POST',
-            url: "controlador/fachada.php?clase=sala&oper=selectNombresSala",
-            data: {},
-            success: function(data)
-            {
-                var datos=jQuery.parseJSON(data);
-                console.log(datos);
-                var rows = datos['rows'];                
-                for(i in rows)
-                {
-                    var id=rows[i]['id'];
-                    var s=id+":"+id+";";
-                    valoresNS+=s;
-                
-                }            
-                    
-            },
-              
-            async:false
-        });
-        
-
-        return valoresNS.substr(0,(valoresNS.length-1)); 
-    }
-
-    function valoresSelect2(){
-
-        valores = "correcto:correcto;dañado:dañado;reparacion:reparacion";
-        return valores;
-    }
 
     // inicializa el grid
     var grid = jQuery('#equipos_sala-grid').jqGrid({
@@ -146,7 +86,7 @@ $(function () {
         width: anchoGrid,
         pager: "#" + idPager,
         viewrecords: true,
-        caption: "Equipos de sala",
+        caption: "Equipos de salas sala",
         multiselect: false,
         multiboxonly: true,
         hiddengrid: false,
@@ -208,12 +148,125 @@ $(function () {
 
 
      //------------------------------------------------------------------------
-   
+     //validaciones campo 1
+    function validarOrdenProduccion(valor, columna) {
 
-    
+        if (columna == 'id_equipo_sala') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar la el id del equipo"];
+            }
+        }
+        if (columna == 'descripcion') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar la descripcion del equipo"];
+            }
+        }
+        if (columna == 'estado') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar la estado del equipo"];
+            }
+        }
+        if (columna == 'nombre_sala') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar el nombre de la sala del equipo"];
+            }
+        }
+        return [true, ""];
+    }
 
 
+    //validacion campo 2
 
+var field1,check_function1 = function(value,colname) 
+    {
+
+        if (colname === "id_equipo_sala") {
+            field1 = value;
+        } 
+        
+        if(value.length<3){
+            return [false, "El codigo del equipo debe tener una longitud mayor a 2"];
+        }
+        return [true];
+    };
+
+    var field1,check_function2 = function(value,colname) 
+    {
+        
+        if (colname === "descripcion") {
+            field1 = value;
+        }       
+          
+        if(value.length>=50){
+            return [false, "Se han exedido la cantidad de caracteres de la descripcion"];
+        }       
+        return [true];
+    };
+
+    var field1,check_function3 = function(value,colname) 
+    {
+        
+        if (colname === "estado") {
+            field1 = value;
+        }       
+          
+        if(value!='dañado'&& value!= 'correcto'&& value!='reparacion'){
+            console.log("t",value,colname);
+            return [false, "igrese uno de los valores correcto , dañado o reparacion"];
+        }
+               
+        return [true];
+    };
+
+    var field1,check_function4 = function(value,colname) 
+    {
+        
+        if (colname === "nombre_sala") {
+            field1 = value;
+        }       
+          
+        if(value.length<2){
+           
+            return [false, "El el nombre de la sala debe tener una longitud mayor a 1"];
+        }
+        
+        return [true];
+    };
+
+    var field1,check_function5 = function(value,colname) 
+    {
+        
+        if (colname === "id_parte") {
+            field1 = value;
+        }       
+          
+        if(value.length<1){
+            return [false, "El id de la parte debe ser utener una longitud mayor a 0"];
+        }
+        if( isNaN(valor) ) {
+             return [false, "El id de la parte debe ser numerico"];
+        } 
+        
+        return [true];
+    };
+
+
+    var field1,check_function6 = function(value,colname) 
+    {
+        
+        if (colname === "id_sofware") {
+            field1 = value;
+        }       
+          
+        if(value.length<1){
+            return [false, "El id del software debe tener una longitud mayor a 0"];
+        }
+        if( isNaN(valor) ) {
+             return [false, "El id del software debe ser numerico"];
+        } 
+        
+        return [true];
+    };
 
 
 
