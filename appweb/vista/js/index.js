@@ -9,6 +9,8 @@
 'use strict';
 
 var anchoContenedor;
+var tipoReserva;
+var dias;
 
 $(document).on('ready', function () {
 
@@ -64,6 +66,22 @@ $(document).on('ready', function () {
     }, function (estados) {
        // console.log(estados);
     }, 'json');*/
+	
+	$.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoReserva'
+    }, function (tipos) {
+        console.log(tipos);
+        tipoReserva = tipos;
+    }, 'json');
+
+    $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getDias'
+    }, function (datosDias) {
+        console.log(datosDias);
+        dias = datosDias;
+    }, 'json');
 
     // cada que se redimensione el navegador se actualiza anchoContenedor
     $(window).on('resize', function () {

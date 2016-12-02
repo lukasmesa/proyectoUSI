@@ -8,10 +8,17 @@ class UtilConexion {
 
     private $pdo;
     public static $tipoEstadoProduccion;
+    public static $tipoReserva;
+    public static $dias;
 
     public function __construct() {
         // estas constantes se utilizan tanto en vista como en modelo, por lo tanto se definen una vez y se utilizan N veces (nada de duplicar código)
         self::$tipoEstadoProduccion = ['0' => 'Seleccione un estado', '1' => 'Pendiente', '2' => 'En producción', '3' => 'Terminado'];
+        //Agregar más tipos de reserva de ser necesario, con la misma estructura que se ve...
+        self::$tipoReserva = ['0' => 'Seleccione un tipo de actividad', '1' => 'Clase', '2' => 'Monitoría', '3' => 'Exposición'];
+        
+        self::$dias = ['0' => 'Seleccione un día', 'Monday' => 'Lunes', 'Tuesday' => 'Martes', 'Wednesday' => 'Miércoles'
+            , 'Thursday' => 'Jueves', 'Friday' => 'Viernes', 'Saturday' => 'Sábado', 'Sunday' => 'Domingo'];
 
         try {
             $this->pdo = new PDO("pgsql:host=" . SERVIDOR . " port=" . PUERTO . " dbname=" . BASE_DATOS, USUARIO, CONTRASENA);
@@ -166,6 +173,12 @@ class UtilConexion {
 
     public function getEstadosProduccion() {
         echo json_encode(self::$tipoEstadoProduccion);
+    }
+    public function getTipoReserva() {
+        echo json_encode(self::$tipoReserva);
+    }
+    public function getDias() {
+        echo json_encode(self::$dias);
     }
 
 }
