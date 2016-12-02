@@ -114,5 +114,16 @@ class sala {
         echo json_encode($respuesta);
     }
 
+    public function getSelectSala($param) {
+        $json = FALSE;
+        extract($param);
+        $select = "";
+        $select .= "<option value='0'>Seleccione una sala</option>";
+        foreach ($conexion->getPDO()->query("SELECT nombre_sala, id_sala, nombre_bloque FROM sala ORDER BY (nombre_bloque, nombre_sala)") as $fila) {
+            $name = 'Bloque: '.$fila['nombre_bloque'].' - '.$fila['nombre_sala'];
+            $select .= "<option value='{$fila['id_sala']}'>{$name}</option>";
+        }
+        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
+    }
 }
 ?>

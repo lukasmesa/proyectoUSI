@@ -6,11 +6,10 @@ class administrativo {
         extract($param);
         
 		$sql = "DO $$
-
-BEGIN
-	INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
-    INSERT INTO administrativo values('$id_administrativo','$id_usuario');
-END$$;";
+		        BEGIN
+                	INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena','$tipo_doc');
+                    INSERT INTO administrativo values('$id_usuario');
+                END$$;";
         
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -21,7 +20,7 @@ END$$;";
 		
 		$sql = "do $$
 			begin
-                UPDATE usuario SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
+                UPDATE usuario SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo = '$correo', contrasena = '$contrasena'
                     WHERE id_usuario = '$id';			    
 			end$$;
 		
@@ -54,7 +53,7 @@ END$$;";
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_administrativo, e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM administrativo e inner join usuario u on e.id_usuario = u.id_usuario";
+        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo, u.contrasena FROM administrativo e inner join usuario u on e.id_usuario = u.id_usuario";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -64,17 +63,17 @@ END$$;";
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                $tipoDoc = UtilConexion::$tipo_doc[$fila['tipo_doc']];  // <-- 
                 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['id_administrativo'],
                         $fila['id_usuario'],
-                        $fila['tipo_doc'],
+                        $tipoDoc,
                         $fila['nombre'],
                         $fila['apellido'],
-                        $fila['correo_login'],
+                        $fila['correo'],
                         $fila['contrasena']
                     ]
                 ];
