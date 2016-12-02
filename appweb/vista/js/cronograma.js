@@ -18,28 +18,58 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Iniperiodo', name: 'inicio_periodo', index: 'inicio_periodo', width: 100, sortable: true, editable: true,  editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Inicio período', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
+            editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                title: 'AAAA-MM-DD HH:ii',
+                dataInit: function (elemento) {
+                    $(elemento).datetimepicker(initDatePicker);
+                    $(elemento).width(260);
+                }
+            }
         },
-        {'label': 'Finperiodo', name: 'fin_periodo', index: 'fin_periodo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Fin período', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
+            editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                title: 'AAAA-MM-DD HH:ii',
+                dataInit: function (elemento) {
+                    $(elemento).datetimepicker(initDatePicker);
+                    $(elemento).width(260);
+                }
+            }
         },
-        {'label': 'Grupo', name: 'grupo', index: 'grupo', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Tipo de actividad', name: 'tipo', index: 'tipo', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: { value: tipoReserva
+            }
         },
-        {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Descripción de actividad', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, edittype: "textarea",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                dataInit: asignarAncho
+            }
         },
-        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Usuario', name: 'usuario', index: 'usuario', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=usuario&oper=getSelectUsuario',
+                dataInit: asignarAncho
+            }
         },
-        {'label': 'Hora', name: 'hora', index: 'hora', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Sala', name: 'sala', index: 'sala', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {
+                dataUrl: 'controlador/fachada.php?clase=sala&oper=getSelectSala',
+                dataInit: asignarAncho
+            }
         },
-        {'label': 'Horas', name: 'horas', index: 'horas', width: 100, sortable: true, editable: true, edittype: "select", editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        }
+        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
+            editrules: {custom: true, custom_func: validarOrdenProduccion},
+            editoptions: {value: dias
+            }
+        },
     ];
+
 
     // inicializa el grid
     var grid = jQuery('#cronograma-grid').jqGrid({
@@ -95,7 +125,22 @@ $(function () {
     }, {// add
         width: 420,
         modal: true,
-        afterSubmit: respuestaServidor
+        afterSubmit: function(respuestaServidor){
+            if(respuestaServidor.responseText){
+                $( function() {
+                    jQuery("#dialog-message").text(respuestaServidor.responseText);
+                    $( "#dialog-message" ).dialog({
+                        minWidth: 350,
+                        modal: true,
+                        buttons: {
+                            Ok: function() {
+                                $( this ).dialog( "close" );
+                            }
+                        }
+                    });
+                } );
+            }
+        }
     }, {// del
         width: 335,
         modal: true, // jqModal: true,
@@ -122,18 +167,35 @@ $(function () {
      */
     function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'Cod_Asignaturas') {
+        if (columna == 'Usuario') {
             if (valor === '0') {
-                return [false, "Falta seleccionar la Asignatura"];
+                return [false, "Falta seleccionar un Usuario"];
             }
         }
-        if (columna == 'Nom_Asignaturas') {
+        if (columna == 'Sala') {
             if (valor === '0') {
-                return [false, "Falta seleccionar la Asignatura"];
+                return [false, "Falta seleccionar una sala"];
             }
         }
+        if (columna == 'Día') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar un día"];
+            }
+        }
+        if (columna == 'Tipo de actividad') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar un tipo de actividad"];
+            }
+        }
+
         return [true, ""];
     }
+    $( "#programacion" ).click(function() {
+        $( function() {
+            jQuery("#default").text("¡UPS! Esta función no está implementada");
+            $( "#default" ).dialog();
+        } );
+    });
 
 });
 
