@@ -9,6 +9,9 @@
 'use strict';
 
 var anchoContenedor;
+var tipoDoc;
+var diasSemana;
+var estadosEquipos;
 
 $(document).on('ready', function () {
 
@@ -64,6 +67,31 @@ $(document).on('ready', function () {
     }, function (estados) {
        // console.log(estados);
     }, 'json');*/
+
+        // ejemplo de llamado de una instrucción $.post
+    $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoDocumento'
+    }, function (data) {
+        console.log(data);
+        tipoDoc = data;
+    }, 'json');
+
+        $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getDiasSemana'
+    }, function (data) {
+        console.log(data);
+        diasSemana = data;
+    }, 'json');
+
+        $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getEstadosEquipos'
+    }, function (data) {
+        console.log(data);
+        estadosEquipos = data;
+    }, 'json');
 
     // cada que se redimensione el navegador se actualiza anchoContenedor
     $(window).on('resize', function () {

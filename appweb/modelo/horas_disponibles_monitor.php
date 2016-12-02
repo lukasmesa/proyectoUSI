@@ -50,13 +50,14 @@ class horas_disponibles_monitor {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
-                
+                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                $diasS = UtilConexion::$diasSemana[$fila['dia']];
+
                 $respuesta['rows'][] = [
                     'id' => $fila['id_horario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                      //   $fila['id_horario'],
-					    $fila['dia'],
+					    $diasS,
                         $fila['hora_inicio'],
                         $fila['hora_fin'],
                         $fila['id_monitor'],

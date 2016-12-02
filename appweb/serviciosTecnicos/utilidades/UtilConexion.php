@@ -8,10 +8,16 @@ class UtilConexion {
 
     private $pdo;
     public static $tipoEstadoProduccion;
+    public static $tipo_doc;
+    public static $diasSemana;
+    public static $estadoEquipos;
 
     public function __construct() {
         // estas constantes se utilizan tanto en vista como en modelo, por lo tanto se definen una vez y se utilizan N veces (nada de duplicar código)
-        self::$tipoEstadoProduccion = ['0' => 'Seleccione un estado', '1' => 'Pendiente', '2' => 'En producción', '3' => 'Terminado'];
+        //self::$tipoEstadoProduccion = ['1' => 'Seleccione un estado', '2' => 'Pendiente', '3' => 'En producción', '3' => 'Terminado'];
+        self::$tipo_doc = ['1'=>'Indeterminado','2'=>'Cédula de ciudadanía','3'=>'Tarjeta de Identidad','4'=>'Pasaporte','5'=>'Cédula Extranjera'];
+        self::$diasSemana = ['1'=>'Lunes','2'=>'Martes','3'=>'Miércoles','4'=>'Jueves','5'=>'Viernes','6'=>'Sábado'];
+        self::$estadoEquipos=['1'=>'Correcto','2'=>'Dañado','3'=>'Reparacion'];
 
         try {
             $this->pdo = new PDO("pgsql:host=" . SERVIDOR . " port=" . PUERTO . " dbname=" . BASE_DATOS, USUARIO, CONTRASENA);
@@ -164,9 +170,16 @@ class UtilConexion {
         return $json ? json_encode(['ok' => $ok, 'mensaje' => $mensaje]) : ['ok' => $ok, 'mensaje' => $mensaje];
     }
 
-    public function getEstadosProduccion() {
-        echo json_encode(self::$tipoEstadoProduccion);
+    public function getTipoDocumento() {
+        echo json_encode(self::$tipo_doc);
     }
 
+    public function getDiasSemana() {
+        echo json_encode(self::$diasSemana);
+    }
+
+    public function getEstadosEquipos() {
+        echo json_encode(self::$estadoEquipos);
+    }
 }
 ?>

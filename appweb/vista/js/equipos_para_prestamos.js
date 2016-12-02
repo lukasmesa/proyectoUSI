@@ -1,4 +1,4 @@
-/* 
+ /* 
  * Permite la actualización de la información de órdenes de producción
  * Demostración de las posibilidades más usuales de un elemento jqGrid
  */
@@ -68,7 +68,7 @@ $(function () {
 		{'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
-                value:"correcto:correcto;dañado:dañado;reparacion:reparacion"
+                value:estadosEquipos
             }			
         },		
 		

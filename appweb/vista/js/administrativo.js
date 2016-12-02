@@ -52,7 +52,7 @@ $(function () {
     var field1, check_function3 = function (value, colname)
     {
 
-        if (colname === "correo_login") {
+        if (colname === "correo") {
             field1 = value;
         }
 
@@ -83,9 +83,9 @@ $(function () {
         },
         {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                defaultValue: '0',
                 dataInit: asignarAncho,
-                value:valoresSelect()}
+                value:tipoDoc
+            }
         },
         {'label': 'Nombre Administrativo', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
@@ -93,7 +93,7 @@ $(function () {
         {'label': 'Apellido Administrativo', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Correo', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
+        {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Contraseña', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},

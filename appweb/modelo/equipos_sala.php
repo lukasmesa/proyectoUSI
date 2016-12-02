@@ -48,14 +48,15 @@ class equipos_sala {
             $tiros_x_unidad = 2;
 
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+    //            $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                $estadoEq = UtilConexion::$estadoEquipos[$fila['estado']];
 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_equipo_sala'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['id_equipo_sala'],
                         $fila['descripcion'],
-                        $fila['estado'],
+                        $estadoEq,
                         $fila['software_equipo'],
                         $fila['partes_equipo'],
                         $fila['nombre_sala']

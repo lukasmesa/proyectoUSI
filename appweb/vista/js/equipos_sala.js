@@ -73,7 +73,8 @@ $(function () {
         {'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
                 dataInit: asignarAncho,
-                value:valoresSelect2()}
+                value:estadosEquipos
+            }
         },
         
         {'label': 'Software Equipo', name: 'software_equipo', index: 'id_parte', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},

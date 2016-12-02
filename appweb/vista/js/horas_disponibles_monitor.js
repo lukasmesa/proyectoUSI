@@ -60,17 +60,22 @@ $(function () {
         {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
                 dataInit: asignarAncho,
-                value:"lunes:lunes;martes:martes;miercoles:miercoles;jueves:jueves;viernes:viernes;sabado:sabado"}
+                value:diasSemana
+            }
         },
-		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},edittype:'select',
+		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
-                dataInit: asignarAncho,
-                value:valoresSelect2()}
+                dataInit: function (e) {
+                    //$('#basicExample').timepicker();
+                }
+            }
         },
-		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},edittype:'select',
+		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
-                dataInit: asignarAncho,
-                value:valoresSelect2()}
+                dataInit: function (e) {
+                    //$('#basicExample').timepicker();
+                }
+            }
         },
 		{'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
