@@ -31,10 +31,10 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'nombre_bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
+        {'label': 'Nombre', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre_sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
                 dataUrl: 'controlador/fachada.php?clase=bloque&oper=getSelect',
                 dataInit: asignarAncho,
