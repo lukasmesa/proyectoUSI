@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class detalles extends AppCompatActivity {
+public class Detalles extends AppCompatActivity {
 
     private TextView textnomsala;
     private TextView textnomMon;
