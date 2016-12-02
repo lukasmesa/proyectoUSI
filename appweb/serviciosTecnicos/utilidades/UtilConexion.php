@@ -6,19 +6,19 @@
  */
 class UtilConexion {
 
-    private $pdo;
-    public static $tipoEstadoProduccion;
-    public static $tipoReserva;
-    public static $dias;
+    private $pdo;    
+    public static $tipo_doc;
+    public static $diasSemana;
+    public static $estadoEquipos;
+	public static $tipoReserva;
 
     public function __construct() {
         // estas constantes se utilizan tanto en vista como en modelo, por lo tanto se definen una vez y se utilizan N veces (nada de duplicar código)
-        self::$tipoEstadoProduccion = ['0' => 'Seleccione un estado', '1' => 'Pendiente', '2' => 'En producción', '3' => 'Terminado'];
-        //Agregar más tipos de reserva de ser necesario, con la misma estructura que se ve...
+        //self::$tipoEstadoProduccion = ['1' => 'Seleccione un estado', '2' => 'Pendiente', '3' => 'En producción', '3' => 'Terminado'];
+        self::$tipo_doc = ['1'=>'Indeterminado','2'=>'Cédula de ciudadanía','3'=>'Tarjeta de Identidad','4'=>'Pasaporte','5'=>'Cédula Extranjera'];
+        self::$diasSemana = ['0'=>'Domingo','1'=>'Lunes','2'=>'Martes','3'=>'Miércoles','4'=>'Jueves','5'=>'Viernes','6'=>'Sábado'];
+        self::$estadoEquipos=['1'=>'Correcto','2'=>'Dañado','3'=>'Reparacion'];
         self::$tipoReserva = ['0' => 'Seleccione un tipo de actividad', '1' => 'Clase', '2' => 'Monitoría', '3' => 'Exposición'];
-        
-        self::$dias = ['0' => 'Seleccione un día', 'Monday' => 'Lunes', 'Tuesday' => 'Martes', 'Wednesday' => 'Miércoles'
-            , 'Thursday' => 'Jueves', 'Friday' => 'Viernes', 'Saturday' => 'Sábado', 'Sunday' => 'Domingo'];
 
         try {
             $this->pdo = new PDO("pgsql:host=" . SERVIDOR . " port=" . PUERTO . " dbname=" . BASE_DATOS, USUARIO, CONTRASENA);
@@ -171,15 +171,19 @@ class UtilConexion {
         return $json ? json_encode(['ok' => $ok, 'mensaje' => $mensaje]) : ['ok' => $ok, 'mensaje' => $mensaje];
     }
 
-    public function getEstadosProduccion() {
-        echo json_encode(self::$tipoEstadoProduccion);
+    public function getTipoDocumento() {
+        echo json_encode(self::$tipo_doc);
     }
     public function getTipoReserva() {
         echo json_encode(self::$tipoReserva);
-    }
-    public function getDias() {
-        echo json_encode(self::$dias);
+    }    
+
+    public function getDiasSemana() {
+        echo json_encode(self::$diasSemana);
     }
 
+    public function getEstadosEquipos() {
+        echo json_encode(self::$estadoEquipos);
+    }
 }
 ?>

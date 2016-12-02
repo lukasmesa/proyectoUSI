@@ -34,7 +34,7 @@ $(function () {
         return [true];
     };
 
-    var field1, check_function2 = function (value, colname)
+    var field1, check_function22 = function (value, colname)
     {
 
         if (colname === "apellido") {
@@ -43,7 +43,7 @@ $(function () {
 
         if (value.length < 3) {
             console.log("t", value, colname);
-            return [false, "El apellido de usuario tiene que ser un como minimo de 3 caracteres"];
+            return [false, "El apellido de usuario tiene que ser un aaa como minimo de 3 caracteres"];
         } else
         {
             return [true];
@@ -54,7 +54,7 @@ $(function () {
     var field1, check_function3 = function (value, colname)
     {
 
-        if (colname === "correo_login") {
+        if (colname === "correo") {
             field1 = value;
         }
 
@@ -78,30 +78,36 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'id_externo', name: 'id_externo', index: 'id_externo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Id Externo', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:tipoDoc
+            }
+        },
+        {'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'tipo_doc', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function22},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
+        {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'correo_login', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'contrasena', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+        {'label': 'contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
             editoptions: {dataInit: asignarAncho}
         }
 
     ];
 
+    function valoresSelect(){
+
+        
+        valores = "0:cedula;1:codigo";
+        return valores;
+    }
     // inicializa el grid
     var grid = jQuery('#externo-grid').jqGrid({
         url: 'controlador/fachada.php',
