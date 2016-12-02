@@ -76,10 +76,7 @@ $(function () {
     };
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
-    var columnas = [
-        {'label': 'Id Administrativo', name: 'id_administrativo', index: 'id_administrativo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
+    var columnas = [        
         {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
@@ -98,7 +95,6 @@ $(function () {
         {'label': 'Contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
             editoptions: {dataInit: asignarAncho}
         }
-
     ];
 
     // inicializa el grid

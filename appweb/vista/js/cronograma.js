@@ -18,7 +18,7 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Inicio período', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
+        {'label': 'Inicio per&iacute;odo', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
             editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
                 title: 'AAAA-MM-DD HH:ii',
@@ -28,7 +28,7 @@ $(function () {
                 }
             }
         },
-        {'label': 'Fin período', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
+        {'label': 'Fin per&iacute;odo', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
             editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
                 title: 'AAAA-MM-DD HH:ii',
@@ -43,7 +43,7 @@ $(function () {
             editoptions: { value: tipoReserva
             }
         },
-        {'label': 'Descripción de actividad', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, edittype: "textarea",
+        {'label': 'Descripci&oacute;n de actividad', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, edittype: "textarea",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
                 dataInit: asignarAncho
@@ -63,7 +63,7 @@ $(function () {
                 dataInit: asignarAncho
             }
         },
-        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
+        {'label': 'D&iacute;a', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
             editoptions: {value: dias
             }

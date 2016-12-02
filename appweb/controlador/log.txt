@@ -3762,3 +3762,221 @@ LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
 =======
 [01-Dec-2016 11:05:43 America/Bogota] 
 >>>>>>> refs/remotes/origin/master
+[02-Dec-2016 08:56:38 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getDias
+)
+
+[02-Dec-2016 08:58:05 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getDias
+)
+
+[02-Dec-2016 08:59:14 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getDias
+)
+
+[02-Dec-2016 08:59:37 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getDias
+)
+
+[02-Dec-2016 09:00:16 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getDias
+)
+
+[02-Dec-2016 09:01:14 America/Bogota] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\serviciosTecnicos\utilidades\UtilConexion.php on line 24
+[02-Dec-2016 09:01:23 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getDias
+)
+
+[02-Dec-2016 09:03:13 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[02-Dec-2016 09:03:13 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[02-Dec-2016 09:03:13 America/Bogota] 
+[02-Dec-2016 09:04:16 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "cod_asignatura" does not exist
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura 
+               ^
+)
+
+[02-Dec-2016 09:05:25 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\bloque.php on line 49
+[02-Dec-2016 09:07:50 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...,descripcion,estado,software_equipo,partes_equipo,nombre_sal...
+                                                             ^
+)
+
+[02-Dec-2016 09:08:59 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column a.cod_asignatura does not exist
+LINE 1: ...signatura from grupo g inner join asignatura a on a.cod_asig...
+                                                             ^
+)
+
+[02-Dec-2016 09:10:30 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\docente.php on line 113
+[02-Dec-2016 09:10:32 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => equipos_para_prestamos
+    [oper] => selectEquipos
+)
+
+[02-Dec-2016 09:10:34 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "equipo_para_prestamo" does not exist
+LINE 1: ...codigo_prestamo,fecha_inicio,fecha_fin,id_usuario,equipo_par...
+                                                             ^
+)
+
+[02-Dec-2016 09:11:00 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\docente.php on line 113
+[02-Dec-2016 09:11:02 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => equipos_para_prestamos
+    [oper] => selectEquipos
+)
+
+[02-Dec-2016 09:11:03 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "equipo_para_prestamo" does not exist
+LINE 1: ...codigo_prestamo,fecha_inicio,fecha_fin,id_usuario,equipo_par...
+                                                             ^
+)
+
+[02-Dec-2016 09:11:17 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\reportedano.php on line 56
+[02-Dec-2016 09:12:22 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\sala.php on line 68
+[02-Dec-2016 09:13:15 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\sede.php on line 48
+[02-Dec-2016 09:13:39 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "cod_asignatura" does not exist
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura 
+               ^
+)
+
+[02-Dec-2016 09:18:48 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "cod_asignatura" does not exist
+LINE 1: SELECT cod_asignatura,nombre_asignatura FROM asignatura 
+               ^
+)
+
+[02-Dec-2016 09:18:54 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\bloque.php on line 49
+[02-Dec-2016 09:19:00 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...,descripcion,estado,software_equipo,partes_equipo,nombre_sal...
+                                                             ^
+)
+
+[02-Dec-2016 09:19:05 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column a.cod_asignatura does not exist
+LINE 1: ...signatura from grupo g inner join asignatura a on a.cod_asig...
+                                                             ^
+)
+
+[02-Dec-2016 09:19:11 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\docente.php on line 113
+[02-Dec-2016 09:19:13 America/Bogota] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => equipos_para_prestamos
+    [oper] => selectEquipos
+)
+
+[02-Dec-2016 09:19:15 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "equipo_para_prestamo" does not exist
+LINE 1: ...codigo_prestamo,fecha_inicio,fecha_fin,id_usuario,equipo_par...
+                                                             ^
+)
+
+[02-Dec-2016 09:19:23 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\reportedano.php on line 56
+[02-Dec-2016 09:19:25 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\sala.php on line 68
+[02-Dec-2016 09:19:27 America/Bogota] PHP Fatal error:  Access to undeclared static property: UtilConexion::$tipoEstadoProduccion in C:\xampp\htdocs\gitHub\proyectoUSI\appweb\modelo\sede.php on line 48
+[02-Dec-2016 09:19:34 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[02-Dec-2016 09:19:34 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[02-Dec-2016 09:19:34 America/Bogota] 
+[02-Dec-2016 09:23:07 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[02-Dec-2016 09:23:08 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[02-Dec-2016 09:23:08 America/Bogota] 
+[02-Dec-2016 09:24:27 America/Bogota] SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[02-Dec-2016 09:24:27 America/Bogota] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[02-Dec-2016 09:24:27 America/Bogota] 

@@ -26,7 +26,7 @@ $(function () {
             editoptions: {dataInit: asignarAncho}
         },
         
-        {'label': 'Descripcion del Equipo', name: 'descripcion', index: 'descripcion', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Descripci&oacute;n del Equipo', name: 'descripcion', index: 'descripcion', width: 80, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         

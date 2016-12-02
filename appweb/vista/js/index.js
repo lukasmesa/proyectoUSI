@@ -78,14 +78,6 @@ $(document).on('ready', function () {
         tipoReserva = tipos;
     }, 'json');
 
-    $.post("controlador/fachada.php", {
-        clase: 'UtilConexion',
-        oper: 'getDias'
-    }, function (datosDias) {
-        console.log(datosDias);
-        dias = datosDias;
-    }, 'json');
-
         // ejemplo de llamado de una instrucción $.post
     $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
