@@ -39,7 +39,7 @@ $(function () {
             }
        },
 
-        {'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Fecha fin', name: 'fecha_fin', index: 'fecha_fin', width: 100, sortable: true, editable: true,editrules: {required: false, number: false, minValue: 1},
             editoptions: {
                 //dataInit: asignarAncho
                 dataInit: function (e) {
@@ -55,7 +55,7 @@ $(function () {
                 value:valoresSelect1()
             }
         },
-        {'label': 'Equipo para pr&eacute;stamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Equipo para pr&eacute;stamo', name: 'fk_equipo', index: 'fk_equipo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect2',
                 dataInit: asignarAncho,

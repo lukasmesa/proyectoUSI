@@ -69,7 +69,10 @@ var field1,check_function3 = function(value,colname)
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Nombre', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+        /*{'label': 'Id Sala', name: 'id_sala', index: 'id_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+            editoptions: {dataInit: asignarAncho}
+        },*/
+        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Capacidad', name: 'capacidad', index: 'capacidad', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
@@ -78,8 +81,18 @@ var field1,check_function3 = function(value,colname)
         {'label': 'Descripci&oacute;n', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Nombre Bloque', name: 'nombre_bloque', index: 'nombre_bloque', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect()}
+        },
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
+            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
     ];
 

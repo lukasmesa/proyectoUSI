@@ -9,7 +9,7 @@ class grupo {
         $sql = "do $$
                     begin
                         
-                        INSERT INTO grupo (numero_grupo,id_docente,cod_asignatura,color) values('$numero_grupo','$id_docente' , '$cod_asignatura','$color' );
+                        INSERT INTO grupo (numero_grupo,id_docente,codigo_asignatura,color) values('$numero_grupo','$id_docente' , '$codigo_asignatura','$color' );
                     end$$
                 ";
         $conexion->getPDO()->exec($sql);
@@ -26,7 +26,7 @@ class grupo {
         $sql = "do $$
                     begin
                        UPDATE grupo
-                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color',cod_asignatura='$cod_asignatura'
+                       SET numero_grupo = '$numero_grupo', id_docente = '$id_docente',color = '$color',codigo_asignatura='$codigo_asignatura'
                        WHERE id_grupo='$id';                       
                     end$$
                     ";          
@@ -61,7 +61,7 @@ class grupo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "select g.numero_grupo, g.id_docente,g.id_grupo,a.cod_asignatura from grupo g inner join asignatura a on a.cod_asignatura = g.cod_asignatura $where";
+        $sql = "select g.numero_grupo, g.id_docente,g.id_grupo,a.codigo_asignatura from grupo g inner join asignatura a on a.codigo_asignatura = g.codigo_asignatura $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -79,7 +79,7 @@ class grupo {
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['numero_grupo'],
                         $fila['id_docente'],                        
-                        $fila['cod_asignatura']                       
+                        $fila['codigo_asignatura']                       
                         
                     ]
                 ];
