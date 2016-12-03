@@ -12,6 +12,13 @@ var anchoContenedor;
 var tipoDoc;
 var diasSemana;
 var estadosEquipos;
+var tipoReserva;
+var initDatePicker = {
+    dateFormat: 'yy-mm-dd hh:ii',
+    minDate: new Date(2010, 0, 1),
+    maxDate: new Date(2020, 0, 1),
+    showOn: 'focus'
+};
 
 $(document).on('ready', function () {
 
@@ -31,6 +38,12 @@ $(document).on('ready', function () {
 
     });
 	
+    var opciones_cronograma = "#index-cronograma";
+    $(opciones_cronograma).css({'width': '13em'});
+
+    $("#index-cronograma").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+    });
     // un ejemplo de uso de selectores jQuery para controlar eventos sobre links
     $("#index-menu-superior li a").each(function () {
         var opcion = $(this).text();
@@ -60,6 +73,7 @@ $(document).on('ready', function () {
         });
     });
 
+
     // ejemplo de llamado de una instrucción $.post
  /*   $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
@@ -67,6 +81,14 @@ $(document).on('ready', function () {
     }, function (estados) {
        // console.log(estados);
     }, 'json');*/
+
+    $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoReserva'
+    }, function (tipos) {
+        console.log(tipos);
+        tipoReserva = tipos;
+    }, 'json');
 
         // ejemplo de llamado de una instrucción $.post
     $.post("controlador/fachada.php", {

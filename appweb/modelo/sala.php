@@ -5,7 +5,7 @@ class sala {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO sala values('$nombre_sala','$capacidad','$descripcion','$nombre_bloque','$color')";
+        $sql = "INSERT INTO sala(nombre_sala,capacidad,descripcion,nombre_bloque,color) values('$nombre_sala','$capacidad','$descripcion','$nombre_bloque','$color')";
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -16,8 +16,8 @@ class sala {
  
         $sql = "UPDATE sala
                        SET nombre_sala = '$nombre_sala', capacidad = '$capacidad',descripcion='$descripcion',
-                       nombre_bloque='$nombre_bloque',color='$color'					   
-                       WHERE nombre_sala = '$id';";
+                       nombre_bloque='$nombre_bloque',color='$color'				   
+                       WHERE id_sala = '$id';";
        
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -27,22 +27,9 @@ class sala {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
-        $conexion->getPDO()->exec("DELETE FROM sala WHERE nombre_sala = '$id';");
+        $conexion->getPDO()->exec("DELETE FROM sala WHERE id_sala = '$id';");
         echo $conexion->getEstado();
 
-    }
-
-
-    public function getSelect($param) {
-        $json = FALSE;
-        extract($param);
-        $select = "";
-        $select .= "<option value='0'>Seleccione una sala</option>";
-        foreach ($conexion->getPDO()->query("SELECT nombre_sala FROM sala") as $fila) {
-            $descripcion = $fila['nombre_sala'];
-            $select .= "<option value='{$fila['nombre_sala']}'>$descripcion</option>";
-        }
-        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
     }
 
 
@@ -54,7 +41,7 @@ class sala {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT s.nombre_sala, s.capacidad, s.descripcion, s.nombre_bloque "
+        $sql = "SELECT s.id_sala,s.nombre_sala, s.capacidad, s.descripcion, s.nombre_bloque "
                 . " FROM sala s inner join bloque b on s.nombre_bloque = b.nombre_bloque   $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
@@ -68,8 +55,9 @@ class sala {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['nombre_sala'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_sala'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
+                       
                        $fila['nombre_sala'],
                        $fila['capacidad'],
                        $fila['descripcion'],
@@ -83,12 +71,12 @@ class sala {
     }
 
     //funcion requerida para desplegar los nombres de salas disponibles a la hora de ingresar en una tabla que referencie este campo
-    function selectNombresSala($param)
+    function selectIdsSala($param)
     {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT nombre_sala FROM sala";
+        $sql = "SELECT id_sala FROM sala";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -101,10 +89,10 @@ class sala {
                 $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['nombre_sala'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_sala'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         
-                        $fila['nombre_sala'],
+                        $fila['id_sala'],
                         
                     ]
                 ];

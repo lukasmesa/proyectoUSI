@@ -10,7 +10,7 @@ class asignatura {
     function add($param) {
         extract($param);
         
-        $sql = "INSERT INTO asignatura values('$cod_asignatura','$nombre_asignatura')";
+        $sql = "INSERT INTO asignatura values('$codigo_asignatura','$nombre_asignatura')";
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -20,8 +20,8 @@ class asignatura {
         extract($param);
  
         $sql = "UPDATE asignatura
-                       SET cod_asignatura = '$cod_asignatura', nombre_asignatura = '$nombre_asignatura'
-                       WHERE cod_asignatura = '$id';";
+                       SET codigo_asignatura = '$codigo_asignatura', nombre_asignatura = '$nombre_asignatura'
+                       WHERE codigo_asignatura = '$id';";
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
 
@@ -30,7 +30,7 @@ class asignatura {
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
-        $conexion->getPDO()->exec("DELETE FROM asignatura WHERE cod_asignatura = '$id';");
+        $conexion->getPDO()->exec("DELETE FROM asignatura WHERE codigo_asignatura = '$id';");
         echo $conexion->getEstado();
 
     }
@@ -43,7 +43,7 @@ class asignatura {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT cod_asignatura,nombre_asignatura FROM asignatura $where";
+        $sql = "SELECT codigo_asignatura,nombre_asignatura FROM asignatura $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -53,12 +53,12 @@ class asignatura {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['cod_asignatura'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['codigo_asignatura'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['cod_asignatura'],
+                        $fila['codigo_asignatura'],
                         $fila['nombre_asignatura']
                     ]
                 ];
@@ -75,7 +75,7 @@ class asignatura {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT cod_asignatura FROM asignatura";
+        $sql = "SELECT codigo_asignatura FROM asignatura";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -85,13 +85,13 @@ class asignatura {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['cod_asignatura'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['codigo_asignatura'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         
-                        $fila['cod_asignatura'],
+                        $fila['codigo_asignatura'],
                         
                     ]
                 ];

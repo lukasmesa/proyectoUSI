@@ -18,16 +18,16 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'numero_grupo', name: 'numero_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Número Grupo', name: 'numero_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'id_docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Id docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
                 value:valoresSelect1()
             }
         },
-        {'label': 'cod_asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Código Asignatura', name: 'codigo_asignatura', index: 'codigo_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
                 value:valoresSelect2()

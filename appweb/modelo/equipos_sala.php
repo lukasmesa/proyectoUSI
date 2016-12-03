@@ -5,7 +5,7 @@ class equipos_sala {
       function add($param) {
         extract($param);
 
-        $sql = "insert into equipos_sala values('$id_equipo_sala','$descripcion','$estado','$software_equipo','$partes_equipo','$nombre_sala')";    
+        $sql = "insert into equipos_sala values('$id_equipo_sala','$descripcion','$estado','$software_equipo','$partes_equipo','$id_sala')";    
 
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -16,7 +16,7 @@ class equipos_sala {
        
         $sql = "UPDATE equipos_sala 
                     set id_equipo_sala='$id_equipo_sala',descripcion='$descripcion',estado='$estado',
-                    software_equipo='$software_equipo',partes_equipo='$partes_equipo',nombre_sala='$nombre_sala'
+                    software_equipo='$software_equipo',partes_equipo='$partes_equipo',id_sala='$id_sala'
                     where id_equipo_sala='$id';";
             
         $conexion->getPDO()->exec($sql);
@@ -39,7 +39,7 @@ class equipos_sala {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT  id_equipo_sala,descripcion,estado,software_equipo,partes_equipo,nombre_sala from equipos_sala $where";
+        $sql = "SELECT  id_equipo_sala,descripcion,estado,software_equipo,partes_equipo,id_sala from equipos_sala $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
         // agregar al objeto que se envía las filas de la página requerida
@@ -59,7 +59,7 @@ class equipos_sala {
                         $estadoEq,
                         $fila['software_equipo'],
                         $fila['partes_equipo'],
-                        $fila['nombre_sala']
+                        $fila['id_sala']
                     ]
                 ];
             }

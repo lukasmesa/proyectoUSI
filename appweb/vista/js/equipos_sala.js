@@ -67,7 +67,7 @@ $(function () {
         {'label': 'Id Equipo Sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
+        {'label': 'Descripción', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: false, number: false, minValue: 1, custom: true, custom_func: check_function2},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -83,7 +83,7 @@ $(function () {
         {'label': 'Partes Equipo', name: 'partes_equipo', index: 'id_sofware', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Id Sala', name: 'id_sala', index: 'id_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
                 dataInit: asignarAncho,
                 value:valoresSelect1()}
@@ -93,10 +93,10 @@ $(function () {
 
     function valoresSelect1(){
 
-        valoresNS="";      
+        valoresIdsS="";      
         $.ajax({
             type: 'POST',
-            url: "controlador/fachada.php?clase=sala&oper=selectNombresSala",
+            url: "controlador/fachada.php?clase=sala&oper=selectIdsSala",
             data: {},
             success: function(data)
             {
@@ -107,7 +107,7 @@ $(function () {
                 {
                     var id=rows[i]['id'];
                     var s=id+":"+id+";";
-                    valoresNS+=s;
+                    valoresIdsS+=s;
                 
                 }            
                     
@@ -117,7 +117,7 @@ $(function () {
         });
         
 
-        return valoresNS.substr(0,(valoresNS.length-1)); 
+        return valoresIdsS.substr(0,(valoresIdsS.length-1)); 
     }
 
     function valoresSelect2(){
