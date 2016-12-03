@@ -25,8 +25,6 @@ var tipoReserva;
 $(document).on('ready', function () {
 
     // una de las formas de manipular el css mediante jQuery
-    var opciones_cronograma = "#index-cronograma";
-    $(opciones_cronograma).css({'width': '13em'});    
     
     var opciones = "#index-CRUDS";
     $(opciones).css({'width': '13em'});   
