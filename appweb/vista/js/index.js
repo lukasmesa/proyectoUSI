@@ -26,11 +26,8 @@ $(document).on('ready', function () {
 
     // una de las formas de manipular el css mediante jQuery
     var opciones_cronograma = "#index-cronograma";
-    $(opciones_cronograma).css({'width': '13em'});
+    $(opciones_cronograma).css({'width': '13em'});    
     
-    $("#index-cronograma").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/cronograma.html");
-    });
     var opciones = "#index-CRUDS";
     $(opciones).css({'width': '13em'});   
     $("#index-calendario").css({'width': '13em'});
