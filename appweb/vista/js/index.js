@@ -8,6 +8,13 @@
 
 'use strict';
 
+var initDatePicker = {
+    dateFormat: 'yy-mm-dd hh:ii',
+    minDate: new Date(2010, 0, 1),
+    maxDate: new Date(2020, 0, 1),
+    showOn: 'focus'
+};
+
 var anchoContenedor;
 var tipoDoc;
 var diasSemana;
@@ -18,6 +25,12 @@ var tipoReserva;
 $(document).on('ready', function () {
 
     // una de las formas de manipular el css mediante jQuery
+    var opciones_cronograma = "#index-cronograma";
+    $(opciones_cronograma).css({'width': '13em'});
+    
+    $("#index-cronograma").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+    });
     var opciones = "#index-CRUDS";
     $(opciones).css({'width': '13em'});   
     $("#index-calendario").css({'width': '13em'});
