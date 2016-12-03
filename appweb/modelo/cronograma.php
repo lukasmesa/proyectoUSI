@@ -10,7 +10,7 @@ class cronograma {
     function add($param)
     {
         extract($param);
-
+        $dias = array('', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
         $inicio = new DateTime($inicio_periodo);
         $hora_inicio = $inicio->format('H:i');
         $fin = new DateTime($fin_periodo);
@@ -27,7 +27,7 @@ class cronograma {
                 $fecha = $fecha->format('Y-m-d');
                 $inicio = "$fecha $hora_inicio";
                 $fin = "$fecha $hora_fin";
-                $diaSemana = date("l", strtotime($fecha));
+                $diaSemana = date("w", strtotime($fecha));
                 if ($dia == $diaSemana) {
                     if($this->checkCollision($inicio, $fin, $rs)){
                         $mensaje .= "$inicio - $fin // \n";
