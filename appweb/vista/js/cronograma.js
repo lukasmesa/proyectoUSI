@@ -63,9 +63,9 @@ $(function () {
                 dataInit: asignarAncho
             }
         },
-        {'label': 'D&iacute;a', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
+        {'label': 'Dia', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, edittype: "select",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: {value: dias
+            editoptions: {value: diasSemana
             }
         },
     ];
