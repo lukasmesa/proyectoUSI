@@ -1067,3 +1067,529 @@ LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
                                                                      ^
 )
 
+[03-Dec-2016 04:34:14 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:34:47 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:35:44 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:36:08 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:39:08 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:39:32 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:42:11 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:42:20 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:42:42 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:42:57 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:43:05 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:46:32 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:46:38 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...amo,nombre,descripcion,estado from equipos_para_prestamos 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:46:54 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:47:07 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:48:22 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:48:30 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:48:34 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 21:48:55 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 21:49:40 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:49:48 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:49:54 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 21:50:19 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 21:51:59 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => sala
+    [oper] => getSelect
+    [json] => true
+)
+
+[03-Dec-2016 21:52:00 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:00 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:00 UTC] 
+[03-Dec-2016 21:52:01 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => sala
+    [oper] => getSelect
+    [json] => true
+)
+
+[03-Dec-2016 21:52:07 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:07 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:07 UTC] 
+[03-Dec-2016 21:52:09 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:09 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:09 UTC] 
+[03-Dec-2016 21:52:11 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:11 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:11 UTC] 
+[03-Dec-2016 21:52:12 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:12 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:12 UTC] 
+[03-Dec-2016 21:52:13 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:13 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:13 UTC] 
+[03-Dec-2016 21:52:14 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:14 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:14 UTC] 
+[03-Dec-2016 21:52:15 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:15 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:15 UTC] 
+[03-Dec-2016 21:52:16 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:16 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:16 UTC] 
+[03-Dec-2016 21:52:17 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:17 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:17 UTC] 
+[03-Dec-2016 21:52:18 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:19 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:19 UTC] 
+[03-Dec-2016 21:52:19 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:20 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:20 UTC] 
+[03-Dec-2016 21:52:20 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:21 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:21 UTC] 
+[03-Dec-2016 21:52:22 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:22 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:22 UTC] 
+[03-Dec-2016 21:52:23 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:23 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:23 UTC] 
+[03-Dec-2016 21:52:24 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:24 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:24 UTC] 
+[03-Dec-2016 21:52:25 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 21:52:25 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 21:52:25 UTC] 
+[03-Dec-2016 21:53:13 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 21:53:22 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 21:53:27 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 21:53:37 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 22:00:40 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 22:00:45 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => sala
+    [oper] => getSelect
+    [json] => true
+)
+
+[03-Dec-2016 22:00:46 UTC] SELECT id_reserva, fecha_reserva, estado_reserva, fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma 
+[03-Dec-2016 22:00:46 UTC] ¡Pilas! Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERROR:  column "nombre_sala" does not exist
+LINE 1: ...echa_fin_prestamo, tipo, descripcion, id_usuario, nombre_sal...
+                                                             ^
+)
+
+[03-Dec-2016 22:00:46 UTC] 
+[03-Dec-2016 22:01:28 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 22:01:39 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 22:01:48 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 22:02:13 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[03-Dec-2016 22:02:22 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 10
+                                                                     ^
+)
+
+[03-Dec-2016 22:02:28 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+
+[03-Dec-2016 22:02:49 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
+                                                                     ^
+)
+

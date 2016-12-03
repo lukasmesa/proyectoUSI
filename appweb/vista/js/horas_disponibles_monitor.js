@@ -63,18 +63,14 @@ $(function () {
                 value:diasSemana
             }
         },
-		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                dataInit: function (e) {
-                    //$('#basicExample').timepicker();
-                }
+                value:"0700:07:00 AM;0730:07:30 AM;0800:08:00 AM;0830:08:30 AM;0900:09:00 AM;0930:09:30 AM;1000:10:00 AM;1030:10:30 AM;1100:11:00 AM;1130:11:30 AM;1200:12:00 M;1230:12:30 PM;0100:01:00 PM;0130:01:30 PM;0200:02:00 PM;0230:02:30 PM;0300:03:00 PM;0330:03:30 PM;0040:04:00 PM;0430:04:30 PM;0500:05:00 PM;0530:05:30 PM;0600:06:00 PM;0630:06:30 PM;0700:07:00 PM;0730:07:30 PM;0800:08:00 PM"
             }
         },
-		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                dataInit: function (e) {
-                    //$('#basicExample').timepicker();
-                }
+                value:"0700:07:00 AM;0730:07:30 AM;0800:08:00 AM;0830:08:30 AM;0900:09:00 AM;0930:09:30 AM;1000:10:00 AM;1030:10:30 AM;1100:11:00 AM;1130:11:30 AM;1200:12:00 M;1230:12:30 PM;0100:01:00 PM;0130:01:30 PM;0200:02:00 PM;0230:02:30 PM;0300:03:00 PM;0330:03:30 PM;0040:04:00 PM;0430:04:30 PM;0500:05:00 PM;0530:05:30 PM;0600:06:00 PM;0630:06:30 PM;0700:07:00 PM;0730:07:30 PM;0800:08:00 PM"
             }
         },
 		{'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
