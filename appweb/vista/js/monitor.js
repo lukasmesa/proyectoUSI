@@ -54,7 +54,7 @@ $(function () {
     var field1, check_function3 = function (value, colname)
     {
 
-        if (colname === "correo_login") {
+        if (colname === "correo") {
             field1 = value;
         }
 
@@ -79,45 +79,30 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        
-        {'label': 'id_usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Id Monitor', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'tipo_doc', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
-            editoptions: {defaultValue: '0',
-                dataInit: asignarAncho,
-                value:valoresSelect()}
-        },
-        {'label': 'nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'correo_login', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'contrasena', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},
-            
+        {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
-                dataInit: function (e) {
-                    $(e).attr("type", "color");
-                 }
+                dataInit: asignarAncho,
+                value:tipoDoc
             }
+        },
+        {'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'Apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
+            editoptions: {dataInit: asignarAncho}
+        },
+        {'label': 'Contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
+            editoptions: {dataInit: asignarAncho}
         }
 
     ];
 
-
-    function valoresSelect(){
-
-        
-        valores = "codigo:codigo";
-        return valores;
-    }
     // inicializa el grid
     var grid = jQuery('#monitor-grid').jqGrid({
         url: 'controlador/fachada.php',
@@ -132,7 +117,7 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'id_usuario', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_monitor', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
@@ -168,16 +153,10 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
-           beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
-            postdata.color = $('#color').val();
-        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
-           beforeSubmit: function (postdata) {   //  OJO  <<<<<<<<<
-            postdata.color = $('#color').val();
-        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

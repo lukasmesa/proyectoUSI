@@ -7,10 +7,10 @@ class monitor {
         
         $sql = "do $$
                     begin
-                        INSERT INTO monitor values('$id_monitor','$id_usuario');
-                        INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                        INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena''$tipo_doc');
+                        INSERT INTO monitor values('$id_usuario');                        
                     end$$
-                ";
+				";
         
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
@@ -19,15 +19,17 @@ class monitor {
     function edit($param) {
         extract($param);
         
+        error_log(print_r($param,1));
         $sql = "do $$
                     begin
-                       UPDATE monitor
-                       SET id_monitor = '$id_monitor', id_usuario = '$id_usuario'
-                       WHERE id_monitor = '$id_monitor';
-
                        UPDATE usuario
-                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';
+                       SET id_usuario = '$id_usuario', nombre = '$nombre', apellido = '$apellido', 
+                       correo = '$correo', contrasena = '$contrasena', tipo_doc = '$tipo_doc'
+                       WHERE id_usuario = '$id';
+
+                       UPDATE monitor
+                       set color='$color'
+                       WHERE id_usuario = '$id_usuario';                       
                     end$$
                     ";
         
@@ -53,7 +55,7 @@ class monitor {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_monitor, e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
+        $sql = "SELECT e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo, u.contrasena FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -63,17 +65,17 @@ class monitor {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                $tipoDoc = UtilConexion::$tipo_doc[$fila['tipo_doc']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['id_monitor'],
                         $fila['id_usuario'],
-                        $fila['tipo_doc'],
+                        $tipoDoc,
                         $fila['nombre'],
                         $fila['apellido'],
-                        $fila['correo_login'],
+                        $fila['correo'],
                         $fila['contrasena']
                     ]
                 ];

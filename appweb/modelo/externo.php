@@ -5,28 +5,28 @@ class externo {
     function add($param) {
         extract($param);
                
-        $sql = "do $$
+      $sql = "do $$
                     begin
+                        INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena','$tipo_doc');
                         INSERT INTO externo values('$id_usuario');
-                        INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+                        
                     end$$
                 ";
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
     }
 
+
     function edit($param) {
         extract($param);
  
         $sql = "do $$
-                    begin
-                       UPDATE externo
-                       id_usuario = '$id_usuario'
-                       WHERE id_externo = '$id_externo';
+                   begin
+                    UPDATE usuario
+                       SET id_usuario = '$id_usuario', nombre = '$nombre', apellido = '$apellido', 
+                       correo = '$correo', contrasena = '$contrasena', tipo_doc = '$tipo_doc'
+                       WHERE id_usuario = '$id';                               
 
-                       UPDATE usuario
-                       SET id_usuario = '$id_usuario', tipo_doc = '$tipo_doc', nombre = '$nombre', apellido = '$apellido', correo_login = '$correo_login', contrasena = '$contrasena'
-                       WHERE id_usuario = '$id_usuario';
                     end$$
                     ";           
      
@@ -35,12 +35,14 @@ class externo {
 
     }
 
+    //DELETE FROM externo WHERE id_usuario = '$id';
+
     function del($param) {
         extract($param);
         error_log(print_r($param, TRUE));
         $sql = "do $$
                     begin
-                        DELETE FROM externo WHERE id_usuario = '$id';
+                        
                         DELETE FROM usuario WHERE id_usuario = '$id';
                     end$$
                 ";
@@ -58,7 +60,7 @@ class externo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo_login, u.contrasena FROM externo e inner join usuario u on e.id_usuario = u.id_usuario ";
+        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo, u.contrasena FROM externo e inner join usuario u on e.id_usuario = u.id_usuario ";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -68,18 +70,19 @@ class externo {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                $tipoDoc = UtilConexion::$tipo_doc[$fila['tipo_doc']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
-                    'id' => $fila['id_externo'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
+                    'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         
                         $fila['id_usuario'],
-                        $fila['tipo_doc'],
+                        $tipoDoc,                        
                         $fila['nombre'],
                         $fila['apellido'],
-                        $fila['correo_login'],
-                        $fila['contrasena']
+                        $fila['correo'],
+                        $fila['contrasena'],
+
                     ]
                 ];
             }

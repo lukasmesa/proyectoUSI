@@ -1,0 +1,45 @@
+en php sede hacer este cambio
+$sql = "UPDATE sede
+ SET nombre_sede = '$nombre_sede', direccion = '$direccion'
+  WHERE nombre_sede = '$id';";
+---------------------------------------------------
+
+en en crud sala no hace modificaciones
+
+-----------------------------------
+en crud grupo no se pueden hacer modificaciones
+------------------------------------------------
+
+en crud monitor no se pueden hacer modificaciones
+
+-------------------------------------------
+crud externo no modifica ni elimina
+
+hacer el siguiente cambio en la inserciones
+
+$sql = "do $$
+       begin
+         INSERT INTO usuario values('$id_usuario','$tipo_doc','$nombre','$apellido','$correo_login','$contrasena');
+         INSERT INTO externo values('$id_usuario');           
+       end$$
+       ";
+
+---------------------------------------------
+en el crud bloque hay que hacer una modificacion
+$sql = "UPDATE bloque
+                       SET nombre_bloque = '$nombre_bloque', nombre_sede = '$nombre_sede'
+                       WHERE nombre_bloque = '$id';";
+
+
+
+-------------------------------------------------------
+en crud docente no deja hacer modificaciones al id
+
+------------------------------------------------------
+en crud administrativo no deja hacer modificaciones al id
+---------------------------------------------------
+en crud monitor no deja hacer modificaciones al id
+
+------------------------------------------------------
+crud externo no permite hacer modificarcioens ni eliminar
+

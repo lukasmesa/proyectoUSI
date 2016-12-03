@@ -8,108 +8,43 @@
 
 'use strict';
 
+var initDatePicker = {
+    dateFormat: 'yy-mm-dd hh:ii',
+    minDate: new Date(2010, 0, 1),
+    maxDate: new Date(2020, 0, 1),
+    showOn: 'focus'
+};
+
 var anchoContenedor;
+var tipoDoc;
+var diasSemana;
+var estadosEquipos;
+var tipoReserva;
+
 
 $(document).on('ready', function () {
 
     // una de las formas de manipular el css mediante jQuery
-    var opciones = "#index-asignatura";
-    $(opciones).css({'width': '13em'});
-    $("#index-externo").css({'width': '13em'});
-    $("#index-prestamo_equipo").css({'width': '13em'});
-    $("#index-horas_disponibles_monitor").css({'width': '13em'});
-    $("#index-parte_equipo").css({'width': '13em'});
-    $("#index-grupo").css({'width': '13em'});
-    $("#index-bloque").css({'width': '13em'});
-    $("#index-equipos_sala").css({'width': '13em'});
-    $("#index-sala").css({'width': '13em'});
-    $("#index-docente").css({'width': '13em'});
-    $("#index-administrativo").css({'width': '13em'});
-    $("#index-monitor").css({'width': '13em'});
-    $("#index-reporte_danos").css({'width': '13em'});
-    $("#index-sede").css({'width': '13em'});
-    $("#index-equipos_para_prestamos").css({'width': '13em'});
-    $("#index-software").css({'width': '13em'});
-    $("#index-parte").css({'width': '13em'});
-
-    $("#index-asignatura").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/asignatura.html");
-    });
-    $("#index-externo").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/externo.html");
-    });
-	$("#index-prestamo_equipo").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/prestamo_equipo.html");
-
-    });
-	$("#index-horas_disponibles_monitor").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/horas_disponibles_monitor.html");
-
-    });
-	$("#index-parte_equipo").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/parte_equipo.html");
-
-    });
-	$("#index-grupo").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/grupo.html");
-
-    });
-	
-	$("#index-bloque").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/bloque.html");
-
-    });
-	$("#index-equipos_sala").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/equipos_sala.html");
-
-    });
-	$("#index-sala").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/sala.html");
-
-    });	
-	
-	$("#index-docente").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/docente.html");
-
-    });
-	$("#index-administrativo").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/administrativo.html");
-
-    });
-	$("#index-monitor").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/monitor.html");
-
-    });
-	
-	$("#index-reporte_danos").button().on("click", function () {
-		cargarPagina("#index-contenido", "vista/html/reporte_danos.html");
-
-    });
-	
-	$("#index-calendario").button().on('click', function() {
-        cargarPagina("#index-contenido","vista/html/calendario.html");        
-    });
-	
-	$("#index-sede").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/sede.html");
-
-    });
-
-    $("#index-equipos_para_prestamos").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/equipos_para_prestamos.html");
-
-    });
+    var opciones_cronograma = "#index-cronograma";
+    $(opciones_cronograma).css({'width': '13em'});
     
-    $("#index-software").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/software.html");
+    $("#index-cronograma").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+    });
+    var opciones = "#index-CRUDS";
+    $(opciones).css({'width': '13em'});   
+    $("#index-calendario").css({'width': '13em'});
+
+   
+    $("#index-CRUDS").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/CRUDS.html");
 
     });
+    $("#index-calendario").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/calendario.html");        
 
-    $("#index-parte").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/parte.html");
 
     });
-	
 	
     // un ejemplo de uso de selectores jQuery para controlar eventos sobre links
     $("#index-menu-superior li a").each(function () {
@@ -141,11 +76,44 @@ $(document).on('ready', function () {
     });
 
     // ejemplo de llamado de una instrucción $.post
-    $.post("controlador/fachada.php", {
+ /*   $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
         oper: 'getEstados'
     }, function (estados) {
-        console.log(estados);
+       // console.log(estados);
+    }, 'json');*/
+	
+	$.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoReserva'
+    }, function (tipos) {
+        console.log(tipos);
+        tipoReserva = tipos;
+    }, 'json');
+
+        // ejemplo de llamado de una instrucción $.post
+    $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoDocumento'
+    }, function (data) {
+        console.log(data);
+        tipoDoc = data;
+    }, 'json');
+
+        $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getDiasSemana'
+    }, function (data) {
+        console.log(data);
+        diasSemana = data;
+    }, 'json');
+
+        $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getEstadosEquipos'
+    }, function (data) {
+        console.log(data);
+        estadosEquipos = data;
     }, 'json');
 
     // cada que se redimensione el navegador se actualiza anchoContenedor
@@ -229,7 +197,7 @@ function getElementos(parametros) {
     }).done(function (data) {
         elementos = data;
     }).fail(function () {
-        console.log("Error de carga de datos: " + JSON.stringify(parametros));
+       // console.log("Error de carga de datos: " + JSON.stringify(parametros));
         alert("Error de carga de datos");
     }).always(function () {
         if (aviso) {

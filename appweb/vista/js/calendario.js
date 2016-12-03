@@ -6,8 +6,8 @@ $(document).ready(function() {
     var calendario;
     var anchoEtiquetas = 100;
     var anchoContenedor = 500;
-    var lista_Actividades = ["Selecciones una actividad","Monitoria", "Clase", "Evento"];
-
+    var lista_Actividades = ["Selecciones una actividad","Monitora&icute;a", "Clase", "Evento"];
+    var filtros=["Seleccione un Filtro","Docente","Sala","Monitor","Grupo"];
     jQuery('#calendario-start').datetimepicker({
         step: 30, // listado de horas con cambio cada media hora
         format: 'Y-m-d H:i'
@@ -27,12 +27,19 @@ $(document).ready(function() {
         option.value = lista_Actividades[i];
         x.appendChild(option);
     }
+    $('#calendario-filtros').html('');
+    for (var j = 0; j < filtros.length; j++) {
+        $('#calendario-filtros').append($('<option>', {
+            value: filtros[j],
+            text: filtros[j]
+        }));
+    }
 
     var lista_salas = getElementos({'clase': 'sala', 'oper': 'getSelect', 'json': true});
     $('#calendario-sala').html(lista_salas);
 
     $("#calendario-actividad").on('change', function () {
-        if (this.value == "Monitoria") {
+        if (this.value == "Monitor&iacute;a") {
             var lista_monitores = getElementos({'clase': 'monitor', 'oper': 'getSelect', 'json': true});
             $('#calendario-usuario').html(lista_monitores);
             alert(calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm:s'));
@@ -41,6 +48,11 @@ $(document).ready(function() {
             var lista_docentes = getElementos({'clase': 'docente', 'oper': 'getSelect', 'json': true});
             $('#calendario-usuario').html(lista_docentes);
         }
+    });
+    $('#calendario-filtros').on('change',function () {
+       if(this.value=="Docente"){
+            alert("filtor docente");
+       }
     });
     $("#calendario-dialog").estiloFormulario({
         //'claseFormulario': 'box',
@@ -86,8 +98,8 @@ $(document).ready(function() {
             data: function () {
                 return {
                     clase: 'cronograma',
-                    oper: 'getProgramacion',
-                    //maquina: $("#calendario-usuario").val()  // si esto fuera un valor estático no se requeriría la función anónima
+                    oper: 'getProgramacion'
+
                 }
             }, error: function () {
                // mostrarMensaje('Problemas al intentar cargar los turnos', '#turno_produccion-mensaje')
@@ -95,11 +107,11 @@ $(document).ready(function() {
 
         },
         eventResize: function (event, delta, revertFunc) {
-            alert("reconoci el evento para redimencionar");
+
             redimensionarActividad(event);
         },
         eventDrop: function (event, delta, revertFunc) {
-            alert("reconoci el evento para redimencionar");
+            moverActividad(event);
         }
     });
 
@@ -292,11 +304,11 @@ $(document).ready(function() {
 
     function moverActividad(evento) {
         $.post("controlador/fachada.php", {
-            clase: 'TurnoProduccion',
-            oper: 'actualizarTurno',
+            clase: 'cronograma',
+            oper: 'actualizarActividad',
             caso: 'mover',
             turno: {
-                id: evento.id,
+                id_reserva: evento.id,
                 start: evento.start.format(),
                 end: evento.end.format()
             }

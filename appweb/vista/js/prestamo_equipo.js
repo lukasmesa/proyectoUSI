@@ -20,7 +20,7 @@ $(function () {
     var columnas = [
         
        
-       {'label': 'Código Préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+     /*  {'label': 'Código Préstamo', name: 'codigo_prestamo', index: 'codigo_prestamo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
                 dataInit: asignarAncho,
                 defaultValue:function()
@@ -29,7 +29,7 @@ $(function () {
                 }
                 
             }
-       },
+       },*/
        {'label': 'Fecha inicio', name: 'fecha_inicio', index: 'fecha_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
                 //dataInit: asignarAncho
@@ -55,7 +55,7 @@ $(function () {
                 value:valoresSelect1()
             }
         },
-        {'label': 'Equipo para prestamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Equipo para pr&eacute;stamo', name: 'equipo_para_prestamo', index: 'equipo_para_prestamo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect2',
                 dataInit: asignarAncho,

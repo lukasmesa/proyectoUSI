@@ -1,9 +1,12 @@
 package com.appusi.usiunidaddeserviciosinformaticos;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,36 +15,47 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.appusi.usiunidaddeserviciosinformaticos.Adapters.AdaptadorSalas;
-import com.appusi.usiunidaddeserviciosinformaticos.Clases.SalaInfo;
+import com.appusi.usiunidaddeserviciosinformaticos.Clases.Sala;
+
+import com.loopj.android.http.*;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 public class SalasActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private ArrayList<SalaInfo> informacionSalas;
+    private RecyclerView.LayoutManager layoutManager;
+
+    private ArrayList<Sala> informacionSalas;
+    private RecyclerView.Adapter myAdaptador;
+
     private Button buscar_sala;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salas);
 
-        //inicialización de la lista de datos de ejemplo
-        informacionSalas = new ArrayList<SalaInfo>();
 
-        ejemploLlenar();
+        informacionSalas = new ArrayList<>();
 
-        //Inicialización RecyclerView
-        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        recyclerView.setHasFixedSize(true);
+        dialog = new ProgressDialog(this);
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        dialog.setMessage("Cargando.. Espere por favor...");
+        consumir();
 
-        final AdaptadorSalas adaptadorSalas = new AdaptadorSalas(informacionSalas);
 
-        recyclerView.setAdapter(adaptadorSalas);
-        recyclerView.setLayoutManager(
-                new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         buscar_sala = (Button) findViewById(R.id.btn_buscar_sala);
 
@@ -49,36 +63,81 @@ public class SalasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SalasActivity.this,"Aun no esta implementado",Toast.LENGTH_SHORT).show();
+
             }
         });
 
     }
 
 
-    private void ejemploLlenar(){
-
-        SalaInfo temp3[]= {new SalaInfo("Sala A","Ocupada"),
-                new SalaInfo("Sala B","ocupada")};
-        añadirSalas("10:00 am - 12:00 pm", temp3);
-        SalaInfo temp4[]= {new SalaInfo("Sala F","Ocupada"),
-                new SalaInfo("Sala L","disponible")};
-        añadirSalas("8:00 am - 10:00 pm", temp4);
-        SalaInfo temp[]= {new SalaInfo("Sala A","Ocupada"),
-                new SalaInfo("Sala B","disponible")};
-        añadirSalas("2:00 pm - 4:00 pm", temp);
-        SalaInfo temp2[]= {new SalaInfo("Sala C","Ocupada"),
-                new SalaInfo("Sala D","disponible")};
-        añadirSalas("4:00 pm - 6:00 pm", temp2);
+    private ArrayList<Sala> ejemploLlenar(){
+        return new ArrayList<Sala>(){{
+           add(new Sala("Sala J","C",20,"CLase de seguridad", "#F2F2F2"));
+           add(new Sala("Sala I","C",20,"CLase de ING.Software", "#F2F2F3"));
+        }};
     }
 
-    private void añadirSalas(String Hora,SalaInfo[] salas){
 
-        informacionSalas.add(new SalaInfo(Hora,""));
+    public void consumir(){
+        AsyncHttpClient client;
+        client = new AsyncHttpClient();
+        dialog.show();
+        client.get("http://dijansoft.xyz/usiWS/index.php?accion=todasprogramadas", new TextHttpResponseHandler() {
 
-        for (SalaInfo i:salas) {
-            informacionSalas.add(i);
-        }
-        informacionSalas.add(new SalaInfo("",""));
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+
+
+                try{
+                    Log.d("Respuesta",responseString);
+                    JSONArray respuestaJson = new JSONArray(responseString);
+
+                    for (int i = 0; i < respuestaJson.length(); i++) {
+                        JSONObject temp = (JSONObject) respuestaJson.get(i);
+                        Sala tempSalita  = new Sala(temp.getString("nombre_sala"),
+                                temp.getString("nombre_bloque"),
+                                temp.getInt("capacidad"),
+                                temp.getString("descripcion"),
+                                temp.getString("color"));
+
+                        informacionSalas.add(tempSalita);
+                    }
+                    dialog.dismiss();
+                    construirRecyclerView(informacionSalas);
+                }catch(JSONException e){
+                    Log.e("ERROR en json",e.toString());
+                }
+
+            }
+        });
+    }
+
+    public void construirRecyclerView(ArrayList<Sala> infoSala){
+        //Inicialización RecyclerView
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        layoutManager = new LinearLayoutManager(this);
+
+
+
+        myAdaptador = new AdaptadorSalas(infoSala, R.layout.item_salas, new AdaptadorSalas.OnItemListener() {
+            @Override
+            public void OnItemClick(Sala salita, int position) {
+                //Toast.makeText(SalasActivity.this, salita.getNombre() + " - " + position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SalasActivity.this,ActivityDetallesSalas.class);
+                intent.putExtra("sala", salita);
+                startActivity(intent);
+            }
+        });
+
+        recyclerView.setAdapter(myAdaptador);
+        recyclerView.setLayoutManager(layoutManager);
+
 
     }
 

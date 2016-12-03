@@ -34,7 +34,7 @@ $(function () {
         return [true];
     };
 
-    var field1, check_function2 = function (value, colname)
+    var field1, check_function22 = function (value, colname)
     {
 
         if (colname === "apellido") {
@@ -43,7 +43,7 @@ $(function () {
 
         if (value.length < 3) {
             console.log("t", value, colname);
-            return [false, "El apellido de usuario tiene que ser un como minimo de 3 caracteres"];
+            return [false, "El apellido de usuario tiene que ser un aaa como minimo de 3 caracteres"];
         } else
         {
             return [true];
@@ -54,7 +54,7 @@ $(function () {
     var field1, check_function3 = function (value, colname)
     {
 
-        if (colname === "correo_login") {
+        if (colname === "correo") {
             field1 = value;
         }
 
@@ -78,25 +78,25 @@ $(function () {
     };
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        
-        {'label': 'Id Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Id Externo', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
-            editoptions: {defaultValue: '0',
+            editoptions: {
                 dataInit: asignarAncho,
-                value:valoresSelect()}
+                value:tipoDoc
+            }
         },
         {'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
+        {'label': 'Apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function22},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Correo', name: 'correo_login', index: 'correo_login', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
+        {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Contraseña', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+        {'label': 'contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
             editoptions: {dataInit: asignarAncho}
         }
 
@@ -105,7 +105,7 @@ $(function () {
     function valoresSelect(){
 
         
-        valores = "cedula:cedula";
+        valores = "0:cedula;1:codigo";
         return valores;
     }
     // inicializa el grid
@@ -122,7 +122,7 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'id_usuario', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_externo', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
@@ -181,25 +181,6 @@ $(function () {
         $(elemento).width(260);
     }
 
-    /**
-     * Validación personalizada de los campos de un jqGrid
-     * @param {type} valor el dato contenido en un campo
-     * @param {type} columna nombre con que está etiquetada la columna
-     * @returns {Array} un array indicando si la validación fue exitosa o no
-     */
-    function validarOrdenProduccion(valor, columna) {
 
-        if (columna == 'id_externo') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar identificador usuario externo"];
-            }
-        }
-        if (columna == 'id_usuario') {
-            if (valor === '0') {
-                return [false, "Falta seleccionar identificador del usuario"];
-            }
-        }
-        return [true, ""];
-    }
 
 });
