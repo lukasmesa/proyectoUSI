@@ -18,18 +18,15 @@ $(function () {
 
     var field1, check_function1 = function (value, colname)
     {
-
         if (colname === "nombre") {
             field1 = value;
         }
-
         if (value.length < 3) {
             return [false, "El nombre debe tener minimo 3 caracteres"];
         } else
         {
             return [true];
         }
-
         return [true];
     };
 
