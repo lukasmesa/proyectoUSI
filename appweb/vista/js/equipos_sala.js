@@ -41,7 +41,7 @@ $(function () {
         {'label': 'Id Equipo Sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Descripci&oacute;n', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function2},
+        {'label': 'Descripci&oacute;n', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: false, number: false, minValue: 1, custom: true, custom_func: check_function2},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Estado', name: 'estado', index: 'estado', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -56,16 +56,43 @@ $(function () {
         {'label': 'Partes Equipo', name: 'partes_equipo', index: 'id_sofware', width: 100, sortable: true, editable: true,
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, editable: true,edittype: 'select', editrules: {required: true, number: false, minValue: 1},
-            editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=equipos_sala&oper=getSelect',
+        {'label': 'Id Sala', name: 'id_sala', index: 'id_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {defaultValue: '0',
                 dataInit: asignarAncho,
                 defaultValue: '0'
             }
         }
-
     ];
 
+    function valoresSelect1(){
+
+        valoresIdsS="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=sala&oper=selectIdsSala",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIdsS+=s;                
+                }   
+            },              
+            async:false
+        });
+		return valoresIdsS.substr(0,(valoresIdsS.length-1)); 
+    }
+
+    function valoresSelect2(){
+
+        valores = "correcto:correcto;dañado:dañado;reparacion:reparacion";
+        return valores;
+    }
     // inicializa el grid
     var grid = jQuery('#equipos_sala-grid').jqGrid({
         url: 'controlador/fachada.php',

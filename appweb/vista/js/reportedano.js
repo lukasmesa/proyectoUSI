@@ -24,12 +24,17 @@ $(function () {
         },*/
         {'label': 'Descripci&oacute;n', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
+        },        
+        {'label': 'Id Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {dataInit: asignarAncho,
+                value:valoresSelect2
+            }
         },
-        {'label': 'Id Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-        },
-        {'label': 'Id Equipo Sala', name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Id Equipo Sala' , name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect1()
+            }
         }
 
     ];

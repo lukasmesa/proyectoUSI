@@ -18,19 +18,31 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'N&uacute;mero Grupo', name: 'codigo_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'N&uacute;mero Grupo', name: 'numero_grupo', index: 'numero_grupo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Id Docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'Id Docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect1()
+            }
         },
-        {'label': 'C&oacute;digo Asignatura', name: 'cod_asignatura', index: 'cod_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
+        {'label': 'C&oacute;digo Asignatura', name: 'codigo_asignatura', index: 'codigo_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+            editoptions: {
+                dataInit: asignarAncho,
+                value:valoresSelect2()
+            }
         },
         {'label': 'Nombre Asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
+		},
+        {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},            
+            editoptions: {
+                dataInit: function (e) {
+                    $(e).attr("type", "color");
+                 }
+            }
         }
-
     ];
 
     // inicializa el grid

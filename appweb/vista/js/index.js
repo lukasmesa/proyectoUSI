@@ -21,12 +21,9 @@ var diasSemana;
 var estadosEquipos;
 var tipoReserva;
 
-
 $(document).on('ready', function () {
 
     // una de las formas de manipular el css mediante jQuery
-    var opciones_cronograma = "#index-cronograma";
-    $(opciones_cronograma).css({'width': '13em'});    
     
     var opciones = "#index-CRUDS";
     $(opciones).css({'width': '13em'});   
@@ -43,6 +40,12 @@ $(document).on('ready', function () {
 
     });
 	
+    var opciones_cronograma = "#index-cronograma";
+    $(opciones_cronograma).css({'width': '13em'});
+
+    $("#index-cronograma").button().on("click", function () {
+        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+    });
     // un ejemplo de uso de selectores jQuery para controlar eventos sobre links
     $("#index-menu-superior li a").each(function () {
         var opcion = $(this).text();
@@ -72,6 +75,7 @@ $(document).on('ready', function () {
         });
     });
 
+
     // ejemplo de llamado de una instrucción $.post
  /*   $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
@@ -81,6 +85,14 @@ $(document).on('ready', function () {
     }, 'json');*/
 	
 	$.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoReserva'
+    }, function (tipos) {
+        console.log(tipos);
+        tipoReserva = tipos;
+    }, 'json');
+
+    $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
         oper: 'getTipoReserva'
     }, function (tipos) {
