@@ -102,7 +102,7 @@ $(function () {
         valoresIDEquipo="";      
         $.ajax({
             type: 'POST',
-            url: "controlador/fachada.php?clase=equipos_para_prestamos&oper=selectEquipos",
+            url: "controlador/fachada.php?clase=equipos_para_prestamos&oper=select",
             data: {},
             success: function(data)
             {

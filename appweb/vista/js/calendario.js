@@ -35,11 +35,11 @@ $(document).ready(function() {
         }));
     }
 
-    var lista_salas = getElementos({'clase': 'sala', 'oper': 'getSelect', 'json': true});
+    var lista_salas = getElementos({'clase': 'sala', 'oper': 'getSelectSala', 'json': true});
     $('#calendario-sala').html(lista_salas);
 
     $("#calendario-actividad").on('change', function () {
-        if (this.value == "Monitor&iacute;a") {
+        if (this.value == "Monitoría") {
             var lista_monitores = getElementos({'clase': 'monitor', 'oper': 'getSelect', 'json': true});
             $('#calendario-usuario').html(lista_monitores);
             alert(calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm:s'));
