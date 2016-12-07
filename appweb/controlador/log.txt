@@ -1593,3 +1593,106 @@ LINE 1: ...a,hora_inicio,hora_fin,id_monitor from horas_disp_monitor 30
                                                                      ^
 )
 
+[07-Dec-2016 16:08:53 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[07-Dec-2016 16:09:22 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...,software_equipo,partes_equipo,id_sala from equipos_sala  10
+                                                                     ^
+)
+
+[07-Dec-2016 16:09:31 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
+[07-Dec-2016 16:09:37 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[07-Dec-2016 16:09:54 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[07-Dec-2016 16:10:13 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[07-Dec-2016 16:10:25 UTC] Array
+(
+    [clase] => sala
+    [oper] => del
+    [id] => 15
+    [conexion] => UtilConexion Object
+        (
+            [pdo:UtilConexion:private] => PDO Object
+                (
+                )
+
+        )
+
+)
+
+[07-Dec-2016 16:10:26 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "30"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    30
+                                                                     ^
+)
+
+[07-Dec-2016 16:16:44 UTC] Problemas en ::()
+Imposible responder al mensaje enviado. Argumentos recibidos:
+Array
+(
+    [clase] => UtilConexion
+    [oper] => getTipoReserva
+)
+
+[07-Dec-2016 16:17:13 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: SELECT nombre_sede,direccion from sede  10
+                                                ^
+)
+
+[07-Dec-2016 16:17:21 UTC] ¡Pilas! Array
+(
+    [0] => 00000
+    [1] => 7
+    [2] => ERROR:  syntax error at or near "10"
+LINE 1: ...ner join bloque b on s.nombre_bloque = b.nombre_bloque    10
+                                                                     ^
+)
+
