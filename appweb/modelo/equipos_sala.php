@@ -48,7 +48,7 @@ class equipos_sala {
             $tiros_x_unidad = 2;
 
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-    //            $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+		      //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 $estadoEq = UtilConexion::$estadoEquipos[$fila['estado']];
 
                 $respuesta['rows'][] = [
