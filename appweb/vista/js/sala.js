@@ -95,6 +95,29 @@ var field1,check_function3 = function(value,colname)
             }
         }
     ];
+	
+	function valoresSelect(){
+        valoresNombreBloque="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=bloque&oper=selectNombresBloque",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresNombreBloque+=s;                
+                }                                
+            },              
+            async:false
+        });
+        return valoresNombreBloque.substr(0,(valoresNombreBloque.length-1)); 
+    }
 
     // inicializa el grid
     var grid = jQuery('#sala-grid').jqGrid({

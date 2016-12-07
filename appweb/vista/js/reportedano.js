@@ -27,7 +27,7 @@ $(function () {
         },        
         {'label': 'Id Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {dataInit: asignarAncho,
-                value:valoresSelect2
+                value:valoresSelect2()
             }
         },
         {'label': 'Id Equipo Sala' , name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -38,6 +38,52 @@ $(function () {
         }
 
     ];
+	
+	function valoresSelect1(){
+        valoresIDEquipo="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=equipos_sala&oper=selectIdsEquipo",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIDEquipo+=s;                
+                }                                
+            },              
+            async:false
+        });
+        return valoresIDEquipo.substr(0,(valoresIDEquipo.length-1));  
+    }
+
+        function valoresSelect2(){
+        valoresIDUsuario="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=reportedano&oper=selectIDUSuario",
+            data: {},
+            success: function(data)
+            {
+                var datos=jQuery.parseJSON(data);
+                console.log(datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresIDUsuario+=s;                
+                }                                
+            },              
+            async:false
+        });
+        return valoresIDUsuario.substr(0,(valoresIDUsuario.length-1));  
+    }
 
     // inicializa el grid
     var grid = jQuery('#reporte_daño-grid').jqGrid({
