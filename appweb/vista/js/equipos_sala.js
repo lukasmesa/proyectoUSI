@@ -81,11 +81,11 @@ $(function () {
                     var id=rows[i]['id'];
                     var s=id+":"+id+";";
                     valoresIdsS+=s;                
-                }   
+                }                                
             },              
             async:false
         });
-		return valoresIdsS.substr(0,(valoresIdsS.length-1)); 
+        return valoresIdsS.substr(0,(valoresIdsS.length-1)); 
     }
 
     function valoresSelect2(){
