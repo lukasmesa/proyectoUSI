@@ -31,7 +31,7 @@ $(document).on('ready', function () {
     $("#index-equipos_para_prestamos").css({'width': '13em'});
     $("#index-software").css({'width': '13em'});
     $("#index-parte").css({'width': '13em'});
-    //$("#index-cronograma").css({'width': '13em'});
+    $("#index-cronograma").css({'width': '13em'});
     $("#index-sede").css({'width': '13em'});
     
 
@@ -101,14 +101,10 @@ $(document).on('ready', function () {
     $("#index-equipos_para_prestamos").button().on("click", function () {
         cargarPagina("#CRUDS-contenido", "vista/html/equipos_para_prestamos.html");
 
-    });
-    
-   
-	
-    /*$("#index-cronograma").button().on("click", function () {
+    });$("#index-cronograma").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/cronograma.html");
 
-    });*/
+    });
 
    
 	

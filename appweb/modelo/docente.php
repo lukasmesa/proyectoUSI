@@ -110,7 +110,7 @@ class docente {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
@@ -124,6 +124,17 @@ class docente {
         }
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
+    }
+    public function getSelectDocente($param) {
+        $json = FALSE;
+        extract($param);
+        $select = "";
+        $select .= "<option value='0'>Seleccione un Docente</option>";
+        foreach ($conexion->getPDO()->query("SELECT nombre,d.id_usuario,apellido FROM usuario u,docente d WHERE u.id_usuario=d.id_usuario") as $fila) {
+            $name = 'Nombre: '.$fila['nombre'].' - '.$fila['apellido'];
+            $select .= "<option value='{$fila['id_usuario']}'>{$name}</option>";
+        }
+        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
     }
 
 }

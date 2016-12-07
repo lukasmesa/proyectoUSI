@@ -10,7 +10,7 @@ class cronograma {
     function add($param)
     {
         extract($param);
-
+        $dias = array('', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
         $inicio = new DateTime($inicio_periodo);
         $hora_inicio = $inicio->format('H:i');
         $fin = new DateTime($fin_periodo);
@@ -27,7 +27,7 @@ class cronograma {
                 $fecha = $fecha->format('Y-m-d');
                 $inicio = "$fecha $hora_inicio";
                 $fin = "$fecha $hora_fin";
-                $diaSemana = date("l", strtotime($fecha));
+                $diaSemana = date("w", strtotime($fecha));
                 if ($dia == $diaSemana) {
                     if($this->checkCollision($inicio, $fin, $rs)){
                         $mensaje .= "$inicio - $fin // \n";
@@ -100,7 +100,7 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
             $tiros_x_unidad = 2;
 
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_reserva'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
@@ -173,7 +173,16 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
 
         /*$sql = "SELECT id_turno_produccion, hora_inicio, hora_fin, fk_maquina, maquina.color, maquina.descripcion
                   FROM turno_produccion JOIN maquina ON maquina.id_maquina = turno_produccion.fk_maquina WHERE $condicion";*/
-        $sql = "SELECT id_reserva, fecha_reserva, estado_reserva,fecha_ini_prestamo, fecha_fin_prestamo, tipo, descripcion, id_usuario, nombre_sala FROM cronograma ";
+        if($caso=='Docente') {
+            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario, cronograma.id_sala, docente.color FROM cronograma,docente WHERE cronograma.id_usuario=docente.id_usuario";
+        }else if($caso=='Sala'){
+            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario,sala.color FROM cronograma,sala WHERE cronograma.id_sala=sala.id_sala";
+
+        }else if($caso=='Monitor'){
+            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario, cronograma.id_sala, monitor.color FROM cronograma,monitor WHERE cronograma.id_usuario=monitor.id_usuario";
+
+        }
+
         error_log($sql);
         // error_log($sql);
 
@@ -183,7 +192,7 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
                 // Luego de las siguientes asignaciones se podrían borrar (unset) hora_inicio y hora_fin pero no vale la pena
                 $fila['start'] = $fila['fecha_ini_prestamo'];
                 $fila['end'] = $fila['fecha_fin_prestamo'];
-                $fila['title'] = $fila['descripcion'] . ' En la ' . $fila['nombre_sala'];
+                $fila['title'] = $fila['descripcion'];
                 //$fila['nombres']= $fila['id_usuario'];
                 $evento = new Evento($fila, $timezone);
 //              if ($evento->estaDentroDelRango($rangoInicio, $rangoFin)) {  $turnos[] = $evento->comoArray(); } // otra forma de filtrar eventos
@@ -199,7 +208,7 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
         if ($caso == 'mover') {
             $sql = "UPDATE cronograma SET fecha_ini_prestamo='{$turno['start']}', fecha_fin_prestamo='{$turno['end']}' WHERE id_reserva='{$turno['id_reserva']}'";
         } else if ($caso == 'actualizar') {
-            $sql = "UPDATE cronograma SET fecha_ini_prestamo='{$turno['start']}', fecha_fin_prestamo='{$turno['end']}', tipo='{$turno['tipo']}',descripcion='{$turno['descripcion']}',id_usuario='{$turno['id_usuario']}',nombre_sala='{$turno['sala']}' WHERE id_reserva='{$turno['id_reserva']}'";
+            $sql = "UPDATE cronograma SET fecha_ini_prestamo='{$turno['start']}', fecha_fin_prestamo='{$turno['end']}', tipo='{$turno['tipo']}',descripcion='{$turno['descripcion']}',id_usuario='{$turno['id_usuario']}',id_sala='{$turno['sala']}' WHERE id_reserva='{$turno['id_reserva']}'";
         } else if ($caso == 'redimensionar') {
             $sql = "UPDATE cronograma SET fecha_fin_prestamo='{$turno['end']}' WHERE id_reserva='{$turno['id_reserva']}'";
         }
@@ -212,6 +221,14 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
         $sql = "DELETE FROM cronograma WHERE id_reserva=$idCronograma";
         $conexion->getPDO()->exec($sql);
         echo $conexion->getEstado();
+    }
+    function agregarActividad($param){
+        extract($param);
+        $sql = "INSERT INTO cronograma(fecha_reserva, estado_reserva,fecha_ini_prestamo,fecha_fin_prestamo,tipo,descripcion,id_usuario,id_sala) VALUES ('{$turno['fecha_reserva']}', '{$turno['estado_reserva']}', '{$turno['fecha_ini_prestamo']}', '{$turno['fecha_fin_prestamo']}', '{$turno['tipo']}', '{$turno['descripcion']}', '{$turno['id_usuario']}', '{$turno['id_sala']}')";
+        $conexion->getPDO()->exec($sql);
+
+        echo $conexion->getEstado();
+
     }
 
 }

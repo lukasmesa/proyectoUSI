@@ -4,10 +4,11 @@
 
 $(document).ready(function() {
     var calendario;
+    var filtro="Sala";
     var anchoEtiquetas = 100;
     var anchoContenedor = 500;
-    var lista_Actividades = ["Selecciones una actividad","Monitora&icute;a", "Clase", "Evento"];
-    var filtros=["Seleccione un Filtro","Docente","Sala","Monitor","Grupo"];
+    var lista_Actividades = ["Selecciones una actividad","Monitoria", "Clase", "Evento"];
+    var filtros=["Seleccione un Filtro","Docente","Sala","Monitor"];
     jQuery('#calendario-start').datetimepicker({
         step: 30, // listado de horas con cambio cada media hora
         format: 'Y-m-d H:i'
@@ -24,7 +25,7 @@ $(document).ready(function() {
         var x = document.getElementById("calendario-actividad");
         var option = document.createElement("option");
         option.text = lista_Actividades[i];
-        option.value = lista_Actividades[i];
+        option.value = i;
         x.appendChild(option);
     }
     $('#calendario-filtros').html('');
@@ -35,24 +36,29 @@ $(document).ready(function() {
         }));
     }
 
-    var lista_salas = getElementos({'clase': 'sala', 'oper': 'getSelect', 'json': true});
+    var lista_salas = getElementos({'clase': 'sala', 'oper': 'getSelectSala', 'json': true});
     $('#calendario-sala').html(lista_salas);
 
     $("#calendario-actividad").on('change', function () {
-        if (this.value == "Monitor&iacute;a") {
-            var lista_monitores = getElementos({'clase': 'monitor', 'oper': 'getSelect', 'json': true});
+
+        if (this.value == 1) {
+
+            var lista_monitores = getElementos({'clase': 'monitor', 'oper': 'getSelectMonitor', 'json': true});
             $('#calendario-usuario').html(lista_monitores);
-            alert(calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm:s'));
+
         }
-        else if (this.value =="Clase" || this.value == "Evento") {
-            var lista_docentes = getElementos({'clase': 'docente', 'oper': 'getSelect', 'json': true});
+        else if (this.value ==2 || this.value == 3) {
+
+            var lista_docentes = getElementos({'clase': 'docente', 'oper': 'getSelectDocente', 'json': true});
             $('#calendario-usuario').html(lista_docentes);
         }
     });
     $('#calendario-filtros').on('change',function () {
-       if(this.value=="Docente"){
-            alert("filtor docente");
-       }
+        if(this.value=='Docente'||this.value=='Monitor'||this.value=='Sala') {
+
+            filtro = this.value;
+            calendario.fullCalendar("refetchEvents");
+        }
     });
     $("#calendario-dialog").estiloFormulario({
         //'claseFormulario': 'box',
@@ -98,8 +104,8 @@ $(document).ready(function() {
             data: function () {
                 return {
                     clase: 'cronograma',
-                    oper: 'getProgramacion'
-
+                    oper: 'getProgramacion',
+                    caso: filtro
                 }
             }, error: function () {
                // mostrarMensaje('Problemas al intentar cargar los turnos', '#turno_produccion-mensaje')
@@ -176,11 +182,11 @@ $(document).ready(function() {
 
         var sala = $("#calendario-sala").val();
         var fecha_reserva=calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm'); //la hroa y fecha del regustro de la actividad
-        var estado_reserva="disponible";
-        var tercero="no";
+
         var tipo=$("#calendario-actividad").val();
         var descripcion=$("#calendario-descripcion").val();
-        alert(idUsuario+"\n"+start+"\n"+end+"\n"+sala+"\n"+fecha_reserva+"\n"+estado_reserva+"\n"+tipo+"\n"+descripcion+"\n");
+        var estado_reserva=0;
+        //alert(idUsuario+"\n"+start+"\n"+end+"\n"+sala+"\n"+fecha_reserva+"\n"+estado_reserva+"\n"+tipo+"\n"+descripcion+"\n");
         // si start y end de los campos tiene dato, reemplazar lo que llega como argumentos
         // si end es vacío, entonces start + 1 hora
 
@@ -190,18 +196,17 @@ $(document).ready(function() {
                 id_usuario: idUsuario,
                 fecha_ini_prestamo: start,
                 fecha_fin_prestamo: end,
-                nombre_sala: sala,
-                tercero:tercero,
+                id_sala: sala,
                 fecha_reserva:fecha_reserva,
-                estado_reserva:estado_reserva,
                 descripcion:descripcion,
-                tipo:tipo
+                tipo:tipo,
+                estado_reserva:estado_reserva
                 // y así sucesivamente para otros campos que hagan falta
                 //title: $("#turno_produccion-maquina option:selected").text(),
                 //color: $("#turno_produccion-maquina option:selected").attr('color')
             };
             var datosConcatenados={
-              title:descripcion+" en la sala "+sala,
+              title:descripcion,
                start:start,
                 end:end
             };
