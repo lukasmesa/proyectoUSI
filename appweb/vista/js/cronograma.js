@@ -112,7 +112,7 @@ $(function () {
     // inicializa los elementos de la barra de navegación del grid
     grid.jqGrid('navGrid', "#" + idPager, {
         refresh: true,
-        edit: true,
+        edit: false,
         add: true,
         del: true,
         view: false,
