@@ -100,6 +100,14 @@ $(document).on('ready', function () {
         tipoReserva = tipos;
     }, 'json');
 
+    $.post("controlador/fachada.php", {
+        clase: 'UtilConexion',
+        oper: 'getTipoReserva'
+    }, function (tipos) {
+        console.log(tipos);
+        tipoReserva = tipos;
+    }, 'json');
+
         // ejemplo de llamado de una instrucción $.post
     $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
