@@ -18,7 +18,7 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [
-        {'label': 'Inicio per&iacute;odo', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
+        {'label': 'Inicio periodo', name: 'inicio_periodo', index: 'inicio_periodo', width: 110, sortable: true, editable: true, align: "center",
             editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
                 title: 'AAAA-MM-DD HH:ii',
@@ -28,7 +28,7 @@ $(function () {
                 }
             }
         },
-        {'label': 'Fin per&iacute;odo', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
+        {'label': 'Fin periodo', name: 'fin_periodo', index: 'fin_periodo', width: 110, sortable: true, editable: true, align: "center",
             editrules: {required: true, dateTime: true, custom: true, custom_func: validarOrdenProduccion},
             editoptions: {
                 title: 'AAAA-MM-DD HH:ii',
@@ -40,7 +40,19 @@ $(function () {
         },
         {'label': 'Tipo de actividad', name: 'tipo', index: 'tipo', width: 100, sortable: true, editable: true, edittype: "select",
             editrules: {custom: true, custom_func: validarOrdenProduccion},
-            editoptions: { value: tipoReserva
+            editoptions: { value: tipoReserva,
+                            dataEvents: [
+                                  {  type: 'change',
+                                     fn: function(e) {
+                                        if(this.value==1){
+                                            var lista = getElementos({'clase': 'monitor', 'oper': 'getSelectMonitor', 'json': true});
+                                        }else if(this.value ==2 || this.value == 3){
+                                            var lista = getElementos({'clase': 'docente', 'oper': 'getSelectDocente', 'json': true});
+                                        }
+                                        $('#usuario').html(lista);
+                                     }
+                                  }
+                               ]
             }
         },
         {'label': 'Descripci&oacute;n de actividad', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, edittype: "textarea",
@@ -125,6 +137,14 @@ $(function () {
     }, {// add
         width: 420,
         modal: true,
+        closeAfterAdd:true,
+        beforeSubmit : function(postdata, formid) { 
+            if(moment(postdata.fin_periodo).isAfter(postdata.inicio_periodo)){
+                return[true,"Success"]; 
+            }else{
+                return[false,"Fecha inicio debe ser menor a fecha fin."];
+            }
+        },
         afterSubmit: function(respuestaServidor){
             if(respuestaServidor.responseText){
                 $( function() {
@@ -198,5 +218,7 @@ $(function () {
     });
 
 });
+
+
 
 
