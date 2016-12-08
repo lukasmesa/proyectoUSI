@@ -59,6 +59,5 @@ class Utilidades {
             echo json_encode(['ok' => 0, 'mensaje' => $e->getMessage()]);  // Este mensaje no soporta formateo del html incluso usando htmlspecialchars()
         }
     }
-
 }
 ?>

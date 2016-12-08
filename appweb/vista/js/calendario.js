@@ -182,10 +182,11 @@ $(document).ready(function() {
 
         var sala = $("#calendario-sala").val();
         var fecha_reserva=calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm'); //la hroa y fecha del regustro de la actividad
+		var estado_reserva="disponible";
 
         var tipo=$("#calendario-actividad").val();
         var descripcion=$("#calendario-descripcion").val();
-        var estado_reserva=0;
+        //var estado_reserva=0;
         //alert(idUsuario+"\n"+start+"\n"+end+"\n"+sala+"\n"+fecha_reserva+"\n"+estado_reserva+"\n"+tipo+"\n"+descripcion+"\n");
         // si start y end de los campos tiene dato, reemplazar lo que llega como argumentos
         // si end es vacío, entonces start + 1 hora
@@ -196,17 +197,18 @@ $(document).ready(function() {
                 id_usuario: idUsuario,
                 fecha_ini_prestamo: start,
                 fecha_fin_prestamo: end,
-                id_sala: sala,
+                nombre_sala: sala,
+                
                 fecha_reserva:fecha_reserva,
+                estado_reserva:estado_reserva,
                 descripcion:descripcion,
-                tipo:tipo,
-                estado_reserva:estado_reserva
+                tipo:tipo
                 // y así sucesivamente para otros campos que hagan falta
                 //title: $("#turno_produccion-maquina option:selected").text(),
                 //color: $("#turno_produccion-maquina option:selected").attr('color')
             };
             var datosConcatenados={
-              title:descripcion,
+              title:descripcion+" en la sala "+sala,
                start:start,
                 end:end
             };

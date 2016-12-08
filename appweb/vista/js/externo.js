@@ -180,7 +180,4 @@ $(function () {
     function asignarAncho(elemento) {
         $(elemento).width(260);
     }
-
-
-
 });

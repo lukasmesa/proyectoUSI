@@ -69,7 +69,6 @@ $(function () {
 
 
     function valoresSelect1(){
-
         valoresID="";      
         $.ajax({
             type: 'POST',
@@ -84,21 +83,15 @@ $(function () {
                 {
                     var id=rows[i]['id'];
                     var s=id+":"+id+";";
-                    valoresID+=s;
-                
-                }            
-                    
-            },
-              
+                    valoresID+=s;                
+                }                                
+            },              
             async:false
         });
-        
-
         return valoresID.substr(0,(valoresID.length-1)); 
     }
 
     function valoresSelect2(){
-
         valoresIDEquipo="";      
         $.ajax({
             type: 'POST',
@@ -113,22 +106,13 @@ $(function () {
                 {
                     var id=rows[i]['id'];
                     var s=id+":"+id+";";
-                    valoresIDEquipo+=s;
-                
-                }            
-                    
-            },
-              
+                    valoresIDEquipo+=s;                
+                }                                
+            },              
             async:false
         });
-        
-
         return valoresIDEquipo.substr(0,(valoresIDEquipo.length-1)); 
     }
-
-
-
-
 
     // inicializa el grid
     var grid = jQuery('#prestamo_equipo-grid').jqGrid({
