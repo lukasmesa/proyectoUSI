@@ -82,6 +82,42 @@ $(function () {
     });
 
     // inicializa los elementos de la barra de navegación del grid
+	var grid = jQuery('#bloque-grid').jqGrid({
+        url: 'controlador/fachada.php',
+        datatype: "json",
+        mtype: 'POST',
+        postData: {
+            clase: clase,
+            oper: 'select'
+        },
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        colModel: columnas,
+        autowidth: false,
+        shrinkToFit: false,
+        sortname: 'nombre_bloque', // <-- OJO pueden ir varias columnas separadas por comas
+        sortorder: "asc",
+        height: altoGrid,
+        width: anchoGrid,
+        pager: "#" + idPager,
+        viewrecords: true,
+        caption: "Bloque",
+        multiselect: false,
+        multiboxonly: true,
+        hiddengrid: false,
+        cellurl: 'controlador/fachada.php?clase=' + clase,
+        cellsubmit: 'remote', // enviar cada entrada
+        gridComplete: function () {
+            // hacer algo...
+        },
+        loadError: function (jqXHR, textStatus, errorThrown) {
+            alert('Error. No se tiene acceso a los datos de órdenes de producción.')
+            console.log('textStatus: ' + textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseText);
+        },
+        editurl: "controlador/fachada.php?clase=" + clase
+    });
     grid.jqGrid('navGrid', "#" + idPager, {
         refresh: true,
         edit: true,

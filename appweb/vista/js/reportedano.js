@@ -178,9 +178,4 @@ $(function () {
         }
         return [true, ""];
     }
-
 });
-
-
-
-

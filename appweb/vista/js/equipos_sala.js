@@ -59,9 +59,9 @@ $(function () {
         {'label': 'Id Sala', name: 'id_sala', index: 'id_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
                 dataInit: asignarAncho,
-                defaultValue: '0'
-            }
-        }
+                value:valoresSelect1()
+				}
+            }        
     ];
 
     function valoresSelect1(){
@@ -113,7 +113,7 @@ $(function () {
         width: anchoGrid,
         pager: "#" + idPager,
         viewrecords: true,
-        caption: "Equipos de salas sala",
+        caption: "Equipos de sala",
         multiselect: false,
         multiboxonly: true,
         hiddengrid: false,

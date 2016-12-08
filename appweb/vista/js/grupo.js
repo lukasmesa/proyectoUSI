@@ -142,10 +142,16 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+		beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+		beforeSubmit: function (postdata) {   //  OJO  <<<< 
+            postdata.color = $('#color').val();
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,
@@ -172,7 +178,6 @@ $(function () {
      * @returns {Array} un array indicando si la validación fue exitosa o no
      */
     function validarOrdenProduccion(valor, columna) {
-
         if (columna == 'codigo_grupo') {
             if (valor === '0') {
                 return [false, "Falta seleccionar el codigo del grupo"];
@@ -185,7 +190,6 @@ $(function () {
         }
         return [true, ""];
     }
-
 });
 
 

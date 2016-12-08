@@ -69,6 +69,5 @@ class horas_disponibles_monitor {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
-
 }
 ?>

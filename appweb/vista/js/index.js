@@ -23,8 +23,7 @@ var tipoReserva;
 
 $(document).on('ready', function () {
 
-    // una de las formas de manipular el css mediante jQuery
-    
+    // una de las formas de manipular el css mediante jQuery    
     var opciones = "#index-CRUDS";
     $(opciones).css({'width': '13em'});   
     $("#index-calendario").css({'width': '13em'});
@@ -85,22 +84,6 @@ $(document).on('ready', function () {
     }, 'json');*/
 	
 	$.post("controlador/fachada.php", {
-        clase: 'UtilConexion',
-        oper: 'getTipoReserva'
-    }, function (tipos) {
-        console.log(tipos);
-        tipoReserva = tipos;
-    }, 'json');
-
-    $.post("controlador/fachada.php", {
-        clase: 'UtilConexion',
-        oper: 'getTipoReserva'
-    }, function (tipos) {
-        console.log(tipos);
-        tipoReserva = tipos;
-    }, 'json');
-
-    $.post("controlador/fachada.php", {
         clase: 'UtilConexion',
         oper: 'getTipoReserva'
     }, function (tipos) {
