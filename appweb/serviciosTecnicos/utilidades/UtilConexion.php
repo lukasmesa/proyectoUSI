@@ -18,7 +18,7 @@ class UtilConexion {
         self::$tipo_doc = ['1'=>'Indeterminado','2'=>'Cédula de ciudadanía','3'=>'Tarjeta de Identidad','4'=>'Pasaporte','5'=>'Cédula Extranjera'];
         self::$diasSemana = ['0' => 'Seleccione un dia','1'=>'Lunes','2'=>'Martes','3'=>'Miércoles','4'=>'Jueves','5'=>'Viernes','6'=>'Sábado', '7'=>'Domingo'];
         self::$estadoEquipos=['1'=>'Correcto','2'=>'Dañado','3'=>'Reparacion'];
-        self::$tipoReserva = ['0' => 'Seleccione un tipo de actividad', '1' => 'Clase', '2' => 'Monitoría', '3' => 'Exposición'];
+        self::$tipoReserva = ['0' => 'Seleccione un tipo de actividad', '1' => 'Monitoría', '2' => 'Clase', '3' => 'Evento'];
 
         try {
             $this->pdo = new PDO("pgsql:host=" . SERVIDOR . " port=" . PUERTO . " dbname=" . BASE_DATOS, USUARIO, CONTRASENA);
