@@ -86,6 +86,7 @@ class cronograma {
     {
         extract($param);
         $dias = array('', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo');
+        $tipoActividad = array('', 'Monitoría', 'Clase', 'Evento');
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
         $sql = "SELECT cronograma.id_reserva, cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo, cronograma.tipo, cronograma.descripcion, 
@@ -107,7 +108,7 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['fecha_ini_prestamo'],
                         $fila['fecha_fin_prestamo'],
-                        $fila['tipo'],
+                        $tipoActividad[$fila['tipo']],
                         $fila['descripcion'],
                         $fila['nombre'].' '.$fila['apellido'],
                         $fila['nombre_sala'],
