@@ -61,6 +61,7 @@ public class AdaptadorSalas
         private TextView txtTitulo;
         private TextView txtSubtitulo;
         private TextView txtBloque;
+
         //private TextView txtHoraSala;
 
         public SalasViewHolder(View itemView) {
@@ -69,6 +70,8 @@ public class AdaptadorSalas
             txtTitulo = (TextView)itemView.findViewById(R.id.LblTitulo);
             txtSubtitulo = (TextView)itemView.findViewById(R.id.LblSubTitulo);
             txtBloque = (TextView)itemView.findViewById(R.id.LblBloque);
+
+
             //txtHoraSala = (TextView) itemView.findViewById(R.id.LblHoraSala);
         }
 
@@ -76,6 +79,7 @@ public class AdaptadorSalas
             txtTitulo.setText(t.getNombre());
             txtSubtitulo.setText(t.getDescripcionPrestamo());
             txtBloque.setText(t.getNombreBloque());
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
