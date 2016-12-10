@@ -108,7 +108,7 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['fecha_ini_prestamo'],
                         $fila['fecha_fin_prestamo'],
-                        $tipoActividad[$fila['tipo']],
+                        $tipoActividad[$fila['tipo']],,
                         $fila['descripcion'],
                         $fila['nombre'].' '.$fila['apellido'],
                         $fila['nombre_sala'],
@@ -175,12 +175,12 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
         /*$sql = "SELECT id_turno_produccion, hora_inicio, hora_fin, fk_maquina, maquina.color, maquina.descripcion
                   FROM turno_produccion JOIN maquina ON maquina.id_maquina = turno_produccion.fk_maquina WHERE $condicion";*/
         if($caso=='Docente') {
-            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario, cronograma.id_sala, docente.color FROM cronograma,docente WHERE cronograma.id_usuario=docente.id_usuario";
+            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario, cronograma.id_sala, docente.color FROM cronograma,docente,usuario WHERE cronograma.id_usuario=docente.id_usuario and usuario.id_usuario=cronograma.id_usuario";
         }else if($caso=='Sala'){
-            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario,sala.color FROM cronograma,sala WHERE cronograma.id_sala=sala.id_sala";
+            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario,sala.color,usuario.nombre FROM cronograma,sala,usuario WHERE cronograma.id_sala=sala.id_sala and usuario.id_usuario=cronograma.id_usuario";
 
         }else if($caso=='Monitor'){
-            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario, cronograma.id_sala, monitor.color FROM cronograma,monitor WHERE cronograma.id_usuario=monitor.id_usuario";
+            $sql="SELECT cronograma.id_reserva, cronograma.fecha_reserva,cronograma.fecha_ini_prestamo, cronograma.fecha_fin_prestamo,cronograma.descripcion, cronograma.id_usuario, cronograma.id_sala, monitor.color FROM cronograma,monitor,usuario WHERE cronograma.id_usuario=monitor.id_usuario and usuario.id_usuario=cronograma.id_usuario";
 
         }
 

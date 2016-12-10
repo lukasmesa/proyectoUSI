@@ -83,6 +83,7 @@ $(document).ready(function() {
             center: 'title',
             right: 'month,agendaWeek,agendaDay,listMonth'
         },
+        defaultView: 'agendaWeek',
         height: 600,
         width: 650,
         selectable: true,
@@ -118,9 +119,20 @@ $(document).ready(function() {
         },
         eventDrop: function (event, delta, revertFunc) {
             moverActividad(event);
+        },
+        eventRender: function (event, element) {
+            // Desplegar información complementaria del turno
+            element.qtip({
+                content: {
+                    text: event.descripcion+"\nusuario:"+event.nombre
+                }
+            });
         }
     });
 
+    function mostrarInformacion(evento){
+
+    }
     function nuevaActividad(start, end) {
         console.log('agregando turnos');
 
@@ -152,6 +164,11 @@ $(document).ready(function() {
         $("#calendario-end").val(event.end.format("YYYY-MM-DD HH:mm"));
 
         var formulario = $("#calendario-dialog").dialog("option", "buttons", [
+            {   id: "btnGuardar", text: "Guardar", click: function () {
+                //aca va el metodo para agregar una actividad
+                    agregarActividad(formulario);
+            }
+            },
             {
                 id: "btnActualizar", text: "Actualizar", click: function () {
                 //aca va el metodo para editar la actividad
@@ -168,7 +185,8 @@ $(document).ready(function() {
                 id: "btnCancelar", text: "Cancelar", icons: {primary: "ui-icon-close"}, click: function () {
                 $(this).dialog("close");
             }
-            }
+            }            
+            
         ]).dialog("open");
     }
 
@@ -182,11 +200,10 @@ $(document).ready(function() {
 
         var sala = $("#calendario-sala").val();
         var fecha_reserva=calendario.fullCalendar('getDate').format('YYYY-MM-DD H:mm'); //la hroa y fecha del regustro de la actividad
-		var estado_reserva="disponible";
 
         var tipo=$("#calendario-actividad").val();
         var descripcion=$("#calendario-descripcion").val();
-        //var estado_reserva=0;
+        var estado_reserva=0;
         //alert(idUsuario+"\n"+start+"\n"+end+"\n"+sala+"\n"+fecha_reserva+"\n"+estado_reserva+"\n"+tipo+"\n"+descripcion+"\n");
         // si start y end de los campos tiene dato, reemplazar lo que llega como argumentos
         // si end es vacío, entonces start + 1 hora
@@ -197,18 +214,17 @@ $(document).ready(function() {
                 id_usuario: idUsuario,
                 fecha_ini_prestamo: start,
                 fecha_fin_prestamo: end,
-                nombre_sala: sala,
-                
+                id_sala: sala,
                 fecha_reserva:fecha_reserva,
-                estado_reserva:estado_reserva,
                 descripcion:descripcion,
-                tipo:tipo
+                tipo:tipo,
+                estado_reserva:estado_reserva
                 // y así sucesivamente para otros campos que hagan falta
                 //title: $("#turno_produccion-maquina option:selected").text(),
                 //color: $("#turno_produccion-maquina option:selected").attr('color')
             };
             var datosConcatenados={
-              title:descripcion+" en la sala "+sala,
+              title:descripcion,
                start:start,
                 end:end
             };
@@ -250,7 +266,7 @@ $(document).ready(function() {
             evento.end = end;
             evento.fecha_ini_prestamo=start;
             evento.fecha_fin_prestamo=end;
-            evento.nombre_sala=$("#calendario-sala").val();
+            evento.id_sala=$("#calendario-sala").val();
             evento.tipo=$("#calendario-actividad").val();
             evento.descripcion=$("#calendario-descripcion").val();
             // y así sucesivamente para otros campos
@@ -266,7 +282,7 @@ $(document).ready(function() {
                     id_usuario: idUsuario,
                     start: start,
                     end: end,
-                    sala:evento.nombre_sala,
+                    sala:evento.id_sala,
                     tipo:evento.tipo,
                     descripcion:evento.descripcion
                     }
