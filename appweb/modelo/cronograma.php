@@ -108,7 +108,7 @@ cronograma, sala, usuario where cronograma.id_sala=sala.id_sala and cronograma.i
                     'cell' => [ // los campos que se muestra en las columnas del grid
                         $fila['fecha_ini_prestamo'],
                         $fila['fecha_fin_prestamo'],
-                        $tipoActividad[$fila['tipo']],,
+                        $tipoActividad[$fila['tipo']],
                         $fila['descripcion'],
                         $fila['nombre'].' '.$fila['apellido'],
                         $fila['nombre_sala'],
