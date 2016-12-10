@@ -83,6 +83,17 @@
                 android:text="Apellido"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
+            <TextView
+                android:text="@string/txt_masdetalles_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_masdetalles_monitorias"
+                android:textColor="?attr/actionModeSplitBackground"
+                android:textStyle="normal|bold"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp" />
+
         </LinearLayout>
     </LinearLayout>
 

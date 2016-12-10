@@ -18,4 +18,5 @@
     <string name="txt_codigo_monitor_detalle">Codigo Monitor</string>
     <string name="txt_nombre_sala">Nombre de la sala</string>
     <string name="txt_correo_monitor_detalle">Correo Monitor</string>
+    <string name="txt_masdetalles_item">Mas Detalles</string>
 </resources>
