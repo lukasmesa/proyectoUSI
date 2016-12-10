@@ -45,7 +45,7 @@ import java.util.List;
 
 public class Monitorias extends AppCompatActivity {
 
-    private final String URL_SERVIDOR = "http://dijansoft.xyz/usiWS/index.php?accion=monitorias&orden=True";
+    private final String URL_SERVIDOR = "https://dijansoft.xyz/usiWS/index.php?accion=monitorias&orden=True";
     private ListView lstMonitor;
     private ProgressDialog dialog;
     //http://dijansoft.xyz/usiWS/index.php?accion=monitorias&orden=True
