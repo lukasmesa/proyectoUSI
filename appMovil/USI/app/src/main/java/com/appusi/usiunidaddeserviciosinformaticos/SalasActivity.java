@@ -2,6 +2,7 @@ package com.appusi.usiunidaddeserviciosinformaticos;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -45,6 +46,7 @@ public class SalasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salas);
+        setTitle("SALAS");
 
 
         informacionSalas = new ArrayList<>();
@@ -72,8 +74,8 @@ public class SalasActivity extends AppCompatActivity {
 
     private ArrayList<Sala> ejemploLlenar(){
         return new ArrayList<Sala>(){{
-           add(new Sala("Sala J","C",20,"CLase de seguridad", "#F2F2F2"));
-           add(new Sala("Sala I","C",20,"CLase de ING.Software", "#F2F2F3"));
+           add(new Sala("Sala J","C",20,"CLase de seguridad", "#F2F2F2", "12312"));
+           add(new Sala("Sala I","C",20,"CLase de ING.Software", "#F2F2F3", "12323"));
         }};
     }
 
@@ -95,7 +97,7 @@ public class SalasActivity extends AppCompatActivity {
 
 
                 try{
-                    Log.d("Respuesta",responseString);
+                    //Log.d("Respuesta",responseString);
                     JSONArray respuestaJson = new JSONArray(responseString);
 
                     for (int i = 0; i < respuestaJson.length(); i++) {
@@ -104,7 +106,8 @@ public class SalasActivity extends AppCompatActivity {
                                 temp.getString("nombre_bloque"),
                                 temp.getInt("capacidad"),
                                 temp.getString("descripcion"),
-                                temp.getString("color"));
+                                temp.getString("color"),
+                                temp.getString("fecha_ini_prestamo"));
 
                         informacionSalas.add(tempSalita);
                     }
@@ -137,6 +140,13 @@ public class SalasActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(myAdaptador);
         recyclerView.setLayoutManager(layoutManager);
+
+        AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+        dlgAlert.setMessage("La letra que se encuentra en la parte izquierda representa el bloque " +
+                "en el que se encuentra esa sala");
+        dlgAlert.setTitle("Atencion");
+        dlgAlert.setPositiveButton("OK", null);
+        dlgAlert.create().show();
 
 
     }

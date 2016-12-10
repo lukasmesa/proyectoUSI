@@ -23,7 +23,6 @@
         card_view:cardBackgroundColor="@color/cardview_light_background"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="5dp"
-        android:clickable="true"
         >
 
         <LinearLayout
@@ -40,7 +39,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Bloque C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
 
@@ -50,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:text="Nombre : Sala H1"
-                android:textSize="23dp"
+                android:textSize="23sp"
                 />
 
             <TextView
@@ -59,14 +58,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:text="Capacidad : 30"
-                android:textSize="23dp"/>
+                android:textSize="23sp"/>
             <TextView
                 android:id="@+id/descripcion_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:text="Descripcion : clase de redes"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
+
+            <TextView
+                android:text="Fecha :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_fecha_inicio_info"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp" />
+
             <View
                 android:id="@+id/color_info"
                 android:layout_width="wrap_content"

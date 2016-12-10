@@ -13,14 +13,16 @@ public class Sala implements Serializable {
     private int capacidad;
     private String descripcionPrestamo;
     private String color;
+    private String fecha;
 
 
-    public Sala(String nombre, String nombreBloque, int capacidad, String descripcionPrestamo, String color) {
+    public Sala(String nombre, String nombreBloque, int capacidad, String descripcionPrestamo, String color, String fecha) {
         this.nombre = nombre;
         this.nombreBloque = nombreBloque;
         this.capacidad = capacidad;
         this.descripcionPrestamo = descripcionPrestamo;
         this.color = color;
+        this.fecha = fecha;
     }
 
     public Sala() {
@@ -67,6 +69,16 @@ public class Sala implements Serializable {
     public void setColor(String color) {
         this.color = color;
     }
+
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
 
 
 
