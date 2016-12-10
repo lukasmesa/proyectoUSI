@@ -82,7 +82,7 @@ public class SalasActivity extends AppCompatActivity {
         AsyncHttpClient client;
         client = new AsyncHttpClient();
         dialog.show();
-        client.get("http://dijansoft.xyz/usiWS/index.php?accion=todasprogramadas", new TextHttpResponseHandler() {
+        client.get("https://dijansoft.xyz/usiWS/index.php?accion=todasprogramadas", new TextHttpResponseHandler() {
 
 
             @Override

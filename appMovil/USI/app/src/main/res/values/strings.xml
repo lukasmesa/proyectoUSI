@@ -13,4 +13,9 @@
     <string name="opt_menu_filtrar_disp">Filtrar por salas diponibles</string>
     <string name="opt_menu_filtrar_ocup">Filtrar por salas ocupadas</string>
     <string name="buscar_salas">buscar salas</string>
+    <string name="txt_informacion_adicional">Informacion Adicional</string>
+    <string name="txt_monitor_encargado_detalle">Monitor Encargado</string>
+    <string name="txt_codigo_monitor_detalle">Codigo Monitor</string>
+    <string name="txt_nombre_sala">Nombre de la sala</string>
+    <string name="txt_correo_monitor_detalle">Correo Monitor</string>
 </resources>
