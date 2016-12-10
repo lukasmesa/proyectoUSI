@@ -116,5 +116,17 @@ class monitor {
         $conexion->getEstado(false); // envía al log un posible mensaje de error si las cosas salen mal
         echo json_encode($respuesta);
     }
+	
+	public function getSelectMonitor($param) {
+        $json = FALSE;
+        extract($param);
+        $select = "";
+        $select .= "<option value='0'>Seleccione un Monitor</option>";
+        foreach ($conexion->getPDO()->query("SELECT nombre, m.id_usuario,apellido FROM usuario u,monitor m WHERE u.id_usuario=m.id_usuario") as $fila) {
+            $name = 'Nombre: '.$fila['nombre'].' '.$fila['apellido'];
+            $select .= "<option value='{$fila['id_usuario']}'>{$name}</option>";
+        }
+        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
+    }
 }
 ?>
