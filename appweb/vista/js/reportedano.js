@@ -25,15 +25,15 @@ $(function () {
         {'label': 'Descripci&oacute;n', name: 'descripcion', index: 'descripcion', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {dataInit: asignarAncho}
         },        
-        {'label': 'Id Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {dataInit: asignarAncho,
-                value:valoresSelect2()
+                dataUrl: 'controlador/fachada.php?clase=usuario&oper=getSelectUsuario2'
             }
         },
-        {'label': 'Id Equipo Sala' , name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Id Equipo Sala' , name: 'id_equipo_sala', index: 'id_equipo_sala', width: 100, sortable: true, editable: true, edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
-                value:valoresSelect1()
+                dataUrl: 'controlador/fachada.php?clase=equipos_sala&oper=selectIdEquipos'
             }
         }
 
@@ -171,7 +171,7 @@ $(function () {
                 return [false, "Falta seleccionar identificador usuario externo"];
             }
         }
-        if (columna == 'id_usuario') {
+        if (columna == 'Usuario') {
             if (valor === '0') {
                 return [false, "Falta seleccionar identificador del usuario"];
             }

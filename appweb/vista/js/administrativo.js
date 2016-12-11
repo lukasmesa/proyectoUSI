@@ -96,6 +96,7 @@ $(function () {
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
+        edittype:'password',
             editoptions: {
                 dataInit: asignarAncho,
                 value:function()

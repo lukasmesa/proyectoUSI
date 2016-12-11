@@ -234,7 +234,7 @@ $(document).ready(function() {
                 turno: datosCronograma
             }, function (data) {
                 if (data.ok) {
-                    alert("entre a insertar");
+                    //alert("entre a insertar");
                     // argumento 3 > stick = true => persistirá en el calendario (no quiero eso)
 
                     calendario.fullCalendar('renderEvent', datosConcatenados, false);

@@ -35,15 +35,9 @@ $(document).on('ready', function () {
     });
     $("#index-calendario").button().on("click", function () {
         cargarPagina("#index-contenido", "vista/html/calendario.html");        
-
-
     });
-	
-    var opciones_cronograma = "#index-cronograma";
-    $(opciones_cronograma).css({'width': '13em'});
-
-    $("#index-cronograma").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+    $("#cerrar-sesion").button().on("click", function () {
+        location.reload(true);        
     });
     // un ejemplo de uso de selectores jQuery para controlar eventos sobre links
     $("#index-menu-superior li a").each(function () {
@@ -124,6 +118,41 @@ $(document).on('ready', function () {
             $(this).jqGrid('setGridWidth', anchoContenedor);
         });
     });
+
+
+//$('a.login-window').click(function() {
+        
+        // Getting the variable's value from a link 
+        //var loginBox = $(this).attr('href');
+        //alert(loginBox);
+        //Fade in the Popup and add close button
+        $("#login-box").fadeIn(300);
+        
+        //Set the center alignment padding + border
+        var popMargTop = ($("#login-box").height() + 24) / 2; 
+        var popMargLeft = ($("#login-box").width() + 24) / 2; 
+        
+        $("#login-box").css({ 
+            'margin-top' : -popMargTop,
+            'margin-left' : -popMargLeft
+        });
+        
+        // Add the mask to body
+        $('body').append('<div id="mask"></div>');
+        $('#mask').fadeIn(300);
+        
+        //return false;
+    //});
+    
+    // When clicking on the button close or the mask layer the popup closed
+    /*$('a.close, #mask, #entrar').on('click', function() { 
+          $('#mask , .login-popup').fadeOut(300 , function() {
+            $('#mask').remove();  
+        }); 
+        return false;
+    });*/
+
+    
 
 });
 

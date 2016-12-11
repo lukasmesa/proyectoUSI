@@ -14,7 +14,8 @@ $(function () {
     }
 
     valoresSelect3();
-	var clase = 'horas_disponibles_monitor';  // la clase que implementa el CRUD para este grid
+
+    var clase = 'horas_disponibles_monitor';  // la clase que implementa el CRUD para este grid
     var idPager = 'horas_disponibles_monitor-pager';  // la barra de navegación del grid ubicada en la parte inferior
 
      var field1, check_function1 = function (value, colname)
@@ -56,29 +57,30 @@ $(function () {
                 }
             }
         },*/
-        {'label': 'D&iacute;a', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Día', name: 'dia', index: 'dia', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
                 dataInit: asignarAncho,
                 value:diasSemana
             }
         },
-		{'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Hora Inicio', name: 'hora_inicio', index: 'hora_inicio', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 value:"0700:07:00 AM;0730:07:30 AM;0800:08:00 AM;0830:08:30 AM;0900:09:00 AM;0930:09:30 AM;1000:10:00 AM;1030:10:30 AM;1100:11:00 AM;1130:11:30 AM;1200:12:00 M;1230:12:30 PM;0100:01:00 PM;0130:01:30 PM;0200:02:00 PM;0230:02:30 PM;0300:03:00 PM;0330:03:30 PM;0040:04:00 PM;0430:04:30 PM;0500:05:00 PM;0530:05:30 PM;0600:06:00 PM;0630:06:30 PM;0700:07:00 PM;0730:07:30 PM;0800:08:00 PM"
             }
         },
-		{'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Hora Fin', name: 'hora_fin', index: 'hora_fin', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 value:"0700:07:00 AM;0730:07:30 AM;0800:08:00 AM;0830:08:30 AM;0900:09:00 AM;0930:09:30 AM;1000:10:00 AM;1030:10:30 AM;1100:11:00 AM;1130:11:30 AM;1200:12:00 M;1230:12:30 PM;0100:01:00 PM;0130:01:30 PM;0200:02:00 PM;0230:02:30 PM;0300:03:00 PM;0330:03:30 PM;0040:04:00 PM;0430:04:30 PM;0500:05:00 PM;0530:05:30 PM;0600:06:00 PM;0630:06:30 PM;0700:07:00 PM;0730:07:30 PM;0800:08:00 PM"
             }
         },
-		{'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+        {'label': 'Id Monitor', name: 'id_monitor', index: 'id_monitor', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 /*dataUrl: 'controlador/fachada.php?clase=horas_disponibles_monitor&oper=getSelect',
                 dataInit: asignarAncho,
                 defaultValue: '0'*/
                 dataUrl: 'controlador/fachada.php?clase=monitor&oper=getMonitorid',
                 dataInit: asignarAncho
+                
             }
         },
         {'label': 'Nombre Monitor', name: 'nombre', index: 'nombre', width: 100, sortable: true,  editrules: { number: false       , minValue: 1},
@@ -87,22 +89,36 @@ $(function () {
                 dataInit: asignarAncho,
                 defaultValue: '0'*/
                 dataInit: asignarAncho,
+              
+                
             }
-        }		
+        
+        }
+
+        
     ];
-	
-	function valoresSelect1(){        
+
+    function valoresSelect1(){
+
+        
         valores = "lunes:lunes;martes:martes;miercoles:miercoles;jueves:jueves;viernes:viernes;sabado:sabado";
         return valores;
     }
-	
-	function valoresSelect2(){
-        //modificar para coger valores del id monitor de la BD        
+
+    function valoresSelect2(){
+        //modificar para coger valores del id monitor de la BD
+        
         valores = "7:7 AM;8:8 AM;9:9 AM;10:10 AM;11:11 AM;12:12 M;13:1 PM;14:2 PM;15:3 PM;16:4 PM;17:5 PM;18:6 PM;19:7 PM;20:8 PM";
         return valores;
     }
-	
-	function valoresSelect3(){
+
+
+    
+
+
+    function valoresSelect3(){
+        
+        
         valoresID="";      
         $.ajax({
             type: 'POST',
@@ -117,13 +133,22 @@ $(function () {
                 {
                     var id=rows[i]['id'];
                     var s=id+":"+id+";";
-                    valoresID+=s;                
-                }                                
-            },              
+                    valoresID+=s;
+                
+                }            
+                    
+            },
+              
             async:false
         });
+        
+
         return valoresID.substr(0,(valoresID.length-1));    
+        
+        
     }
+
+    
 
     // inicializa el grid
     var grid = jQuery('#horas_disponibles_monitor-grid').jqGrid({
@@ -175,10 +200,24 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+        beforeSubmit : function(postdata, formid) { 
+            if(moment(postdata.hora_fin).isAfter(postdata.hora_inicio)){
+                return[true,"Success"]; 
+            }else{
+                return[false,"Fecha inicio debe ser menor a fecha fin."];
+            }
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+        beforeSubmit : function(postdata, formid) { 
+            if(moment(postdata.hora_fin).isAfter(postdata.hora_inicio)){
+                return[true,"Success"]; 
+            }else{
+                return[false,"Fecha inicio debe ser menor a fecha fin."];
+            }
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,
@@ -218,5 +257,8 @@ $(function () {
         }
         return [true, ""];
     }
+
 });
+
+
 // JavaScript Document

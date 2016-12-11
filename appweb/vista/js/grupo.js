@@ -24,7 +24,7 @@ $(function () {
         {'label': 'Id Docente', name: 'id_docente', index: 'id_docente', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
-                value:valoresSelect1()
+                dataUrl: 'controlador/fachada.php?clase=docente&oper=getSelectDocente'
             }
         },
         {'label': 'C&oacute;digo Asignatura', name: 'codigo_asignatura', index: 'codigo_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
