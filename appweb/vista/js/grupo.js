@@ -32,10 +32,7 @@ $(function () {
                 dataInit: asignarAncho,
                 value:valoresSelect2()
             }
-        },
-        {'label': 'Nombre Asignatura', name: 'nombre_asignatura', index: 'nombre_asignatura', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
-            editoptions: {dataInit: asignarAncho}
-		},
+        },        
         {'label': 'Color', name: 'color', index: 'color', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true, number: false, minValue: 1,edithidden:true},            
             editoptions: {
                 dataInit: function (e) {
@@ -191,5 +188,3 @@ $(function () {
         return [true, ""];
     }
 });
-
-

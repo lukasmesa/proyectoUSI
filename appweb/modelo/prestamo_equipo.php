@@ -40,7 +40,7 @@ class prestamo_equipo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT codigo_prestamo,fecha_inicio,fecha_fin,id_usuario,fk_equipo from prestamo_equipo";
+        $sql = "SELECT p.codigo_prestamo,p.fecha_inicio,p.fecha_fin,p.id_usuario,a.nombre,p.fk_equipo from prestamo_equipo p, usuario a where(p.id_usuario=a.id_usuario)";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -60,7 +60,7 @@ class prestamo_equipo {
                         $fila['fecha_fin'],
                         $fila['id_usuario'],
                         $fila['fk_equipo'],
-                     
+                        $fila['nombre']
                     ]
                 ];
             }

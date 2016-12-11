@@ -96,10 +96,9 @@ $(function () {
         {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1, custom: true, custom_func: check_function4},
+        {'label': 'contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true,edithidden:true, number: false, minValue: 1, custom: true, custom_func: check_function4},edittype:'password',
             editoptions: {dataInit: asignarAncho}
         }
-
     ];
 
     function valoresSelect(){
@@ -162,6 +161,10 @@ $(function () {
     }, {// add
         width: 420,
         modal: true,
+		beforeSubmit: function(postdata) {
+            postdata['contrasena'] = $.md5(postdata['contrasena'])
+            return [true];
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

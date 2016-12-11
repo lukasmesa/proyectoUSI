@@ -126,7 +126,7 @@ $(function () {
     }, {// add
         width: 420,
         modal: true,
-        afterSubmit: respuestaServidor
+        //afterSubmit: respuestaServidor
     }, {// del
         width: 335,
         modal: true, // jqModal: true,

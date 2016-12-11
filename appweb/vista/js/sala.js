@@ -230,5 +230,3 @@ var field1,check_function3 = function(value,colname)
     }
 
 });
-
-

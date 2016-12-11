@@ -36,12 +36,39 @@ $(function () {
         },
         {'label': 'Sede', name: 'nombre_sede', index: 'nombre_sede', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
             editoptions: {
-                dataUrl: 'controlador/fachada.php?clase=bloque&oper=getSelect',
+                /*dataUrl: 'controlador/fachada.php?clase=bloque&oper=getSelect',
                 dataInit: asignarAncho,
-                defaultValue: '0'
+                defaultValue: '0'*/
+				defaultValue: '0',
+                dataInit: asignarAncho,                
+                value:valoresSelect()
             }
         }
     ];
+	
+	function valoresSelect(){
+        valoresNombreSede="";      
+        $.ajax({
+            type: 'POST',
+            url: "controlador/fachada.php?clase=sede&oper=selectNombreSedes",
+            data: {},
+            success: function(data)
+            {                
+                var datos=jQuery.parseJSON(data);
+                //console.log("data: "+datos);
+                var rows = datos['rows'];                
+                for(i in rows)
+                {
+                    var id=rows[i]['id'];
+                    var s=id+":"+id+";";
+                    valoresNombreSede+=s;
+                  //  console.log("datos: "+rows[i]['id']);
+                }                                
+            },              
+            async:false
+        });
+        return valoresNombreSede.substr(0,(valoresNombreSede.length-1));          
+    }
 
     // inicializa el grid
     var grid = jQuery('#bloque-grid').jqGrid({
@@ -80,44 +107,8 @@ $(function () {
         },
         editurl: "controlador/fachada.php?clase=" + clase
     });
-
-    // inicializa los elementos de la barra de navegación del grid
-	var grid = jQuery('#bloque-grid').jqGrid({
-        url: 'controlador/fachada.php',
-        datatype: "json",
-        mtype: 'POST',
-        postData: {
-            clase: clase,
-            oper: 'select'
-        },
-        rowNum: 10,
-        rowList: [10, 20, 30],
-        colModel: columnas,
-        autowidth: false,
-        shrinkToFit: false,
-        sortname: 'nombre_bloque', // <-- OJO pueden ir varias columnas separadas por comas
-        sortorder: "asc",
-        height: altoGrid,
-        width: anchoGrid,
-        pager: "#" + idPager,
-        viewrecords: true,
-        caption: "Bloque",
-        multiselect: false,
-        multiboxonly: true,
-        hiddengrid: false,
-        cellurl: 'controlador/fachada.php?clase=' + clase,
-        cellsubmit: 'remote', // enviar cada entrada
-        gridComplete: function () {
-            // hacer algo...
-        },
-        loadError: function (jqXHR, textStatus, errorThrown) {
-            alert('Error. No se tiene acceso a los datos de órdenes de producción.')
-            console.log('textStatus: ' + textStatus);
-            console.log(errorThrown);
-            console.log(jqXHR.responseText);
-        },
-        editurl: "controlador/fachada.php?clase=" + clase
-    });
+	
+	// inicializa los elementos de la barra de navegación del grid
     grid.jqGrid('navGrid', "#" + idPager, {
         refresh: true,
         edit: true,
@@ -172,7 +163,4 @@ $(function () {
         }
         return [true, ""];
     }
-
 });
-
-
