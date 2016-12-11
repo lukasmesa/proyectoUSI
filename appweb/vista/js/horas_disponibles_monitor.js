@@ -77,8 +77,16 @@ $(function () {
                 /*dataUrl: 'controlador/fachada.php?clase=horas_disponibles_monitor&oper=getSelect',
                 dataInit: asignarAncho,
                 defaultValue: '0'*/
+                dataUrl: 'controlador/fachada.php?clase=monitor&oper=getMonitorid',
+                dataInit: asignarAncho
+            }
+        },
+        {'label': 'Nombre Monitor', name: 'nombre', index: 'nombre', width: 100, sortable: true,  editrules: { number: false       , minValue: 1},
+            editoptions: {
+                /*dataUrl: 'controlador/fachada.php?clase=nombre&oper=getSelect',
                 dataInit: asignarAncho,
-                value:valoresSelect3()
+                defaultValue: '0'*/
+                dataInit: asignarAncho,
             }
         }		
     ];

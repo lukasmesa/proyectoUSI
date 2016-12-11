@@ -22,7 +22,7 @@ class docente {
         $sql = "do $$
                     begin
                     UPDATE usuario
-                       SET id_usuario = '$id_usuario', nombre = '$nombre', apellido = '$apellido', correo = '$correo', contrasena = '$contrasena', tipo_doc = '$tipo_doc'
+                       SET id_usuario = '$id_usuario', nombre = '$nombre', apellido = '$apellido', correo = '$correo', tipo_doc = '$tipo_doc'
                        WHERE id_usuario = '$id';   
                     
                        UPDATE docente
@@ -61,7 +61,7 @@ class docente {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo, u.contrasena FROM docente e inner join usuario u on e.id_usuario = u.id_usuario";
+        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo FROM docente e inner join usuario u on e.id_usuario = u.id_usuario";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -75,14 +75,12 @@ class docente {
                 $tipoDoc = UtilConexion::$tipo_doc[$fila['tipo_doc']];
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
-                    'cell' => [ // los campos que se muestra en las columnas del grid
-                        
+                    'cell' => [ // los campos que se muestra en las columnas del grid                        
                         $fila['id_usuario'],
                         $tipoDoc,
                         $fila['nombre'],
                         $fila['apellido'],
-                        $fila['correo'],
-                        $fila['contrasena']
+                        $fila['correo']                        
                     ]
                 ];
             }
@@ -110,8 +108,6 @@ class docente {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
-                
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid

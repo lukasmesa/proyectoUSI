@@ -167,6 +167,11 @@ $(function () {
             if (valor === '0') {
                 return [false, "Falta seleccionar estado de equipo para prestamo"];
             }   
+        }        
+		if (columna == 'id de solicitud') {
+            if (valor === '0') {
+                return [false, "Falta seleccionar la peticion"];
+            }
         }
         return [true, ""];
     }

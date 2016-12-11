@@ -15,7 +15,7 @@ class UtilConexion {
     public function __construct() {
         // estas constantes se utilizan tanto en vista como en modelo, por lo tanto se definen una vez y se utilizan N veces (nada de duplicar código)
         //self::$tipoEstadoProduccion = ['1' => 'Seleccione un estado', '2' => 'Pendiente', '3' => 'En producción', '3' => 'Terminado'];
-        self::$tipo_doc = ['1'=>'Indeterminado','2'=>'Cédula de ciudadanía','3'=>'Tarjeta de Identidad','4'=>'Pasaporte','5'=>'Cédula Extranjera'];
+        self::$tipo_doc = ['1'=>'Indeterminado','2'=>'Cédula de ciudadanía','3'=>'Código Estudiantil','4'=>'Tarjeta de Identidad','5'=>'Pasaporte','6'=>'Cédula Extranjera'];
         self::$diasSemana = ['0' => 'Seleccione un dia','1'=>'Lunes','2'=>'Martes','3'=>'Miércoles','4'=>'Jueves','5'=>'Viernes','6'=>'Sábado', '7'=>'Domingo'];
         self::$estadoEquipos=['1'=>'Correcto','2'=>'Dañado','3'=>'Reparacion'];
         self::$tipoReserva = ['0' => 'Seleccione un tipo de actividad', '1' => 'Monitoría', '2' => 'Clase', '3' => 'Evento'];
