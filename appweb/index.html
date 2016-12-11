@@ -10,7 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" media="screen" href="vista/css/estilos.css">
+        <link rel="stylesheet" media="screen" href="vista/css/login.css">
 
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <link type="text/css" href="../includes/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
         <!-- No apto para usar con Internet Explores 9 o inferiores -->
 
@@ -32,13 +35,32 @@
                 <p>
                     <button id="index-calendario">Calendario</button>
 				<p>
+                    <button id="cerrar-sesion">Cerrar sesión</button>
+                <p>
             </div>
 
             <div id="index-contenido" class="right-column">
                 <!-- sobre este div se cargarán todas las páginas que proporcionen funcionalidad a la aplicación -->
             </div>
-        </div> 
-		
+        </div>
+        <div id="login-box" class="login-popup">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+                <label class="username">
+                <span>Ingrese su id</span>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="ID: 1234">
+                </label>
+                
+                <label class="password">
+                <span>Contraseña</span>
+                <input id="password" name="password" value="" type="password" placeholder="Contraseña">
+                </label>
+                
+                <button id="entrar" name="entrar" class="submit button" type="button">Entrar</button>
+                
+                </fieldset>
+          </form>
+        </div>
         <footer id="index-pie_pagina">
             <p><a href="">Contáctenos</a> | <a href="">Mapa del sitio</a> | <a href="">Políticas de privacidad</a></p>
             <p>&copy;2016 Todos los derechos de autor reservados...</p>
@@ -51,7 +73,8 @@
         <script type="text/javascript" src="../includes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="../includes/jquery-ui-1.12.1.custom/jquery.ui.datepicker-es.js"></script>
         <script type="text/javascript" src="vista/js/index.js"></script>
-        
+        <script type="text/javascript" src="vista/js/login.js"></script>
+
         <link rel="stylesheet" type="text/css" media="screen" href="../includes/jqGridFree/css/ui.jqgrid.css" >
         <link rel="stylesheet" type="text/css" media="screen" href="../includes/jqGridFree/plugins/ui.multiselect.css" >
         <script src="../includes/jqGridFree/js/i18n/grid.locale-es.js" type="text/javascript"></script>
