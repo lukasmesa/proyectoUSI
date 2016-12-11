@@ -53,7 +53,7 @@ class administrativo {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo FROM administrativo e inner join usuario u on e.id_usuario = u.id_usuario";
+        $sql = "SELECT  e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo, u.contrasena FROM administrativo e inner join usuario u on e.id_usuario = u.id_usuario";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -68,7 +68,6 @@ class administrativo {
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
                     'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_administrativo'],
                         $fila['id_usuario'],
                         $tipoDoc,
                         $fila['nombre'],
