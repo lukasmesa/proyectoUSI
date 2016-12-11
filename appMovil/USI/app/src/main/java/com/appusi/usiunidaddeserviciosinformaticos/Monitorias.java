@@ -55,7 +55,7 @@ public class Monitorias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitorias);
-        setTitle("MONITORIAS");
+        setTitle("MONITORÍAS");
 
 
         dialog = new ProgressDialog(this);

@@ -11,6 +11,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorLayoutBackground"
     tools:context="com.appusi.usiunidaddeserviciosinformaticos.MainActivity"
     android:scrollbarAlwaysDrawHorizontalTrack="false"
     android:scrollbarAlwaysDrawVerticalTrack="false">
@@ -38,109 +39,111 @@
         android:textSize="18sp"
         tools:ignore="RelativeOverlap" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardViewSalas"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_fecha_hoy"
-        android:layout_marginTop="110dp"
-        android:id="@+id/txt_desea_buscar"
-        android:text="@string/tet_USI_desea_buscar"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:textSize="18sp" />
-
-    <TextView
-        android:text="@string/txt_USI_monitorias_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_USI_monitorias_description"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:textColor="@color/colorControlNormal"
-        android:layout_below="@+id/txt_USI_monitorias"
-        android:layout_alignLeft="@+id/txt_USI_monitorias"
-        android:layout_alignStart="@+id/txt_USI_monitorias" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdButton_salas"
-        android:layout_alignBottom="@+id/txt_USI_salas_description"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdButton_monitorias"
-        android:layout_alignBottom="@+id/imgSearchMonitorias"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageView
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        app:srcCompat="@android:drawable/ic_search_category_default"
-        android:id="@+id/imgSearchSalas"
-        tools:ignore="ContentDescription"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/txt_desea_buscar"
+        android:layout_gravity="center"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="5dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:contentDescription="@string/txt_USI_salas" />
+        android:layout_alignParentStart="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ImageView
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        app:srcCompat="@android:drawable/ic_search_category_default"
-        android:id="@+id/imgSearchMonitorias"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/imgSearchSalas"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:contentDescription="@string/txt_USI_monitorias" />
+            <TextView
+                android:text="@string/txt_USI_monitorias_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_USI_monitorias_description"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textColor="@color/colorControlNormal"
+                android:layout_below="@+id/txt_USI_monitorias"
+                android:layout_alignLeft="@+id/txt_USI_monitorias"
+                android:layout_alignStart="@+id/txt_USI_monitorias" />
 
-    <TextView
-        android:text="@string/txt_USI_monitorias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_USI_monitorias"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:textSize="18sp"
-        android:layout_alignTop="@+id/imgSearchMonitorias"
-        android:layout_toRightOf="@+id/imgSearchMonitorias"
-        android:layout_toEndOf="@+id/imgSearchMonitorias"
-        android:layout_marginLeft="47dp"
-        android:layout_marginStart="47dp" />
+            <TextView
+                android:text="@string/txt_USI_salas_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_USI_salas_description"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textColor="@color/colorControlNormal"
+                android:layout_alignBottom="@+id/imgSearchSalas"
+                android:layout_alignLeft="@+id/txt_USI_monitorias"
+                android:layout_alignStart="@+id/txt_USI_monitorias" />
 
-    <TextView
-        android:text="@string/txt_USI_salas_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_USI_salas_description"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:textColor="@color/colorControlNormal"
-        android:layout_alignBottom="@+id/imgSearchSalas"
-        android:layout_alignLeft="@+id/txt_USI_monitorias"
-        android:layout_alignStart="@+id/txt_USI_monitorias" />
+            <TextView
+                android:text="@string/txt_USI_salas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_USI_salas"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textSize="18sp"
+                android:layout_above="@+id/txt_USI_salas_description"
+                android:layout_alignLeft="@+id/txt_USI_salas_description"
+                android:layout_alignStart="@+id/txt_USI_salas_description" />
 
-    <TextView
-        android:text="@string/txt_USI_salas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_USI_salas"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:textSize="18sp"
-        android:layout_above="@+id/txt_USI_salas_description"
-        android:layout_alignLeft="@+id/txt_USI_salas_description"
-        android:layout_alignStart="@+id/txt_USI_salas_description" />
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="37dp"
+                app:srcCompat="@android:drawable/ic_search_category_default"
+                android:id="@+id/imgSearchSalas"
+                tools:ignore="ContentDescription"
+                android:layout_marginTop="41dp"
+                android:contentDescription="@string/txt_USI_salas"
+                android:layout_below="@+id/txt_desea_buscar"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="21dp"
+                android:layout_marginEnd="21dp" />
 
-    <Button
-        android:text="@string/btn_USI_buscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnConsultar"
-        android:textColor="@android:color/white"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:text="@string/txt_USI_monitorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_USI_monitorias"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textSize="18sp"
+                android:layout_marginTop="21dp"
+                android:layout_below="@+id/txt_USI_salas_description"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="37dp"
+                app:srcCompat="@android:drawable/ic_search_category_default"
+                android:id="@+id/imgSearchMonitorias"
+                android:contentDescription="@string/txt_USI_monitorias"
+                android:layout_alignBottom="@+id/txt_USI_monitorias_description"
+                android:layout_alignLeft="@+id/imgSearchSalas"
+                android:layout_alignStart="@+id/imgSearchSalas" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/txt_desea_buscar"
+                android:text="@string/tet_USI_desea_buscar"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
 
 </RelativeLayout>

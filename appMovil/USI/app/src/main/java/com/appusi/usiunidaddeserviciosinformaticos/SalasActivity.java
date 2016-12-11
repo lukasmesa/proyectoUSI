@@ -1,6 +1,7 @@
 package com.appusi.usiunidaddeserviciosinformaticos;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -89,7 +90,12 @@ public class SalasActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(SalasActivity.this);
+                dlgAlert.setMessage("Algo Paso no se pudo obtener la información del servidor");
+                dlgAlert.setTitle("Error " + statusCode);
+                dlgAlert.setCancelable(false);
+                dlgAlert.setPositiveButton("OK",null);
+                dlgAlert.create().show();
             }
 
             @Override
@@ -141,12 +147,7 @@ public class SalasActivity extends AppCompatActivity {
         recyclerView.setAdapter(myAdaptador);
         recyclerView.setLayoutManager(layoutManager);
 
-        AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-        dlgAlert.setMessage("La letra que se encuentra en la parte izquierda representa el bloque " +
-                "en el que se encuentra esa sala");
-        dlgAlert.setTitle("Atencion");
-        dlgAlert.setPositiveButton("OK", null);
-        dlgAlert.create().show();
+
 
 
     }
