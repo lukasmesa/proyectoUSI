@@ -102,7 +102,7 @@ $(document).on('ready', function () {
         cargarPagina("#CRUDS-contenido", "vista/html/equipos_para_prestamos.html");
 
     });$("#index-cronograma").button().on("click", function () {
-        cargarPagina("#index-contenido", "vista/html/cronograma.html");
+        cargarPagina("#CRUDS-contenido", "vista/html/cronograma.html");
 
     });
 
