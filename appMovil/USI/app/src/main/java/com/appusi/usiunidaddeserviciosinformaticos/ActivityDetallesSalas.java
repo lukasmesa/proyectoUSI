@@ -28,7 +28,7 @@ public class ActivityDetallesSalas extends AppCompatActivity {
         txtBloque.setText("Bloque : "+temp.getNombreBloque());
         txtNombreSala.setText("Nombre : "+temp.getNombre());
         txtCapacidad.setText("Capacidad : "+temp.getCapacidad());
-        txtDescripcion.setText("Descripcion : "+temp.getDescripcionPrestamo());
+        txtDescripcion.setText("Descripción : "+temp.getDescripcionPrestamo());
         txtFecha.setText("Fecha : " + temp.getFecha());
         viewColor.setBackgroundColor(Color.parseColor(temp.getColor())); // cambiamos el color
 

@@ -1,6 +1,8 @@
 package com.appusi.usiunidaddeserviciosinformaticos;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,9 +24,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
 
-    private RadioButton rdButton_salas;
-    private RadioButton rdButton_monitorias;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,43 +31,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView txt_fecha_hoy_date = (TextView) findViewById(R.id.txt_fecha_hoy_date);
-        rdButton_salas = (RadioButton) findViewById(R.id.rdButton_salas);
-        rdButton_monitorias = (RadioButton) findViewById(R.id.rdButton_monitorias);
-        Button btnConsultar = (Button) findViewById(R.id.btnConsultar);
+        ImageView imgSearchSalas = (ImageView) findViewById(R.id.imgSearchSalas);
+        ImageView imgSearchMonitorias = (ImageView) findViewById(R.id.imgSearchMonitorias) ;
 
 
-        rdButton_salas.setOnClickListener(new View.OnClickListener() {
+        imgSearchSalas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(rdButton_monitorias.isChecked()){
-                    rdButton_monitorias.setChecked(false);
-                }
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(MainActivity.this);
+                dlgAlert.setMessage("La letra que se encuentra a la izquierda, representa el bloque " +
+                        "en el que se encuentra esa sala");
+                dlgAlert.setTitle("Atención");
+                dlgAlert.setCancelable(false);
+                dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(MainActivity.this,SalasActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                dlgAlert.create().show();
+
             }
         });
-        rdButton_monitorias.setOnClickListener(new View.OnClickListener() {
+        imgSearchMonitorias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(rdButton_salas.isChecked()){
-                    rdButton_salas.setChecked(false);
-                }
+                Intent intent = new Intent(MainActivity.this,Monitorias.class);
+                startActivity(intent);
             }
         });
 
-        btnConsultar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MainActivity.this, "Proximamente", Toast.LENGTH_SHORT).show();
-
-                if(rdButton_salas.isChecked()){
-                    Intent intent = new Intent(MainActivity.this,SalasActivity.class);
-                    startActivity(intent);
-                }
-                else if(rdButton_monitorias.isChecked()){
-                    Intent intent = new Intent(MainActivity.this,Monitorias.class);
-                    startActivity(intent);
-                }
-            }
-        });
 
 
         Date fechaActual = new Date();
