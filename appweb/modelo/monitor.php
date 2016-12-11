@@ -7,7 +7,7 @@ class monitor {
         
         $sql = "do $$
                     begin
-                        INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena''$tipo_doc');
+                        INSERT INTO usuario values('$id_usuario','$nombre','$apellido','$correo','$contrasena','$tipo_doc');
                         INSERT INTO monitor values('$id_usuario');                        
                     end$$
 				";
@@ -24,7 +24,7 @@ class monitor {
                     begin
                        UPDATE usuario
                        SET id_usuario = '$id_usuario', nombre = '$nombre', apellido = '$apellido', 
-                       correo = '$correo', contrasena = '$contrasena', tipo_doc = '$tipo_doc'
+                       correo = '$correo', tipo_doc = '$tipo_doc'
                        WHERE id_usuario = '$id';
 
                        UPDATE monitor
@@ -55,7 +55,7 @@ class monitor {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo, u.contrasena FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
+        $sql = "SELECT e.id_usuario, u.tipo_doc, u.nombre, u.apellido,u.correo FROM monitor e inner join usuario u on e.id_usuario = u.id_usuario ";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -69,14 +69,12 @@ class monitor {
                 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
-                    'cell' => [ // los campos que se muestra en las columnas del grid
-                        $fila['id_monitor'],
+                    'cell' => [ // los campos que se muestra en las columnas del grid                        
                         $fila['id_usuario'],
                         $tipoDoc,
                         $fila['nombre'],
                         $fila['apellido'],
-                        $fila['correo'],
-                        $fila['contrasena']
+                        $fila['correo']                        
                     ]
                 ];
             }
@@ -101,7 +99,7 @@ class monitor {
             $tiros_x_unidad = 2;
                     
             while ($fila = $rs->fetch(PDO::FETCH_ASSOC)) {
-                $tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
+                //$tipoEstado = UtilConexion::$tipoEstadoProduccion[$fila['estado']];  // <-- OJO, un valor calculado
                 
                 $respuesta['rows'][] = [
                     'id' => $fila['id_usuario'], // <-- debe identificar de manera única una fila del grid, por eso se usa la PK
@@ -117,13 +115,13 @@ class monitor {
         echo json_encode($respuesta);
     }
 	
-	public function getSelectMonitor($param) {
+	public function getMonitorid($param) {
         $json = FALSE;
         extract($param);
         $select = "";
         $select .= "<option value='0'>Seleccione un Monitor</option>";
         foreach ($conexion->getPDO()->query("SELECT nombre, m.id_usuario,apellido FROM usuario u,monitor m WHERE u.id_usuario=m.id_usuario") as $fila) {
-            $name = 'Nombre: '.$fila['nombre'].' '.$fila['apellido'];
+            $name = 'Monitor: '.$fila['id_usuario'].'  '.$fila['nombre'].' '.$fila['apellido'];
             $select .= "<option value='{$fila['id_usuario']}'>{$name}</option>";
         }
         echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");

@@ -47,12 +47,13 @@ $(function () {
                 }
             }
         },
-        {'label': 'Id usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
+        {'label': 'Usuario', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 /*dataUrl: 'controlador/fachada.php?clase=prestamo_equipo&oper=getSelect',
                 dataInit: asignarAncho,
                 defaultValue: '0'*/
-                value:valoresSelect1()
+                dataUrl: 'controlador/fachada.php?clase=usuario&oper=getSelectUsuario2',
+                dataInit: asignarAncho
             }
         },
         {'label': 'Equipo para pr&eacute;stamo', name: 'fk_equipo', index: 'fk_equipo', width: 100, sortable: true, editable: true,editrules: {required: true, number: false, minValue: 1},edittype:'select',
@@ -62,9 +63,16 @@ $(function () {
                 defaultValue: '0'*/
                 value:valoresSelect2()
             }
-        }
+        },
+        {'label': 'Nombre Usuario', name: 'nombre', index: 'nombre', width: 100, sortable: true,  editrules: { number: false       , minValue: 1},
+            editoptions: {
+                /*dataUrl: 'controlador/fachada.php?clase=nombre&oper=getSelect',
+                dataInit: asignarAncho,
+                defaultValue: '0'*/
+                dataInit: asignarAncho,
+            }
         
-
+        }
     ];
 
 
@@ -164,10 +172,26 @@ $(function () {
     }, {// edit
         width: 420,
         modal: true,
+		closeAfterAdd:true,
+        beforeSubmit : function(postdata, formid) { 
+            if(moment(postdata.fecha_fin).isAfter(postdata.fecha_inicio)){
+                return[true,"Success"]; 
+            }else{
+                return[false,"Fecha y hora inicio debe ser menor a fecha y hora fin."];
+            }
+        },
         afterSubmit: respuestaServidor
     }, {// add
         width: 420,
         modal: true,
+		closeAfterAdd:true,
+        beforeSubmit : function(postdata, formid) { 
+            if(moment(postdata.fecha_fin).isAfter(postdata.fecha_inicio)){
+                return[true,"Success"]; 
+            }else{
+                return[false,"Fecha y hora inicio debe ser menor a fecha y hora fin."];
+            }
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,

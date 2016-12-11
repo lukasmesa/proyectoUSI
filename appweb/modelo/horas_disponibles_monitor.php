@@ -40,7 +40,8 @@ class horas_disponibles_monitor {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT id_horario,dia,hora_inicio,hora_fin,id_monitor from horas_disp_monitor";
+        $sql = "SELECT h.id_horario,h.dia,h.hora_inicio,h.hora_fin,h.id_monitor,a.nombre
+                from horas_disp_monitor h, usuario a where(h.id_monitor=a.id_usuario)";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
 
@@ -61,6 +62,7 @@ class horas_disponibles_monitor {
                         $fila['hora_inicio'],
                         $fila['hora_fin'],
                         $fila['id_monitor'],
+						$fila['nombre']
                      
                     ]
                 ];

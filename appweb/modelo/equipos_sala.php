@@ -39,7 +39,8 @@ class equipos_sala {
         extract($param);
         $where = $conexion->getWhere($param);
         // conserve siempre esta sintaxis para enviar filas al grid:
-        $sql = "SELECT  id_equipo_sala,descripcion,estado,software_equipo,partes_equipo,id_sala from equipos_sala $where";
+        $sql = "SELECT  s.id_equipo_sala,s.descripcion,s.estado,s.software_equipo,s.partes_equipo,s.id_sala,p.nombre_sala
+             from equipos_sala s , sala p where (s.id_sala=p.id_sala) $where";
         // crear un objeto con los datos que se envían a jqGrid para mostrar la información de la tabla
         $respuesta = $conexion->getPaginacion($sql, $rows, $page, $sidx, $sord); // $rows = filas * página
         // agregar al objeto que se envía las filas de la página requerida
@@ -60,6 +61,7 @@ class equipos_sala {
                         $fila['software_equipo'],
                         $fila['partes_equipo'],
                         $fila['id_sala']
+						$fila['nombre_sala']
                     ]
                 ];
             }

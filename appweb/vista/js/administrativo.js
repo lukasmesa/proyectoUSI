@@ -77,25 +77,40 @@ $(function () {
 
     // las columnas de un grid se definen como un array de objetos con múltiples atributos
     var columnas = [        
+		{'label': 'Id Usuario ', name: 'id_usuario', index: 'id_usuario', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},
+            editoptions: {dataInit: asignarAncho}
+        },
         {'label': 'Tipo Documento', name: 'tipo_doc', index: 'tipo_doc', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {
                 dataInit: asignarAncho,
                 value:tipoDoc
             }
         },
-        {'label': 'Nombre', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
+        {'label': 'Nombre Administrativo', name: 'nombre', index: 'nombre', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function1},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Apellido', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
+        {'label': 'Apellido Administrativo', name: 'apellido', index: 'apellido', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function2},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
         {'label': 'Contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
-            editoptions: {dataInit: asignarAncho}
+            editoptions: {
+                dataInit: asignarAncho,
+                value:function()
+                {
+                    var md5=$.md5($("#contrasena").val());                    
+                    return md5;
+                }
+            }
         }
     ];
+	
+	function valoresSelect(){
+        valores = "cedula:cedula";
+        return valores;
+    }
 
     // inicializa el grid
     var grid = jQuery('#administrativo-grid').jqGrid({
@@ -111,7 +126,7 @@ $(function () {
         colModel: columnas,
         autowidth: false,
         shrinkToFit: false,
-        sortname: 'id_administrativo', // <-- OJO pueden ir varias columnas separadas por comas
+        sortname: 'id_usuario', // <-- OJO pueden ir varias columnas separadas por comas
         sortorder: "asc",
         height: altoGrid,
         width: anchoGrid,
@@ -151,6 +166,10 @@ $(function () {
     }, {// add
         width: 420,
         modal: true,
+		beforeSubmit: function(postdata) {
+            postdata['contrasena'] = $.md5(postdata['contrasena'])
+            return [true];
+        },
         afterSubmit: respuestaServidor
     }, {// del
         width: 335,
@@ -190,7 +209,4 @@ $(function () {
         }
         return [true, ""];
     }
-
 });
-
-

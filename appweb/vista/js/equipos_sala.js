@@ -24,6 +24,7 @@ $(function () {
 
         return [true];
     };
+	
     var field1, check_function2 = function (value, colname)
     {
 
@@ -33,6 +34,32 @@ $(function () {
 
         if (value.length >= 50) {
             return [false, "Se han excedido la cantidad de caracteres de la descripcion"];
+        }
+        return [true];
+    };
+	
+	var field1, check_function3 = function (value, colname)
+    {
+
+        if (colname === "software_equipo") {
+            field1 = value;
+        }
+
+        if (value.length >= 50) {
+            return [false, "Se han excedido la cantidad de caracteres de la descripcion del Software del equipo"];
+        }
+        return [true];
+    };
+
+    var field1, check_function4 = function (value, colname)
+    {
+
+        if (colname === "partes_equipo") {
+            field1 = value;
+        }
+
+        if (value.length >= 800) {
+            return [false, "Se han excedido la cantidad de caracteres de la descripcion de las partes equipo"];
         }
         return [true];
     };
@@ -58,10 +85,13 @@ $(function () {
         },
         {'label': 'Id Sala', name: 'id_sala', index: 'id_sala', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1},edittype:'select',
             editoptions: {defaultValue: '0',
-                dataInit: asignarAncho,
-                value:valoresSelect1()
-				}
-            }        
+                dataUrl: 'controlador/fachada.php?clase=sala&oper=getSelectSala',
+                dataInit: asignarAncho
+            }
+        },
+        {'label': 'Nombre Sala', name: 'nombre_sala', index: 'nombre_sala', width: 100, sortable: true, 
+            editoptions: {dataInit: asignarAncho}
+        }        
     ];
 
     function valoresSelect1(){

@@ -21,5 +21,16 @@ class usuario {
         }
         echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
     }
-
+	
+	public function getSelectUsuario2($param) {
+        $json = FALSE;
+        extract($param);
+        $select = "";
+        $select .= "<option value='0'>Seleccione un usuario</option>";
+        foreach ($conexion->getPDO()->query("SELECT id_usuario, nombre, apellido FROM usuario ORDER BY apellido") as $fila) {
+            $name = 'Usuario'.$fila['id_usuario'].' '.$fila['nombre'].' '.$fila['apellido'];
+            $select .= "<option value='{$fila['id_usuario']}'>{$name}</option>";
+        }
+        echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
+    }
 }
