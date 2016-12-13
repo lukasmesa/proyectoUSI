@@ -4,7 +4,7 @@
  */
 
 $(function () {
-
+var bandera=true;
     $(window).resize(); // forzar un resize para detectar el ancho del contenedor (ver index.js)
     var anchoGrid = anchoContenedor; // se asigna a una variable local el ancho del contenedor
     var altoGrid = $(window).height() - 350;
@@ -95,9 +95,10 @@ $(function () {
         {'label': 'Correo', name: 'correo', index: 'correo', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function3},
             editoptions: {dataInit: asignarAncho}
         },
-        {'label': 'Contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true, editrules: {required: true, number: false, minValue: 1,custom:true,custom_func:check_function4},
+   {'label': 'Contrase&ntilde;a', name: 'contrasena', index: 'contrasena', width: 100, sortable: true, editable: true,hidden:true, editrules: {required: true,edithidden:true, number: false, minValue: 1,custom:true,custom_func:check_function4, },  
         edittype:'password',
             editoptions: {
+				
                 dataInit: asignarAncho,
                 value:function()
                 {
@@ -167,6 +168,7 @@ $(function () {
     }, {// add
         width: 420,
         modal: true,
+		
 		beforeSubmit: function(postdata) {
             postdata['contrasena'] = $.md5(postdata['contrasena'])
             return [true];
