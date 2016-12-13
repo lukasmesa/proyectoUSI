@@ -132,7 +132,7 @@ class monitor {
         $select = "";
         $select .= "<option value='0'>Seleccione un Monitor</option>";
         foreach ($conexion->getPDO()->query("SELECT nombre, m.id_usuario,apellido FROM usuario u,monitor m WHERE u.id_usuario=m.id_usuario") as $fila) {
-            $name = 'Nombre: '.$fila['nombre'].' '.$fila['apellido'];
+            $name = $fila['id_usuario'].'-'.$fila['nombre'].' '.$fila['apellido'];
             $select .= "<option value='{$fila['id_usuario']}'>{$name}</option>";
         }
         echo $json ? json_encode($select) : ("<select id='$id'>$select</select>");
